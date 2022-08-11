@@ -1,0 +1,7 @@
+{
+  "name": "fishnet_app_new",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
