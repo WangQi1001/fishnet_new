@@ -1,0 +1,18 @@
+.search-bar{
+    background: #FCFCFC;
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    text-align: center;
+    padding: 0 3px 0 1rem;
+    border: 1px solid #49AAE8;
+    border-radius: 30px;
+    
+    width: 70%;
+    margin: auto;
+    height: 40px;
+    .search-icon{
+        width: 34px;
+        height: 34px;
+    }
+}

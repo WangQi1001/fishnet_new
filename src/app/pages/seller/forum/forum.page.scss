@@ -1,0 +1,100 @@
+ion-content{
+    --background: #F8F8F8;
+    font-family: Yuanti TC;
+    .toolbar{
+        padding-top: 2rem;
+        background-image: url('../../../../assets/icon/toolbar-background.svg');
+        background-repeat: no-repeat;
+        height: 130px;
+        .title{
+            font-weight: 700;
+            font-size: 20px;
+            text-align: center;
+            color: #FFFFFF;
+
+            vertical-align: middle;
+            margin-bottom: 1rem;
+        }
+        .search-bar{
+            background: #FCFCFC;
+            display: flex;
+            flex-direction:row;
+            align-items: center;
+            text-align: center;
+            padding: 0 3px 0 1rem;
+            border: 1px solid #49AAE8;
+            border-radius: 30px;
+            
+            width: 70%;
+            margin: auto;
+            height: 40px;
+            .search-icon{
+                width: 34px;
+                height: 34px;
+            }
+        }
+        .comment-bar{
+            border: 1px solid #49AAE8;
+            border-radius: 30px;
+        }
+        .forum-icon{
+            height: 24px;
+            width: 24px;
+            position: absolute;
+            left: 10%; //From left 10% 
+        }
+    }
+    ion-grid{
+        margin: 1.25rem 0.75rem 1.25rem 0.75rem;
+        padding: 0.5rem;
+        border-radius: 0.625rem;
+        font-size: 14px;
+        // width: 100%;
+        .forum-profile{
+            height: 29px;
+            width: 29px;
+        }
+        .forum-text-1{
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 22px;
+            color: #7D7D7D;
+        }
+        .forum-text-2{
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 22px;
+
+            color: #000000;
+        }
+        .forum-text-3{
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 35px;
+
+            color: #7D7D7D;
+        }
+        .forum-profile-button{
+            width: 105px;
+            height: 27px;
+        }
+        .btn1{
+            --background: transparent;
+            --color: #49AAE8;
+            border: 1px solid #49AAE8;
+            border-radius: 9.42263px;
+
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+        }
+        .btn2{
+            --background: #49AAE8;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 20px;
+            border-radius: 9.42263px;
+
+        }
+    }
+}

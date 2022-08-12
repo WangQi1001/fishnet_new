@@ -1,0 +1,125 @@
+<ion-content>
+  <div class="setting-inner-content">
+    <div mode="ios" class="toolbar">
+      <ion-buttons (click)="goBack()">
+        <ion-icon mode="ios-person" class="back-icon" slot="icon-only" name="chevron-back-outline"></ion-icon>
+      </ion-buttons>
+      <ion-row>
+        <ion-col>
+          <div class="title">
+            <ion-icon mode="ios" class="back-icon2" slot="icon-only" src="../../../assets/icon/myorder-icon.svg"></ion-icon>
+            訂單狀態
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
+  
+    <ion-grid class="ion-padding-horizontal">
+      <ion-row>
+        <ion-col class="shopID">
+          <p>
+            {{shopID}}
+          </p>
+        </ion-col>
+        <ion-col class="go-button">
+          <ion-button (click)="goStore()">
+            聯絡商店
+          </ion-button>
+        </ion-col>
+      </ion-row>
+  
+      <ion-row>
+        <ion-col style="font-size: 14px;">
+          <p>
+            訂單編號：{{shopNumber}}
+          </p>
+        </ion-col>
+      </ion-row>
+  
+      <ion-row >
+        <ion-col class="image" size="3">
+          <ion-img alt="image" [src]="productImg"></ion-img>
+        </ion-col>
+        <ion-col class="bold-title">
+          <ion-row>
+            <ion-col style="padding-bottom: 0;">
+              <p style="font-size: 16px;">訂單運送中</p>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <p>產品名稱</p>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+  
+      <ion-row>
+        <ion-col style="padding: 1rem 0">
+          <p>速遞公司名稱 速遞編號：{{shopNumber}}</p>
+        </ion-col>
+      </ion-row>
+  
+      <ion-row class="logistics-status" >
+        <ion-col>
+          <ion-button  class="profile-items">
+            <div class="button-text">
+              <div>
+                <ion-icon mode="ios-card" class="back-icon" slot="icon-only" name="card-outline"></ion-icon>
+              </div>
+              <div>
+                <ion-label>完成付款</ion-label>
+              </div>
+            </div>
+        </ion-button> 
+        </ion-col>
+        <div>...</div>
+        <ion-col>
+          <ion-button  class="profile-items">
+            <div class="button-text">
+              <div>
+                <ion-icon mode="ios-settings" class="back-icon" slot="icon-only" src="../../../assets/icon/delivery.svg"></ion-icon>
+              </div>
+              <div>
+                <ion-label>商品已發貨</ion-label>
+              </div>
+            </div>
+        </ion-button> 
+        </ion-col>
+        <div>...</div>
+        <ion-col>
+          <ion-button  class="profile-items active" >
+            <div class="button-text">
+              <div>
+                <ion-icon mode="ios-flag" class="back-icon" slot="icon-only" name="flag-outline"></ion-icon>
+              </div>
+              <div>
+                <ion-label>商品已送達</ion-label>
+              </div>
+            </div>
+        </ion-button> 
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-row>
+      <ion-col class="map">
+        <ion-img alt="image" [src]="mapImg"></ion-img>
+      </ion-col>
+    </ion-row>
+  
+  <ion-grid class="ion-padding-horizontal">
+    <ion-row *ngFor="let message of logisticsMessage" style="font-size: 14px;">
+      <ion-col size="3">
+        <p>{{message.time}}</p>
+      </ion-col>
+      <ion-col>
+        <p>
+          {{message.message}}
+        </p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  </div>  
+
+</ion-content>

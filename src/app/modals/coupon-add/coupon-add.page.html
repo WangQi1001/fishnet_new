@@ -1,0 +1,543 @@
+<ion-content class="ion-no-padding">
+  <div class="header">
+    <ion-toolbar color="#ffff">
+      <ion-title style="text-align: center">新增優惠券</ion-title>
+      <ion-buttons slot="end">
+        <ion-icon mode="ios" class="back-icon" slot="icon-only" name="close-outline" (click)="close()"></ion-icon>
+      </ion-buttons>
+    </ion-toolbar>
+  </div>
+  <ion-grid *ngIf="isNext === false"  class="ion-padding-horizontal">
+    <form class="form" >
+      <ion-row style="margin-bottom: 0em">
+        <ion-col>
+          <div class="required-form-title">優惠券類型</div>
+          <ion-item mode="ios" class="input-form-item">
+            <ion-select
+              interface="action-sheet"
+              mode="ios"
+              class="form-select"
+              type="text"
+              placeholder="請選擇優惠券類型"
+              (ionChange)="changeCouponType($event)"
+            >
+              <ion-select-option value="1">百分比</ion-select-option>
+              <ion-select-option value="2">固定金額</ion-select-option>
+              <ion-select-option value="3">免運費</ion-select-option>
+              <ion-select-option value="4">滿額後贈送優惠券作下次使用</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row *ngIf="couponType !== 0" style="margin-bottom: 0em">
+        <ion-col>
+          <div class="form-title">優惠券名稱</div>
+          <ion-item mode="ios" class="input-form-item">
+            <ion-input mode="ios" class="form-input" type="text" 
+            ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row *ngIf="couponType !== 0" style="margin-bottom: 0em">
+        <ion-col class="no-pad-bot">
+          <div class="required-form-title">商品類別</div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row *ngIf="couponType !== 0" class="address">
+        <ion-col>
+          <ion-button mode="ios" class="type-button" [ngClass]="{
+          'active': this.type=== 'creatures'}"
+          (click)="selectType('creatures')">生物</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button mode="ios" class="type-button" [ngClass]="
+          {'active': this.type === 'goods'}"
+          (click)="selectType('goods')">貨物</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button mode="ios" class="type-button" [ngClass]="
+          {'active': this.type === 'unlimited'}"
+          (click)="selectType('unlimited')">不限</ion-button>
+        </ion-col>
+      </ion-row>
+
+      <div *ngIf="couponType == 1">
+        <ion-row style="margin-bottom: 0em">
+          <ion-col>
+            <div class="required-form-title">優惠券條件</div>
+            <ion-item mode="ios" class="input-form-item">
+              <ion-select
+                interface="action-sheet"
+                mode="ios"
+                class="form-select"
+                type="text"
+                placeholder="請選擇優惠券條件"
+                (ionChange)="changeCouponCondition($event)"
+              >
+                <ion-select-option value="1">不限</ion-select-option>
+                <ion-select-option value="2">最低消費金額</ion-select-option>
+                <ion-select-option value="3">商品數目</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <div *ngIf="couponCondition == 1">
+          <ion-row style="margin-bottom: 0em">
+            <ion-col>
+              <div class="form-title">折扣（百分比）</div>
+              <ion-item mode="ios" class="input-form-item">
+                <ion-input mode="ios" class="form-input discount-input" type="text" placeholder="% OFF"
+                ></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+
+          <ion-row style="margin-bottom: 0em">
+            <ion-col class="no-pad-bot">
+              <div class="form-title">每位客人可使用次數</div>
+            </ion-col>
+          </ion-row>
+
+          <ion-row style="margin-bottom: 0em">
+            <ion-col class="address">
+              <ion-col class="no-pad-top" size="7">
+                <ion-item mode="ios" class="input-form-item">
+                  <ion-input mode="ios" class="form-input name-input"></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col class="no-pad-top" size="5">
+                <ion-button mode="ios" value="不限" [ngClass]="{
+                  'label-button-active': this.label2Added===true,
+                  'label-button-deactive': this.label2Added===false}"             
+                  (click)="addLabel2()">不限</ion-button>
+              </ion-col>
+            </ion-col>
+          </ion-row>
+        </div>
+
+        <div *ngIf="couponCondition == 2">
+          <ion-row style="margin-bottom: 0em">
+            <ion-col>
+              <div class="form-title">最低消費金額</div>
+              <ion-item mode="ios" class="input-form-item">
+                <ion-input mode="ios" class="form-input" type="text" placeholder="HKD"
+                ></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+
+          <ion-row style="margin-bottom: 0em">
+            <ion-col>
+              <div class="form-title">折扣（百分比）</div>
+              <ion-item mode="ios" class="input-form-item">
+                <ion-input mode="ios" class="form-input discount-input" type="text" placeholder="% OFF"
+                ></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+
+          <ion-row style="margin-bottom: 0em">
+            <ion-col class="no-pad-bot">
+              <div class="form-title">每位客人可使用次數</div>
+            </ion-col>
+          </ion-row>
+
+          <ion-row style="margin-bottom: 0em">
+            <ion-col class="address">
+              <ion-col class="no-pad-top" size="7">
+                <ion-item mode="ios" class="input-form-item">
+                  <ion-input mode="ios" class="form-input name-input"></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col class="no-pad-top" size="5">
+                <ion-button mode="ios" value="不限" [ngClass]="{
+                  'label-button-active': this.label2Added===true,
+                  'label-button-deactive': this.label2Added===false}"             
+                  (click)="addLabel2()">不限</ion-button>
+              </ion-col>
+            </ion-col>
+          </ion-row>
+        </div>
+
+        <div *ngIf="couponCondition == 3">
+
+          <ion-row style="margin-bottom: 0em">
+
+              <ion-col size="7">
+                <div class="form-title">商品數目</div>
+                <ion-item mode="ios" class="input-form-item">
+                  <ion-input mode="ios" class="form-input name-input"></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="5">
+                <div class="form-title">折扣（百分比）</div>
+                <ion-item mode="ios" class="input-form-item">
+                  <ion-input mode="ios" class="form-input discount-input" placeholder="% OFF"></ion-input>
+                </ion-item>
+              </ion-col>
+
+          </ion-row>
+
+          <ion-row style="margin-bottom: 0em">
+            <ion-col>
+            <div class="add-div">
+              <ion-icon mode ="ios" class="edit-icon" slot="icon-only" src="../../../assets/icon/coupon-add-icon.svg"></ion-icon>
+              加入更多條件
+            </div>
+          </ion-col>
+          </ion-row>
+
+          <ion-row style="margin-bottom: 0em">
+            <ion-col class="no-pad-bot">
+              <div class="form-title">每位客人可使用次數</div>
+            </ion-col>
+          </ion-row>
+
+          <ion-row style="margin-bottom: 0em">
+            <ion-col class="address">
+              <ion-col class="no-pad-top" size="7">
+                <ion-item mode="ios" class="input-form-item">
+                  <ion-input mode="ios" class="form-input name-input"></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col class="no-pad-top" size="5">
+                <ion-button mode="ios" value="不限" [ngClass]="{
+                  'label-button-active': this.label2Added===true,
+                  'label-button-deactive': this.label2Added===false}"             
+                  (click)="addLabel2()">不限</ion-button>
+              </ion-col>
+            </ion-col>
+          </ion-row>
+        </div>
+      </div>
+
+      <div *ngIf="couponType == 2">
+
+        <ion-row style="margin-bottom: 0em">
+          <ion-col class="no-pad-bot">
+            <div class="form-title">最低消費金額</div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="margin-bottom: 0em">
+          <ion-col class="address">
+            <ion-col class="no-pad-top" size="7">
+              <ion-item mode="ios" class="input-form-item">
+                <ion-input mode="ios" class="form-input name-input" placeholder="HKD"></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col class="no-pad-top" size="5">
+
+              <!--<ion-item mode="ios" class="input-form-item">-->
+                <ion-button mode="ios" value="沒有" [ngClass]="{
+                  'label-button-active': this.label1Added===true,
+                  'label-button-deactive': this.label1Added===false
+                  }"             
+                  (click)="addLabel1()">沒有</ion-button>
+              <!--</ion-item>-->
+            </ion-col>
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="margin-bottom: 0em">
+          <ion-col>
+            <div class="form-title">扣除金額</div>
+            <ion-item mode="ios" class="input-form-item">
+              <ion-input mode="ios" class="form-input" type="text" placeholder="HKD"
+              ></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="margin-bottom: 0em">
+          <ion-col class="no-pad-bot">
+            <div class="form-title">每位客人可使用次數</div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="margin-bottom: 0em">
+          <ion-col class="address">
+            <ion-col class="no-pad-top" size="7">
+              <ion-item mode="ios" class="input-form-item">
+                <ion-input mode="ios" class="form-input name-input"></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col class="no-pad-top" size="5">
+              <!--<ion-item mode="ios" class="input-form-item">-->
+                <ion-button mode="ios" value="不限" [ngClass]="{
+                  'label-button-active': this.label2Added===true,
+                  'label-button-deactive': this.label2Added===false}"             
+                  (click)="addLabel2()">不限</ion-button>
+              <!--</ion-item>-->
+            </ion-col>
+          </ion-col>
+        </ion-row>
+
+      </div>
+
+      <div *ngIf="couponType == 3">
+
+        <ion-row style="margin-bottom: 0em">
+          <ion-col class="no-pad-bot">
+            <div class="form-title">最低消費金額</div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="margin-bottom: 0em">
+          <ion-col class="address">
+            <ion-col class="no-pad-top" size="7">
+              <ion-item mode="ios" class="input-form-item">
+                <ion-input mode="ios" class="form-input name-input" placeholder="HKD"></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col class="no-pad-top" size="5">
+              <ion-button mode="ios" value="沒有" [ngClass]="{
+                'label-button-active': this.label1Added===true,
+                'label-button-deactive': this.label1Added===false
+                }"             
+                (click)="addLabel1()">沒有</ion-button>
+            </ion-col>
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="margin-bottom: 0em">
+          <ion-col class="no-pad-bot">
+            <div class="form-title">每位客人可使用次數</div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="margin-bottom: 0em">
+          <ion-col class="address">
+            <ion-col class="no-pad-top" size="7">
+              <ion-item mode="ios" class="input-form-item">
+                <ion-input mode="ios" class="form-input name-input"></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col class="no-pad-top" size="5">
+              <ion-button mode="ios" value="不限" [ngClass]="{
+                'label-button-active': this.label2Added===true,
+                'label-button-deactive': this.label2Added===false}"             
+                (click)="addLabel2()">不限</ion-button>
+            </ion-col>
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="margin-bottom: 0em">
+          <ion-col class="no-pad-bot">
+            <div class="form-title">優惠券數目</div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="margin-bottom: 0em">
+          <ion-col class="address">
+            <ion-col class="no-pad-top" size="7">
+              <ion-item mode="ios" class="input-form-item">
+                <ion-input mode="ios" class="form-input name-input"></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col class="no-pad-top" size="5">
+              <ion-button mode="ios" value="不限" [ngClass]="{
+                'label-button-active': this.label3Added===true,
+                'label-button-deactive': this.label3Added===false}"             
+                (click)="addLabel3()">不限</ion-button>
+            </ion-col>
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="margin-bottom: 0em">
+          <ion-col class="no-pad-bot">
+            <div class="form-title">有效日期</div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="margin-bottom: 0em">
+          <ion-col class="address">
+            <ion-col class="no-pad-top" size="5">
+              <ion-item mode="ios" class="input-form-item">
+                <ion-input mode="ios" class="form-input name-input" type="date"></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col class="no-pad-bot" size="2">
+              <div class="form-title" style="text-align:center;">至</div>
+            </ion-col>
+            <ion-col class="no-pad-top" size="5">
+              <ion-item mode="ios" class="input-form-item">
+                <ion-input mode="ios" class="form-input name-input" type="date"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-col>
+        </ion-row>
+
+      </div>
+
+      <div *ngIf="couponType == 4">
+
+        <ion-row style="margin-bottom: 0em">
+          <ion-col class="no-pad-bot">
+            <div class="form-title">下次購物需買滿$__方可使用</div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="margin-bottom: 0em">
+          <ion-col class="address">
+            <ion-col class="no-pad-top" size="7">
+              <ion-item mode="ios" class="input-form-item">
+                <ion-input mode="ios" class="form-input name-input" placeholder="HKD"></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col class="no-pad-top" size="5">
+              <ion-button mode="ios" value="沒有限制" [ngClass]="{
+                'label-button-active': this.label1Added===true,
+                'label-button-deactive': this.label1Added===false
+                }"             
+                (click)="addLabel1()">沒有限制</ion-button>
+            </ion-col>
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="margin-bottom: 0em">
+          <ion-col>
+            <div class="form-title">贈送優惠券之金額</div>
+            <ion-item mode="ios" class="input-form-item">
+              <ion-input mode="ios" class="form-input" type="text" placeholder="HKD"
+              ></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="margin-bottom: 0em">
+          <ion-col class="no-pad-bot">
+            <div class="form-title">每位客人可得到最多券數</div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="margin-bottom: 0em">
+          <ion-col class="address">
+            <ion-col class="no-pad-top" size="7">
+              <ion-item mode="ios" class="input-form-item">
+                <ion-input mode="ios" class="form-input name-input"></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col class="no-pad-top" size="5">
+              <ion-button mode="ios" value="不限" [ngClass]="{
+                'label-button-active': this.label2Added===true,
+                'label-button-deactive': this.label2Added===false}"             
+                (click)="addLabel2()">不限</ion-button>
+            </ion-col>
+          </ion-col>
+        </ion-row>
+
+      </div>
+
+    </form>
+
+    <ion-row *ngIf="couponType == 0 || couponType == 1 || couponType == 2 || couponType == 4">
+      <ion-col class="submit-button">
+        <ion-button mode="ios" (click)="clickNext()">
+          下一步
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="couponType == 3">
+      <ion-col class="submit-button">
+        <ion-button mode="ios" (click)="close()">
+          新增
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+  <ion-grid *ngIf="isNext === true" class="ion-padding-horizontal">
+    <form class="form" >
+
+      <ion-row style="margin-bottom: 0em">
+        <ion-col class="no-pad-bot">
+          <div class="required-form-title" style="color: #49AAE8">如超過以下其中一項條件，優惠券將會自動失效</div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row style="margin-bottom: 0em">
+        <ion-col class="no-pad-bot">
+          <div class="form-title">優惠券數目</div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row style="margin-bottom: 0em">
+        <ion-col class="address">
+          <ion-col class="no-pad-top" size="7">
+            <ion-item mode="ios" class="input-form-item">
+              <ion-input mode="ios" class="form-input name-input"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col class="no-pad-top" size="5">
+            <ion-button mode="ios" value="不限" [ngClass]="{
+              'label-button-active': this.label4Added===true,
+              'label-button-deactive': this.label4Added===false}"             
+              (click)="addLabel4()">不限</ion-button>
+          </ion-col>
+        </ion-col>
+      </ion-row>
+
+      <ion-row style="margin-bottom: 0em">
+        <ion-col class="no-pad-bot">
+          <div class="form-title">最高總折扣金額</div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row style="margin-bottom: 0em">
+        <ion-col class="address">
+          <ion-col class="no-pad-top" size="7">
+            <ion-item mode="ios" class="input-form-item">
+              <ion-input mode="ios" class="form-input name-input" placeholder="HKD"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col class="no-pad-top" size="5">
+            <ion-button mode="ios" value="沒有" [ngClass]="{
+              'label-button-active': this.label5Added===true,
+              'label-button-deactive': this.label5Added===false}"             
+              (click)="addLabel5()">沒有</ion-button>
+          </ion-col>
+        </ion-col>
+      </ion-row>
+
+      <ion-row style="margin-bottom: 0em">
+        <ion-col class="no-pad-bot">
+          <div class="form-title">有效日期</div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row style="margin-bottom: 0em">
+        <ion-col class="address">
+          <ion-col class="no-pad-top" size="5">
+            <ion-item mode="ios" class="input-form-item">
+              <ion-input mode="ios" class="form-input name-input" type="date"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col class="no-pad-bot" size="2">
+            <div class="form-title" style="text-align:center;">至</div>
+          </ion-col>
+          <ion-col class="no-pad-top" size="5">
+            <ion-item mode="ios" class="input-form-item">
+              <ion-input mode="ios" class="form-input name-input" type="date"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-col>
+      </ion-row>
+
+    </form>
+
+    <ion-row>
+      <ion-col class="submit-button">
+        <ion-button mode="ios" (click)="close()">
+          新增
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,33 @@
+<!-- Bird Category Card -->
+<div class="main-grid-button" (click)="openProductPage()">
+  <div class="main-grid-button-top-bar"[style.background-image] = "image_url">
+    <!-- <div>{{product_info}</div> -->
+    <div class="shopping-cart-div">
+      <ion-icon class="shopping-cart-icon" src="../../../../assets/BUYER/{{product_info.first_category}}-category/shopping-cart-icon.svg"></ion-icon>
+    </div>  
+  </div>
+  <div class="main-grid-button-middle-bar {{product_info.first_category}}">
+  </div>
+  <div class="main-grid-button-bottom-bar">
+    <ion-row>
+      <ion-col>
+        <ion-label class="main-grid-bottom-bar-text">{{product_info.name}}</ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-label class="main-grid-bottom-bar-text" style="float:right; padding-right: 0.5rem;">$ {{discounted_price}}</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="8" style="padding: 0 5px">
+        <ion-label class="main-grid-bottom-bar-text-2">{{product_info.first_category}} / {{product_info.second_category}}</ion-label>
+      </ion-col>
+      <ion-col style="padding: 0 5px">
+        <ion-label class="main-grid-bottom-bar-text-2" style="float:right; padding-right: 0.5rem; text-decoration-line: line-through;">$ {{product_info.price}}</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row style="padding: 0 0.5rem 0.5rem 0.25rem">
+      <ion-icon class="main-grid-bottom-bar-icon" src="../../../../assets/BUYER/{{product_info.first_category}}-category/main-grid-bottom-bar-icon.svg"></ion-icon>
+    </ion-row>
+  </div>
+</div>
+

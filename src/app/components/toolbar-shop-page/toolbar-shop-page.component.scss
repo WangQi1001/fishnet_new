@@ -1,0 +1,41 @@
+ion-tab-button:focus{
+    --background-activated: #3F93C9;
+    --background-focused: #3F93C9;
+}
+ion-footer{
+    background: url('../../../assets/icon/Ellipse.svg'), #ffffff;
+    background-repeat: no-repeat;
+    height: 80px;
+    display: flex;
+    align-items: flex-end;
+    --border-width: 0px; 
+    border: none !important;
+
+    ion-toolbar{
+        --border-width: 0px; 
+        height: 65px;
+        --background: #49AAE8;
+        --color: #FFFFFF;
+        display: flex;
+        align-items: center;
+    }
+    ion-tab-bar{
+        border: none !important;
+        --background: #49AAE8;
+        --color: #FFFFFF;
+        .bottom-bar{
+            .bottom-bar-home-icon{
+                width: 2.5rem;
+                height: 2.5rem;
+            }
+            .bottom-bar-icon{
+                font-size: 24px;
+            }
+            .bottom-bar-icon-focused{
+                font-size: 24px;
+                --background: #3F93C9;
+            }
+        }
+        
+    }
+}

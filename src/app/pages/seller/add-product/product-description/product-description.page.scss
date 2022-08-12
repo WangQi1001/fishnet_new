@@ -1,0 +1,133 @@
+ion-content{
+    --background: #F8F8F8;
+    font-family: Yuanti TC;
+    .toolbar{
+        background: url('../../../../../assets/icon/toolbar-background.svg');
+        background-repeat: no-repeat;
+        height: 8rem;
+        width: 25rem;
+        .back-icon{
+            width: 20px;
+            height: 30px;
+        }
+        .title{
+            font-weight: 700;
+            font-size: 20px;
+            color: #FFFFFF;
+        }
+    }
+    .main-body{
+        font-style: normal;
+        font-size: 16px;
+        line-height:22px;
+        color: #000000;
+        .header-text{
+            font-weight: 700;
+        }      
+        .required-form-title{
+            margin:0.5rem 0;
+            font-weight: 400;
+          }
+        .input-form-item{
+        --border-width: 0;
+        --inner-border-width: 0px;
+        --background: #F4FBFF;
+        --background-activated: #F4FBFF;
+        --background-focused: #F4FBFF;
+        --background-hover: #F4FBFF;
+        --border-radius: 0.5rem;
+        text-align: center;
+        color: black;
+        border-radius: 0.5em;
+        border: 1px solid #49AAE8;
+        width: 100%;
+        }
+        .form-select{
+        max-width: 100%;
+        width: 100%;
+        text-align: center;
+        }
+        .category-button{
+            --background: #F4FBFF;
+            --background-activated: #F4FBFF;
+            --background-focused: #F4FBFF;
+            width: 100%;
+            height: 2.9375rem;
+            border: 1px solid #49AAE8;
+            border-radius: 10px;
+            color:#000000;
+        }
+        .category-button-focused{
+            --background: #49AAE8;
+            --background-activated: #49AAE8;
+            --background-focused: #49AAE8;
+            width: 100%;
+            height: 2.9375rem;
+            border-radius: 10px;
+            color:#FFFFFF;
+        }
+        .category-button-2{
+            --background: #49AAE8;
+            --background-activated: #49AAE8;
+            --background-focused: #49AAE8;
+            width: 100%;
+            height: 2.9375rem;
+            border-radius: 10px;
+            color:#FFFFFF;
+        }
+        .next-button{
+            display: flex;
+            justify-content: center;
+            ion-button{
+                --background: #49AAE8;
+                --background-activated: #49AAE8;
+                --background-focused: #49AAE8;
+                --background-hover: #49AAE8;
+                --color: white;
+                overflow-y:visible;
+                font-weight: 700;
+                width: 6.5rem;
+                height: 2rem;
+                border-radius: 0.5rem;
+            }
+            margin: 1rem 0;
+        }
+        .description-box{
+            width: 22.5rem;
+            height: 19rem;
+            background: #F4FBFF;
+            border: 1px solid #49AAE8;
+            border-radius: 8px;     
+            align-items: flex-start;
+            justify-content: flex-end;
+            display: flex;
+            position: relative;
+            .description-box-text{
+                margin: 0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 22px;
+                text-align: center;
+                color: #979797;
+            } 
+            .icon-column{
+                // background: lightcoral;
+                height: 100%;
+                width: 30%;
+            }
+            .description-box-icon{
+                width: 4rem;
+                height: 4rem;
+            } 
+            .description-box-icon-2{
+                width: 2.25rem;
+                height: 2.25rem;
+            } 
+        }
+    }
+}

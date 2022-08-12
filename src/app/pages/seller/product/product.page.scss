@@ -1,0 +1,119 @@
+ion-button{
+  --background: #49AAE8;
+  --background-activated: none;
+  --background-focused: #49AAE8;
+  --background-hover: #49AAE8;
+  --color: white;
+  overflow-y:visible;
+  font-weight: 400;
+  width: 6.25rem;
+  height: 1.625rem;
+}
+ion-content{
+  --background: rgba(227, 240, 251, 0.2);
+  ;
+  .toolbar{
+    padding-top: 2rem;
+    background: rgba(52, 134, 187, 0.85);
+    height: 6.25rem;
+    width: 100%;
+    position: fixed;
+    .title{
+      font-weight: 400;
+      font-size: 16px;
+      color: #FFFFFF;
+      margin: 0 0 0.5rem 0;
+      display: flex;
+      // background: red;
+      ion-col{
+        display: flex;
+        align-items: center;
+      }
+    }
+    .back-icon{
+      height: 30px;
+      width: 20px;
+      margin-left: 1rem;
+    }
+  }
+  .main-body{
+      font-family: 'Yuanti TC';
+      font-style: normal;
+      font-weight: 400;
+      .top-grid{
+          // background: lightgray;
+          .top-grid-text-1{
+              font-size: 16px;
+              color: #000000;
+          }
+          .top-grid-text-2{
+              font-size: 14px;
+              color: #979797;
+          }
+          .top-grid-text-3{
+              font-size: 14px;
+              color: #FFFFFF;
+              position: absolute;
+              top:50%;
+              left:50%;
+              transform: translate(-50%,-50%);
+          }
+          .top-grid-text-4{
+              font-size: 14px;
+              color:#000000;
+              font-weight: 400;
+          }
+          .label-button{
+              width: 4.9rem;
+              height: 1.4rem;
+              background: #49AAE8;
+              border-radius: 4px;;
+              position: relative;
+          }
+          .product-button-focused{
+              --background: none;
+              border: 1px solid #49AAE8;
+              border-radius: 5px;
+              color: #49AAE8;
+          }
+          .product-button{
+              --background: none;
+              --border-radius: 5px;
+              color:#000000
+          }
+      }
+      .flex-box{
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          // background: lightblue;
+      }
+      .middle-grid{
+          margin: 0.5rem;
+          width: 23rem;
+          background: #FFFFFF;
+          border-radius: 0.625rem;
+          font-weight: 400;
+          .middle-grid-description{
+              margin: 1.25rem;
+              font-size: 15px;
+              font-weight: 400;
+              // background: lightcoral;
+          }
+          .middle-grid-picture{
+              margin: 1.25rem;
+              display: flex;
+              justify-content: center;
+              position: relative;
+              .middle-grid-picture-youtube-icon{
+                  width: 3.75rem;
+                  height: 2.625rem;
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+              }
+          }
+      }
+  }
+}

@@ -1,0 +1,136 @@
+<ion-content class="ion-no-padding" scrollY="true">
+  <div class="setting-inner-content">
+    <div mode="ios" class="toolbar">
+      <ion-row>
+        <ion-col>
+          <div class="title">
+            <ion-icon mode ="ios" class="back-icon" slot="icon-only"  name="chevron-back-outline" (click)="goBack()"></ion-icon>
+            付款
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+
+  <div class="ion-padding-horizontal shop-row">
+    <ng-container *ngFor="let item of items">
+      <ion-grid>
+        <ion-row class="first-row" >
+          <ion-col class="name-col">
+            <img src="../../../../assets/icon/no-message-icon.svg" alt="">
+            {{item.name}}
+          </ion-col>
+          <ion-col class="date-col" size="3">
+            <img src="../../../../assets/icon/clock-icon.svg">
+            {{item.date}}
+          </ion-col>
+        </ion-row>
+        <ng-container *ngFor="let product of item.product" >
+          <ion-row>
+            <ion-col size="4" class="img-col">
+              <img [src]="product.img" alt="">
+            </ion-col>
+            <ion-col class="prod-col no-pad">
+              <ion-row>
+                <ion-col class="product-title">
+                  {{product.name}}
+                </ion-col>
+              </ion-row>
+              <ion-row class="no-pad">
+                <ion-col class="no-pad">
+                  原價: $ {{product.price}}
+                </ion-col>
+                <ion-col class="no-pad left-side">
+                  優惠價：$ {{product.discount}}
+                </ion-col>
+              </ion-row>
+              <ion-row class="no-pad">
+                <ion-col class="quantity-col no-pad" >
+                  數量：{{product.quantity}}
+                </ion-col>
+              </ion-row>
+              <ion-row class="no-pad">
+                <ion-col class="coupon-col no-pad" >
+                  優惠券：$ {{coupon}}
+                </ion-col>
+                <ion-col class="left-side white-back" size="5">
+                  折後價：${{finalPrice(item.id, product.pid)}}
+                </ion-col>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+        </ng-container>
+      </ion-grid>
+    </ng-container>
+    <ion-grid>
+      <ion-row class="shipping-info">
+        <ion-col size="5" class="ship-title">
+          確認物流信息
+        </ion-col>
+        <ion-col class="edit-button">
+          <ion-button (click)="presentRecipientInfoEditModal()">
+            <ion-icon mode="ios-pencil" class="edit-icon" slot="icon-only" src="../../../assets/icon/edit-icon.svg"></ion-icon>
+            <ion-text>
+              修改信息
+            </ion-text>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="no-pad">
+          寄送方式：{{shipping.method}}
+        </ion-col>
+        <ion-col class="left-side no-pad">
+          運費：$ {{shipping.price}}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="no-pad">
+          收貨地址：{{shipping.address}}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="no-pad">
+          收件人：{{shipping.recipient}}
+        </ion-col>
+      </ion-row>
+      <ion-row >
+        <ion-col class="no-pad">
+          收件人電話：{{shipping.number}}
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
+<ion-footer>
+  <div class="summary-row">
+    <ion-row>
+      <ion-col size="2" class="middle"></ion-col>
+      <ion-col class="middle">
+        <div>
+          產品數量: {{getTotalQuantity()}}
+        </div>
+      </ion-col>
+      <ion-col size="4" class="middle">
+        <div class="price-col">
+          帳單金額
+          <div class="price-data">$ {{getTotalPrice()}}</div>
+        </div>
+      </ion-col>
+      <ion-col class="button-class">
+        <ion-button (click)="presentPaymentMethodModal()">確認</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="second-row">
+      <ion-col size="2"></ion-col>
+      <ion-col size="3"></ion-col>
+      <ion-col size="4">
+        <div class="dis-col">
+        (含運費: $ {{shipping.price}})
+        </div>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </div>
+
+</ion-footer>

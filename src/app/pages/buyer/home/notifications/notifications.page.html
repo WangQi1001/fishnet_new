@@ -1,0 +1,141 @@
+<ion-content class="ion-no-padding">
+  <div class="setting-inner-content">
+    <div mode="ios" class="toolbar">
+      <ion-row>
+        <ion-col>
+          <div class="title">
+            <ion-icon mode="ios" class="back-icon" slot="icon-only" src="../../../../assets/icon/back-icon.svg" (click)="previousPage()"></ion-icon>
+            <ion-icon mode="ios" class="notification-icon" slot="icon-only" src="../../../../../assets/icon/notification-icon.svg"></ion-icon>
+            最新消息
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <div class="main-body">
+      <ion-grid class="ion-padding">
+        <ion-row style="margin: 0 0.5rem">
+          <ion-col class="ion-no-padding">
+            <ion-button mode="ios" class="notification-btn">>所有</ion-button>
+          </ion-col>
+          <ion-col class="ion-no-padding">
+            <ion-button mode="ios" class="notification-btn">系統</ion-button>
+          </ion-col>
+          <ion-col class="ion-no-padding">
+            <ion-button mode="ios" class="notification-btn">個人</ion-button>
+          </ion-col>
+        </ion-row>
+
+        <ion-grid class="notification-grid" (click)="openNewsDetail()">
+            <div class="notification-grid-container">
+              <ion-img  class="notification-sale-image" src="../../../../../assets/notification/notification-sale.png"></ion-img>
+              <ion-row style="padding: 0.5rem 0;">
+                <div class="horizontal-center">
+                  <ion-text style="font-weight: 700; font-size: 16px;">
+                  最新推出25折優惠!
+                  </ion-text>
+                </div>
+              </ion-row>
+              <ion-row style="padding: 1rem 0.5rem">
+                <ion-text style="display:block;" class="notification-container-text">
+                  最新推出25折優惠！
+                </ion-text>
+                <ion-text style="display:block;" class="notification-container-text">
+                  詳情請聯絡我們！
+                </ion-text>
+              </ion-row>
+              <ion-row>
+                <div class="horizontal-flexend">
+                  <ion-text class="notification-grid-date">
+                    12/12/2021
+                  </ion-text>
+                </div>
+              </ion-row>
+            </div>
+        </ion-grid>
+
+        <ion-grid style="height:11rem; background: rgba(73, 170, 232, 0.15);" class="notification-grid">
+          <div class="notification-grid-container">
+            <ion-row>
+              <div class="horizontal-center">
+                <ion-text style="font-weight: 700; font-size: 16px;">
+                  商品已發貨
+                </ion-text>
+              </div>
+            </ion-row>
+            <ion-row style="padding: 1rem 0.5rem">
+              <ion-text style="display:block;" class="notification-container-text">
+                你在iPYGG商店購買的商品已發貨，
+              </ion-text>
+              <ion-text style="display:block;" class="notification-container-text">
+                點擊這裏而查看更多。
+              </ion-text>
+            </ion-row>
+            <ion-row>
+              <div class="horizontal-flexend">
+                <ion-text class="notification-grid-date">
+                  12/12/2021
+                </ion-text>
+              </div>
+            </ion-row>
+          </div>
+        </ion-grid>
+
+        <ion-grid style="height:10rem; background: rgba(73, 170, 232, 0.15);" class="notification-grid">
+          <div class="notification-grid-container">
+            <ion-row>
+              <div class="horizontal-center">
+                <ion-text style="font-weight: 700; font-size: 16px;">
+                  iPYGG新品上架
+                </ion-text>
+              </div>
+            </ion-row>
+            <ion-row style="padding: 1rem 0.5rem">
+              <ion-text style="display:block;" class="notification-container-text">
+                iPYGG商店發佈了新品，
+              </ion-text>
+              <ion-text style="display:block;" class="notification-container-text">
+                點擊這裏而查看更多。
+              </ion-text>
+            </ion-row>
+            <ion-row>
+              <div class="horizontal-flexend">
+                <ion-text class="notification-grid-date">
+                  12/12/2021
+                </ion-text>
+              </div>
+            </ion-row>
+          </div>
+        </ion-grid>
+
+        <ion-grid style="height: 22rem" class="notification-grid">
+          <div class="notification-grid-container">
+            <ion-img  class="notification-sale-image" src="../../../../../assets/notification/notification-sale.png"></ion-img>
+            <ion-row style="padding: 0.5rem 0;">
+              <div class="horizontal-center">
+                <ion-text style="font-weight: 700; font-size: 16px;">
+                最新推出25折優惠！
+                </ion-text>
+              </div>
+            </ion-row>
+            <ion-row style="padding: 1rem 0.5rem">
+              <ion-text style="display:block;" class="notification-container-text">
+                最新推出25折優惠！
+              </ion-text>
+              <ion-text style="display:block;" class="notification-container-text">
+                詳情請聯絡我們！
+              </ion-text>
+            </ion-row>
+            <ion-row>
+              <div class="horizontal-flexend">
+                <ion-text class="notification-grid-date">
+                  12/12/2021
+                </ion-text>
+              </div>
+            </ion-row>
+          </div>
+        </ion-grid>
+      </ion-grid>
+    </div>
+  </div>
+</ion-content>

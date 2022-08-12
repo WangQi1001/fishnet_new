@@ -1,0 +1,96 @@
+ion-content{
+    --background: #F8F8F8;
+    font-family: Yuani TC;
+    .toolbar{
+        padding-top: 2rem;
+        background: url('../../../../../assets/BUYER/home/homepage/homepage-toolbar.png');
+        height: 100px;
+        .title{
+            font-weight: 700;
+            font-size: 20px;
+            text-align: center;
+            color: #FFFFFF;
+            vertical-align: middle;
+            margin: 0 0 0.5rem 0;
+        }
+        .forum-icon{
+            height: 21px;
+            width: 28px;
+            position: absolute;
+            right: 10%;
+        }
+        
+        .coupon{
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            color: #49AAE8;
+        }
+    }
+    .main-body{
+        margin-top: 4rem;
+
+        .top-grid{
+            background: #49AAE8;
+            position: relative;
+            border-radius: 10px;
+            .top-grid-text{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 20px;
+                color: #FFFFFF;
+            }
+        }
+        .middle-grid{
+            border-radius: 10px;
+            .middle-grid-top-bar{
+                height: 11vw;
+                position: relative;
+                ion-text{
+                    color: #FFFFFF;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 14px;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+            .middle-grid-bottom-bar{
+                ion-row{
+                    display: flex;
+                }
+                ion-col{
+                    flex: 1;
+                }
+            }
+        }
+
+        .latest-product-bar{
+            margin: 0.40rem 0;
+            // background: red; 
+            border-radius: 0.625rem;
+            outline: 1px solid #FFFFFF;
+            outline-offset: -5px;
+            position: relative;
+            .latest-product-bar-text{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+
+                font-style: normal;
+                font-weight: 700;
+                font-size: 16px;
+                color: #FFFFFF;
+            }
+        }
+    }        
+}
+

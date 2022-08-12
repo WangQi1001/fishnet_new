@@ -1,0 +1,637 @@
+<ion-content class="ion-no-padding">
+  <div *ngIf="this.finished == false" class="setting-inner-content">
+    <div mode="ios" class="toolbar">
+      <ion-row style="padding: 2.5rem 0 0.5rem 0;">
+        <ion-col size="4" style="margin-left: 1rem;">
+          <ion-icon mode="ios" class="back-icon" src="../../../../assets/icon/back-icon.svg" (click)="goPreviousPage()"></ion-icon>
+        </ion-col>
+        <ion-col>
+          <ion-label class="title">編輯商品</ion-label>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <div *ngIf="this.pageNumber === 1" mode="ios" class="main-body">
+      <ion-grid class="ion-padding">
+        <ion-row>
+          <ion-col>
+            <ion-text class="header-text">請填寫商品資訊</ion-text>
+          </ion-col>
+        </ion-row>
+        <form [formGroup]="formData" (ngSubmit)="onSubmit()">
+          <ion-grid class="ion-padding-horizontal">
+            <ion-row>
+              <ion-col>
+                <div class="required-form-title">商品類別</div>
+                <ion-item mode="ios" class="input-form-item">
+                  <ion-select placeholder="請選擇商品類別" interface="action-sheet" type="text" mode="ios" class="form-select" formControlName="productCategory">
+                    <ion-select-option value="淡水魚" >淡水魚</ion-select-option>
+                    <ion-select-option value="孔雀魚">孔雀魚</ion-select-option>
+                    <ion-select-option value="接吻魚">接吻魚</ion-select-option>
+                    <ion-select-option value="鬥魚">鬥魚</ion-select-option>
+                    <ion-select-option value="紅綠燈魚">紅綠燈魚</ion-select-option>
+                    <ion-select-option value="海水魚">海水魚</ion-select-option>
+                    <ion-select-option value="珊瑚">珊瑚</ion-select-option>
+                    <ion-select-option value="器材">器材</ion-select-option>
+                  </ion-select>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col style="padding: 0 5px">
+                <div class="required-form-title">類別</div>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col style="padding: 0 5px">
+                <ion-button class="category-button">生物</ion-button>
+              </ion-col>
+              <ion-col style="padding: 0 5px">
+                <ion-button class="category-button">貨物</ion-button>
+              </ion-col>
+            </ion-row>
+
+            <ion-grid style="padding: 0 5px">
+              <ion-row>
+                <ion-col>
+                  <div class="required-form-title">商品名稱</div>
+                  <ion-item mode="ios" class="input-form-item">
+                    <ion-input mode="ios" class="form-input name-input" formControlName="productName" type="text"></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col>
+                  <div class="required-form-title">價格</div>
+                  <ion-item mode="ios" class="input-form-item">
+                    <ion-input mode="ios" class="form-input name-input" formControlName="price" type="text" placeholder="HKD"></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col style="padding: 0 5px">
+                  <div class="required-form-title">折扣（可選填）</div>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col size="7" style="padding: 0 5px">
+                  <ion-item mode="ios" class="input-form-item">
+                    <ion-input mode="ios" class="form-input name-input" formControlName="discount" type="text" placeholder="% OFF"></ion-input>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-text style="font-size: 16px; line-height: 32px;">折後價  $ 100.00</ion-text>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col>
+                  <div class="required-form-title">存庫</div>
+                  <ion-item mode="ios" class="input-form-item">
+                    <ion-input mode="ios" class="form-input name-input" formControlName="stock" type="text" placeholder="輸入存庫數量"></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col style="padding: 0 5px">
+                  <div class="required-form-title">大約尺寸（可選填</div>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="padding: 0 5px">
+                  <div class="required-form-title">長度</div>
+                </ion-col>
+                <ion-col style="padding: 0 5px">
+                  <div class="required-form-title">高度</div>
+                </ion-col>
+                <ion-col style="padding: 0 5px">
+                  <div class="required-form-title">高度</div>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="padding: 0 5px">
+                  <ion-item mode="ios" class="input-form-item">
+                    <ion-input mode="ios" class="form-input name-input" formControlName="size_length" type="text" placeholder="cm"></ion-input>
+                  </ion-item>
+                </ion-col>
+                <ion-col style="padding: 0 5px">
+                  <ion-item mode="ios" class="input-form-item">
+                    <ion-input mode="ios" class="form-input name-input" formControlName="size_height" type="text" placeholder="cm"></ion-input>
+                  </ion-item>
+                </ion-col>
+                <ion-col style="padding: 0 5px">
+                  <ion-item mode="ios" class="input-form-item">
+                    <ion-input mode="ios" class="form-input name-input" formControlName="size_width" type="text" placeholder="cm"></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col class="next-button">
+                  <ion-button mode="ios" type="submit" (click)="nextPage()">
+                    <ion-text style="font-weight: 700; font-size: 16.5px; margin: 3px 0px 1px 0px;">下一步</ion-text>
+                  </ion-button>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+
+          </ion-grid>
+        </form>
+      </ion-grid>
+    </div>
+
+    <div *ngIf="this.pageNumber === 2" mode="ios" class="main-body">
+      <ion-grid class="ion-padding">
+        <ion-row>
+          <ion-col>
+            <ion-text class="header-text">請填寫商品描述</ion-text>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <div class="flex-box">
+            <div class="middle-grid-product-description">
+              <div class="middle-grid-description">
+                <p>
+                  這是商品描述
+                </p>
+              </div>
+              <div class="middle-grid-picture">
+                <ion-img src="../../../../../assets/BUYER/fish-product/product-middle-grid-picture.png"></ion-img>
+                <ion-icon class="middle-grid-picture-youtube-icon" src="../../../../../assets/icon/youtube-icon.svg"></ion-icon>
+              </div>
+<!--              <div class="video-tool">-->
+<!--                <ion-icon class="middle-grid-picture-youtube-icon" src="../../../../../assets/SELLER/item/Icon_Video.svg"></ion-icon>-->
+<!--                <ion-icon class="middle-grid-picture-youtube-icon" src="../../../../../assets/SELLER/item/Icon_Photo.svg"></ion-icon>-->
+<!--                <ion-icon class="middle-grid-picture-youtube-icon" src="../../../../../assets/SELLER/item/Icon_File.svg"></ion-icon>-->
+<!--                <ion-icon class="middle-grid-picture-youtube-icon" src="../../../../../assets/SELLER/item/Icon_Add.svg"></ion-icon>-->
+<!--              </div>-->
+            </div>
+          </div>
+        </ion-row>
+
+        <ion-row>
+          <ion-col class="next-button">
+            <ion-button mode="ios" type="submit" (click)="nextPage()">
+              <ion-text style="font-weight: 700; font-size: 16.5px; margin: 3px 0px 1px 0px;">下一步</ion-text>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <div *ngIf="this.pageNumber === 3" mode="ios" class="main-body">
+      <ion-grid class="ion-padding">
+        <ion-row>
+          <ion-col>
+            <ion-text class="header-text">上載照片或影片</ion-text>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col class="next-button">
+            <ion-button mode="ios" style="width: unset">
+              <ion-text style="font-weight: 700; font-size: 16.5px; margin: 3px 0px 1px 0px;">上載照片或影片</ion-text>
+            </ion-button>
+            <ion-text style="display: block">媒體上限為10個</ion-text>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col class="pin-area">
+            <ion-icon mode="ios" class="back-icon" src="../../../../assets/SELLER/item/pin.svg"></ion-icon>
+            <ion-text style="display: block">第一張為封面照，影片將自動排列到最前位置
+              你可透過拖曳的方式重新排列照片順序</ion-text>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="product-row">
+          <ion-col  class="product-column">
+            <div class="product-item">
+              <div class="product-image">
+                <ion-icon mode="ios" class="bottom-bar-icon" slot="icon-only" src="../../../assets/icon/edit-icon.svg"></ion-icon>
+                <ion-icon mode="ios" class="top-bar-icon" slot="icon-only" src="../../../assets/icon/bin-icon.svg"></ion-icon>
+              </div>
+            </div>
+          </ion-col>
+          <ion-col  class="product-column">
+            <div class="product-item">
+              <div class="product-image">
+                <ion-icon mode="ios" class="bottom-bar-icon" slot="icon-only" src="../../../assets/icon/edit-icon.svg"></ion-icon>
+                <ion-icon mode="ios" class="top-bar-icon" slot="icon-only" src="../../../assets/icon/bin-icon.svg"></ion-icon>
+              </div>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row class="product-row">
+          <ion-col  class="product-column">
+            <div class="product-item">
+              <div class="product-image">
+                <ion-icon mode="ios" class="bottom-bar-icon" slot="icon-only" src="../../../assets/icon/edit-icon.svg"></ion-icon>
+                <ion-icon mode="ios" class="top-bar-icon" slot="icon-only" src="../../../assets/icon/bin-icon.svg"></ion-icon>
+              </div>
+            </div>
+          </ion-col>
+          <ion-col  class="product-column">
+            <div class="product-item">
+              <div class="product-image">
+                <ion-icon mode="ios" class="bottom-bar-icon" slot="icon-only" src="../../../assets/icon/edit-icon.svg"></ion-icon>
+                <ion-icon mode="ios" class="top-bar-icon" slot="icon-only" src="../../../assets/icon/bin-icon.svg"></ion-icon>
+              </div>
+            </div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col class="next-button">
+            <ion-button mode="ios" type="submit" (click)="nextPage()">
+              <ion-text style="font-weight: 700; font-size: 16.5px; margin: 3px 0px 1px 0px;">下一步</ion-text>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+
+      </ion-grid>
+    </div>
+
+    <div *ngIf="this.pageNumber === 4 && this.type === 'edit'" mode="ios" class="main-body">
+      <ion-grid class="ion-padding">
+        <ion-row>
+          <ion-col>
+            <ion-text class="header-text">請填寫商品資訊</ion-text>
+          </ion-col>
+        </ion-row>
+        <form [formGroup]="formData" (ngSubmit)="onSubmit()">
+          <ion-grid class="ion-padding-horizontal">
+            <ion-row>
+              <ion-col>
+                <div class="required-form-title">運送方式1</div>
+                <ion-item mode="ios" class="input-form-item">
+                  <ion-select placeholder="請選擇商品類別" interface="action-sheet" type="text" mode="ios" class="form-select" formControlName="productCategory">
+                    <ion-select-option value="淡水魚" >面交</ion-select-option>
+                  </ion-select>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col style="padding: 0 5px">
+                <div class="required-form-title">備註（可選填）</div>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col style="padding: 0 5px;background: #F4FBFF;border: 1px solid #49AAE8;border-radius: 10px;height: 82px;">
+                <ion-text style="font-weight: 700; font-size: 16.5px; margin: 3px 0px 1px 0px;">會聯絡交收時間</ion-text>
+              </ion-col>
+            </ion-row>
+
+            <ion-grid style="padding: 0 5px">
+
+              <ion-row>
+                <ion-col class="next-button">
+                  <ion-button mode="ios" type="submit" (click)="nextPage()">
+                    <ion-text style="font-weight: 700; font-size: 16.5px; margin: 3px 0px 1px 0px;">新增運送方式</ion-text>
+                  </ion-button>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col class="next-button">
+                  <ion-button mode="ios" type="submit" (click)="nextPage()">
+                    <ion-text style="font-weight: 700; font-size: 16.5px; margin: 3px 0px 1px 0px;">下一步</ion-text>
+                  </ion-button>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+
+          </ion-grid>
+        </form>
+      </ion-grid>
+    </div>
+
+    <div *ngIf="this.pageNumber === 4 && this.type === 'duplicate'" mode="ios" class="main-body">
+      <ion-grid class="ion-padding">
+        <ion-row>
+          <ion-col>
+            <ion-text class="header-text">請填寫商品資訊</ion-text>
+          </ion-col>
+        </ion-row>
+        <form [formGroup]="formData" (ngSubmit)="onSubmit()">
+          <ion-grid class="ion-padding-horizontal">
+            <ion-row>
+              <ion-col>
+                <div class="required-form-title">運送方式1</div>
+                <ion-item mode="ios" class="input-form-item">
+                  <ion-select placeholder="請選擇商品類別" interface="action-sheet" type="text" mode="ios" class="form-select" formControlName="productCategory">
+                    <ion-select-option value="淡水魚" >面交</ion-select-option>
+                  </ion-select>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col style="padding: 0 5px">
+                <div class="required-form-title">備註（可選填）</div>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col style="padding: 0 5px;background: #F4FBFF;border: 1px solid #49AAE8;border-radius: 10px;height: 82px;">
+                <ion-text style="font-weight: 700; font-size: 16.5px; margin: 3px 0px 1px 0px;">會聯絡交收時間</ion-text>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col>
+                <div class="required-form-title">運送方式2</div>
+                <ion-item mode="ios" class="input-form-item">
+                  <ion-select placeholder="請選擇商品類別" interface="action-sheet" type="text" mode="ios" class="form-select" formControlName="productCategory">
+                    <ion-select-option value="淡水魚" >速遞</ion-select-option>
+                  </ion-select>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col style="padding: 0 5px">
+                <div class="required-form-title">寄件地址</div>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col style="padding: 0 5px">
+                <div class="required-form-title">室/單位</div>
+              </ion-col>
+              <ion-col style="padding: 0 5px">
+                <div class="required-form-title">樓層</div>
+              </ion-col>
+              <ion-col style="padding: 0 5px">
+                <div class="required-form-title">座數</div>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col style="padding: 0 5px">
+                <ion-item mode="ios" class="input-form-item">
+                  <ion-input mode="ios" class="form-input name-input" formControlName="size_length" type="text"></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col style="padding: 0 5px">
+                <ion-item mode="ios" class="input-form-item">
+                  <ion-input mode="ios" class="form-input name-input" formControlName="size_height" type="text"></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col style="padding: 0 5px">
+                <ion-item mode="ios" class="input-form-item">
+                  <ion-input mode="ios" class="form-input name-input" formControlName="size_width" type="text"></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col>
+                <div class="required-form-title">大廈名稱</div>
+                <ion-item mode="ios" class="input-form-item">
+                  <ion-input mode="ios" class="form-input name-input" formControlName="productName" type="text" placeholder="BUILDING A"></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col>
+                <div class="required-form-title">街道名稱</div>
+                <ion-item mode="ios" class="input-form-item">
+                  <ion-input mode="ios" class="form-input name-input" formControlName="productName" type="text" placeholder="10 ABC ROAD"></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col>
+                <div class="required-form-title">地區</div>
+                <ion-item mode="ios" class="input-form-item">
+                  <ion-input mode="ios" class="form-input name-input" formControlName="productName" type="text" placeholder="TSUEN WAN"></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col style="padding: 0 5px">
+                <ion-button class="category-button">香港</ion-button>
+              </ion-col>
+              <ion-col style="padding: 0 5px">
+                <ion-button class="category-button">九龍</ion-button>
+              </ion-col>
+              <ion-col style="padding: 0 5px">
+                <ion-button class="category-button">新界</ion-button>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col>
+                <div class="required-form-title">寄件人</div>
+                <ion-item mode="ios" class="input-form-item">
+                  <ion-input mode="ios" class="form-input name-input" formControlName="productName" type="text" placeholder="Chan Tai Man"></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col>
+                <div class="required-form-title">寄件人電話</div>
+                <ion-item mode="ios" class="input-form-item">
+                  <ion-input mode="ios" class="form-input name-input" formControlName="productName" type="text" placeholder="12345678"></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col style="padding: 0 5px">
+                <div class="required-form-title">備註（可選填）</div>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col style="padding: 0 5px;background: #F4FBFF;border: 1px solid #49AAE8;border-radius: 10px;height: 82px;">
+                <ion-text style="font-weight: 100; font-size: 16.5px; margin: 3px 0px 1px 0px;">商品將會經Lalamove 和 Gogovan 進行運送，郵費將根據距離，包裝尺寸和貨物重量而定</ion-text>
+              </ion-col>
+            </ion-row>
+
+            <ion-grid style="padding: 0 5px">
+
+              <ion-row>
+                <ion-col class="next-button">
+                  <ion-button mode="ios" type="submit" (click)="nextPage()">
+                    <ion-text style="font-weight: 700; font-size: 16.5px; margin: 3px 0px 1px 0px;">新增運送方式</ion-text>
+                  </ion-button>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col class="next-button">
+                  <ion-button mode="ios" type="submit" (click)="nextPage()">
+                    <ion-text style="font-weight: 700; font-size: 16.5px; margin: 3px 0px 1px 0px;">下一步</ion-text>
+                  </ion-button>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+
+          </ion-grid>
+        </form>
+      </ion-grid>
+    </div>
+
+    <div *ngIf="this.pageNumber === 5" mode="ios" class="main-body">
+      <ion-row *ngIf="this.type === 'edit'">
+        <ion-col style="padding: 0 5px">
+          <div class="required-form-title" style="font-weight: 700">已加入標籤 </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row *ngIf="this.type === 'edit'">
+        <ion-col class="tagged-button">
+          <div class="bin-image">
+            <ion-icon mode="ios" class="top-bar-icon" slot="icon-only" src="../../../assets/icon/bin-icon.svg"></ion-icon>
+            <ion-button mode="ios">
+              <ion-text style="font-weight: 700; font-size: 16.5px; margin: 3px 0px 1px 0px;">罕有</ion-text>
+            </ion-button>
+          </div>
+        </ion-col>
+        <ion-col class="tagged-button">
+          <div class="bin-image">
+            <ion-icon mode="ios" class="top-bar-icon" slot="icon-only" src="../../../assets/icon/bin-icon.svg"></ion-icon>
+            <ion-button mode="ios">
+              <ion-text style="font-weight: 700; font-size: 16.5px; margin: 3px 0px 1px 0px;">養定</ion-text>
+            </ion-button>
+          </div>
+        </ion-col>
+        <ion-col class="tagged-button">
+        </ion-col>
+      </ion-row>
+
+      <ion-row style="margin-top: 7px" *ngIf="this.type === 'edit'">
+        <ion-col style="padding: 0 5px">
+          <p style="text-align: end; margin: 0;">2%</p>
+        </ion-col>
+        <ion-col style="padding: 0 5px">
+          <p style="text-align: end; margin: 0;">2%</p>
+        </ion-col>
+        <ion-col style="padding: 0 5px">
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col style="padding: 0 5px">
+          <div class="required-form-title" style="font-weight: 700">加入標籤  </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col style="margin: auto">
+          <div class="required-form-title" style="font-weight: 400; text-align: center">（加入標籤後每筆交易將收取額外的平台手續費）  </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col style="margin: auto">
+          <div class="required-form-title" style="font-weight: 400; text-align: center">選購標籤 （最多2個）  </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col style="padding: 0 5px">
+          <ion-item mode="ios" class="input-form-item">
+            <ion-input mode="ios" class="form-input name-input" type="text" placeholder="特別"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col style="padding: 0 5px">
+          <ion-item mode="ios" class="input-form-item">
+            <ion-input mode="ios" class="form-input name-input" type="text" placeholder="XX"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col style="padding: 0 5px">
+          <ion-item mode="ios" class="input-form-item">
+            <ion-input mode="ios" class="form-input name-input" type="text" placeholder="XX"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row style="margin-top: 7px">
+        <ion-col style="padding: 0 5px">
+          <p style="text-align: end; margin: 0;">2%</p>
+        </ion-col>
+        <ion-col style="padding: 0 5px">
+          <p style="text-align: end; margin: 0;">2%</p>
+        </ion-col>
+        <ion-col style="padding: 0 5px">
+          <p style="text-align: end; margin: 0">2%</p>
+        </ion-col>
+      </ion-row>
+      <ion-row style="margin-top: 20px">
+        <ion-col style="padding: 0 5px">
+          <ion-item mode="ios" class="input-form-item">
+            <ion-input mode="ios" class="form-input name-input" type="text" placeholder="XX"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col style="padding: 0 5px">
+          <ion-item mode="ios" class="input-form-item">
+            <ion-input mode="ios" class="form-input name-input" type="text" placeholder="XX"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col style="padding: 0 5px">
+          <ion-item mode="ios" class="input-form-item">
+            <ion-input mode="ios" class="form-input name-input" type="text" placeholder="XX"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row style="margin-top: 7px">
+        <ion-col style="padding: 0 5px">
+          <p style="text-align: end; margin: 0;">2%</p>
+        </ion-col>
+        <ion-col style="padding: 0 5px">
+          <p style="text-align: end; margin: 0;">2%</p>
+        </ion-col>
+        <ion-col style="padding: 0 5px">
+          <p style="text-align: end; margin: 0">2%</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="platform-fee">
+        <ion-col style="margin-left: 15px">
+          <p style="margin-right: auto">額外平台手續費</p>
+        </ion-col>
+        <ion-col>
+          <p style="text-align: end;margin-right: 15px">4%</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row *ngIf="this.type === 'edit'" >
+        <ion-col class="next-button">
+          <ion-button mode="ios" type="submit" (click)="goBack()">
+            <ion-text style="font-weight: 700; font-size: 16.5px; margin: 3px 0px 1px 0px;">完成</ion-text>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+
+      <ion-row *ngIf="this.type === 'duplicate'" >
+        <ion-col class="next-button">
+          <ion-button mode="ios" type="submit" (click)="finishAddingProduct()">
+            <ion-text style="font-weight: 700; font-size: 16.5px; margin: 3px 0px 1px 0px;">完成</ion-text>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+
+  <div *ngIf="this.finished == true" (click)="goBack()">
+    <ion-row>
+      <ion-col style="left: calc(50% - 85px);top: calc(50vh - 100px);">
+        <div mode="ios" class="check-mark-img"></div>
+        <div mode="ios" class="check-mark"></div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col style="margin: auto;font-weight: 700;font-size: 16px;top: calc(50vh - 100px);">
+        <div class="required-form-title" style="font-weight: 400; text-align: center">選購標籤 （最多2個）  </div>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>
+
+

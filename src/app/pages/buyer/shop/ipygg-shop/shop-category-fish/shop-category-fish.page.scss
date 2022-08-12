@@ -1,0 +1,60 @@
+ion-content{
+    --background: #F8F8F8;
+    font-family: Yuani TC;
+    .toolbar{
+        padding-top: 1.5rem;
+        background: url('../../../../../../assets/SELLER/home/homepage/hompage-item-bg-1.png');
+        height: 100px;
+        .title{
+            font-weight: 700;
+            font-size: 20px;
+            text-align: center;
+            color: #FFFFFF;
+        }
+        .forum-icon{
+            height: 42px;
+            width: 42px;
+            float: right;
+            padding-right: 0.5rem;
+        }
+        .search-bar{
+            background: #FCFCFC;
+            display: flex;
+            flex-direction:row;
+            align-items: center;
+            text-align: center;
+            padding: 0 3px 0 1rem;
+            border: 1px solid #49AAE8;
+            border-radius: 30px;
+
+            width: 70%;
+            margin: auto;
+            height: 40px;
+            .search-icon{
+                width: 34px;
+                height: 34px;
+            }
+        }
+    }
+    .sort-icon{
+        width: 1.25rem;
+        height: 0.8125rem;
+        padding: 0 0.25rem;
+    }
+    .filter-icon{
+        width: 1.25rem;
+        height: 1.1rem;
+        padding: 0 0.25rem;
+    }
+    .sort-filter-text{
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .main-body{
+        margin-top: 4rem;
+    }
+}
+

@@ -1,0 +1,31 @@
+<ion-content class="ion-no-padding" content="light dark">
+  <div class="setting-inner-content">
+    <div class="toolbar">
+      <ion-buttons (click)="goBack()">
+        <ion-icon mode="ios-person" class="back-icon" slot="icon-only" name="chevron-back-outline"></ion-icon>
+      </ion-buttons>
+      <ion-row>
+        <ion-col>
+          <div class="title">
+            iPYGG
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <ion-grid class="ion-padding-horizontal">
+      <ion-row >
+        <ion-label class="page-label">送貨與退貨安排</ion-label>
+        <div class="edit-button" (click)="presentShippingEditModal()">
+          <ion-icon mode="ios-pencil" class="edit-icon" slot="icon-only" src="../../../assets/icon/edit-icon.svg"></ion-icon>
+          <ion-label class="edit-button-label">編輯</ion-label>
+        </div>
+      </ion-row>
+      <ion-row>
+        <ion-label class="page-content">這是送貨與退貨安排</ion-label>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+
+</ion-content>

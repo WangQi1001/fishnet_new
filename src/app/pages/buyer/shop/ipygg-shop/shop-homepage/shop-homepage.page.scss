@@ -1,0 +1,173 @@
+ion-content{
+    --background: #F8F8F8;
+    font-family: Yuani TC;
+    .toolbar{
+        padding-top: 1.5rem;
+        background: url('../../../../../../assets/SELLER/home/homepage/hompage-item-bg-1.png');
+        height: 100px;
+        .title{
+            font-weight: 700;
+            font-size: 20px;
+            text-align: center;
+            color: #FFFFFF;
+        }
+        .forum-icon{
+            height: 42px;
+            width: 42px;
+            float: right;
+            padding-right: 0.5rem;
+        }
+        .search-bar{
+            background: #FCFCFC;
+            display: flex;
+            flex-direction:row;
+            align-items: center;
+            text-align: center;
+            padding: 0 3px 0 1rem;
+            border: 1px solid #49AAE8;
+            border-radius: 30px;
+
+            width: 70%;
+            margin: auto;
+            height: 40px;
+            .search-icon{
+                width: 34px;
+                height: 34px;
+            }
+        }
+        .coupon{
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            color: #49AAE8;
+        }
+    }
+    .main-body{
+        margin-top: 4rem;
+        .button-text{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #FFFFFF;
+            font-size: 15px;
+        }
+        .top-grid{
+            background: #49AAE8;
+            position: relative;
+            border-radius: 10px;
+            .top-grid-text{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 20px;
+                color: #FFFFFF;
+            }
+        }
+        .store-button{
+            border-radius: 10px;
+        }
+
+        .latest-product-bar{
+            margin: 0.40rem 0;
+            // background: red; 
+            border-radius: 0.625rem;
+            outline: 1px solid #FFFFFF;
+            outline-offset: -5px;
+            position: relative;
+            .latest-product-bar-text{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+
+                font-style: normal;
+                font-weight: 700;
+                font-size: 16px;
+                color: #FFFFFF;
+            }
+        }
+        .button-group {
+          display: flex;
+          margin-bottom: 11px;
+
+          ion-col {
+            margin-right: 10px;
+            flex: 1;
+            height: 46px;
+            ion-label {
+              color: #FFFFFF;
+              font-weight: 400;
+              font-size: 16px;
+              line-height: 22px;
+            }
+            img {
+              height: 46px;
+              width: 100%;
+              object-fit: unset!important;
+              background: linear-gradient(0deg, rgba(52, 134, 187, 0.8), rgba(52, 134, 187, 0.8)), url('../../../../../../assets/SELLER/home/homepage/hompage-item-bg-1.png');
+              border-radius: 10px;
+            }
+          }
+        }
+
+      .product-row {
+        display: flex;
+        margin-bottom: 11px;
+        .product-column {
+          flex: 1;
+          margin-right: 10px;
+          .product-item {
+            border-radius: 10px;
+            cursor: pointer;
+            .product-image {
+              position: relative;
+              height: calc(50vw - 30px);
+              border-radius: 10px 10px 0 0;
+              background: #C4C4C4;
+              ion-icon {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                padding: 7px;
+                background-color: #49AAE8;
+                border-radius: 5px;
+              }
+            }
+            display: block;
+            .product-info {
+              display: block;
+              background: #ffffff;
+              padding: 10px;
+              border-radius: 0 0 10px 10px;
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 20px;
+              & > div {
+                display: flex;
+                align-items: center;
+              }
+              & > div:nth-child(2) {
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 17px;
+                text-decoration-line: line-through;
+                color: #979797;
+              }
+              & > div:nth-child(3) {
+                color: #49AAE8;
+              }
+              & > div > :nth-child(2) {
+                margin-left: auto;
+              }
+            }
+          }
+        }
+      }
+    }
+}
+

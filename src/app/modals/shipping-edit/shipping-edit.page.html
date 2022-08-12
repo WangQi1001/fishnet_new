@@ -1,0 +1,27 @@
+<ion-content class="ion-no-padding">
+  <div class="header">
+    <ion-toolbar color="#ffff">
+      <ion-title style="text-align: center">送貨與退貨安排</ion-title>
+      <ion-buttons slot="end">
+        <ion-icon mode="ios" class="back-icon" slot="icon-only" name="close-outline" (click)="close()"></ion-icon>
+      </ion-buttons>
+    </ion-toolbar>
+  </div>
+
+  <ion-grid class="ion-padding-horizontal">
+
+    <ion-row style="margin-bottom: 0em">
+      <ion-col>
+        <div class="blue-title">請在此填寫商送貨與退貨安排</div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="submit-button">
+        <ion-button mode="ios" (click)="close()">
+          修改
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

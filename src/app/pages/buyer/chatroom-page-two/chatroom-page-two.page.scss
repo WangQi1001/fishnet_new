@@ -1,0 +1,205 @@
+ion-content{
+    --background: #ffffff;
+    font-family: Yuanti TC;
+    /*.toolbar{
+        padding-top: 2rem;
+        background: url('../../../../assets/icon/chatroom-toolbar.svg');
+        background-repeat: no-repeat;
+        //width: 428px;
+        //height: 99px;
+        .shop{
+            font-weight: 700;
+            font-size: 20px;
+            //text-align: center;
+            color: #FFFFFF;
+
+            vertical-align: middle;
+            margin-bottom: 1rem;
+        }
+        ion-buttons{
+            position: absolute;
+            left: 5%;
+            top: 5%;
+            .back-icon{
+                size: 20px;
+                color:#ffffff;
+                margin-top:5px;
+            }
+        }
+        
+    }*/
+    /*.back-icon{
+        font-size: 24px;
+        position: absolute;
+        left: 10%;
+    }*/
+    .chats-container{
+        color: #000000;
+        font-size: 14px;
+    }
+
+    /*.message-icon{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin-left:70px;
+        img{
+            // margin: auto;
+            width: 40px;
+            height: 40px;
+        }
+        
+    }*/
+    .message {
+        padding: 10px;
+        border-radius:10px;
+        margin-bottom: 10px;
+        white-space: pre-wrap;
+        height: flex;
+        align-items: center;
+        display: flex;
+    }
+    .other-message {
+        background:#F0F0F0;
+        color: black;
+    }
+    .my-message {
+        background:#E6F2FA;
+        color: black;
+    }
+    .time {
+        color: #707C97;
+        font-size:12px;
+        justify-content: end;
+        text-align: right;
+    }
+
+}
+
+ion-header {
+    --background: #ffffff;
+    font-family: Yuanti TC;
+    .toolbar{
+        padding-top: 2rem;
+        background: url('../../../../assets/icon/chatroom-toolbar.svg');
+        background-repeat: no-repeat;
+        //width: 428px;
+        height: 99px;
+        .shopName{
+            font-weight: 700;
+            font-size: 20px;
+            text-align: center;
+            color: #FFFFFF;
+            vertical-align: middle;
+    
+        }
+        .message-icon{
+            vertical-align: middle;
+            margin-left:-10px;
+        }
+        ion-buttons{
+            position: absolute;
+            left: 5%;
+            top: 5%;
+            .back-icon{
+                height:40px;
+                width:40px;
+                color:#ffffff;
+                margin-left:10px;
+                align-items: center;
+                display: flex;
+                justify-content: center;
+            }
+        }
+        
+    }
+}
+
+ion-footer {
+    background: url('../../../../assets/icon/chatroom-sendArea.svg');
+    //width: 428px;
+    height: 75px;
+    .sendArea{
+       //justify-content: center;
+        //align-items: center;
+        vertical-align: middle;
+        display: flex;
+        
+        .add-icon{
+            width:45px;
+            height:45px;
+            margin-left:8px;
+            align-items: center;
+            margin-top:10px;
+            justify-content: center;
+        }
+        .send-icon{
+            width:45px;
+            height:45px;
+            margin-left:4px;
+            align-items: center;
+            margin-top:10px;
+            justify-content: center;
+        }
+        
+
+        .comment-bar{
+            //position: absolute;
+            border: 1px solid #ffffff;
+            --border-width: 0;
+            --inner-border-width: 0px;
+            --ion-background-color: white;
+            --background-activated: white;
+            --background-focused: white;
+            --background-hover: white;
+            border-radius: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: left;
+            --placeholder-color:#7D7D7D;            
+            color: #000000;
+            height: 45px;
+            width:100%;
+            margin-top: 10px;
+            //margin-left:-8px;
+            //vertical-align: middle;
+
+        }
+    }
+    .video-icon{
+        width:45px;
+        height:45px;
+        margin-left:8px;
+        align-items: center;
+        //margin-top:515px;
+        margin-top:-458px;
+        justify-content: center;
+        vertical-align: middle;
+        display: flex;
+    }
+    .photo-icon{
+        width:45px;
+        height:45px;
+        margin-left:8px;
+        align-items: center;
+        //margin-top:8px;
+        margin-top:-358px;
+        justify-content: center;
+        vertical-align: middle;
+        display: flex;
+    }
+    .file-icon{
+        width:45px;
+        height:45px;
+        margin-left:8px;
+        align-items: center;
+        //margin-top:8px;
+        margin-top:-258px;
+        justify-content: center;
+        vertical-align: middle;
+        display: flex;
+    }
+    
+}

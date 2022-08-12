@@ -1,0 +1,254 @@
+<ion-content class="ion-no-padding">
+  <div class="setting-inner-content">
+    <div mode="ios" class="toolbar {{product_info.first_category}}">
+      <ion-row>
+        <ion-col>
+          <div>
+            <ion-icon class="back-icon" src="../../../../../assets/icon/back-icon.svg" (click)="goBack()"></ion-icon>
+          </div>
+        </ion-col>
+        <ion-col style="margin-right: 4rem">
+          <div class="title">
+            <ion-text>
+              限時優惠
+            </ion-text>
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <div class="main-body">
+      <div class="top-grid">
+        <ion-img [src]= "product_image_url"></ion-img>
+      </div>
+
+      <div style="width: 100%; height:0.5rem; background: rgba(227, 240, 251, 1);"></div>
+      
+      <div class="top-grid {{product_info.first_category}}">
+        <ion-row class="ion-padding-horizontal">
+          <ion-col>
+            <ion-text class="top-grid-text-1">{{product_info.name}}</ion-text>
+          </ion-col>
+          <ion-col>
+            <ion-text style="float: right" class="top-grid-text-1">優惠價 ${{discounted_price}}</ion-text>
+          </ion-col>
+        </ion-row>
+        <ion-row class="ion-padding-horizontal">
+          <ion-col>
+            <ion-text class="top-grid-text-2">{{product_info.first_category}} / {{product_info.second_category}}</ion-text>
+          </ion-col>
+          <ion-col>
+            <ion-text style="float: right; text-decoration-line: line-through;" class="top-grid-text-2">$ {{product_info.price}}</ion-text>
+          </ion-col>
+        </ion-row>
+        <ion-row class="ion-padding-horizontal">
+          <ion-col size="3">
+            <div class="label-button {{product_info.first_category}}">
+              <ion-text class="top-grid-text-3">標籤 1</ion-text>
+            </div>
+          </ion-col>
+          <ion-col size="3">
+            <div class="label-button {{product_info.first_category}}">
+              <ion-text class="top-grid-text-3">標籤 2</ion-text>
+            </div>
+          </ion-col>
+          <ion-col  style="padding: 5px 0">
+            <ion-icon style="width: 5rem; height: 0.8125rem; float: right;" src="../../../../../assets/icon/rating-icon.svg"></ion-icon>
+          </ion-col>
+        </ion-row>
+        <ion-row class="ion-padding-horizontal">
+          <ion-col>
+            <ion-text class="top-grid-text-1">大約尺寸：長度 {{product_info.width}}cm x 高度{{product_info.length}}cm</ion-text>
+          </ion-col>
+        </ion-row>
+        <ion-row class="ion-padding-horizontal">
+          <ion-col size="4">
+            <ion-button mode="ios" [ngClass]="{'product-button': isProductDescription===false,
+              'product-button-focused': isProductDescription ===true}" 
+              class="{{product_info.first_category}}"
+              (click)="toggleProductDescription()">產品介紹</ion-button>
+          </ion-col>
+          <ion-col size="4">
+            <ion-button mode="ios" [ngClass]="{
+              'product-button': isShippingMethod===false,
+              'product-button-focused': isShippingMethod ===true}" class="{{product_info.first_category}}"
+              (click)="toggleShippingMethod()">寄送方式</ion-button>
+          </ion-col>
+          <ion-col size="4">
+            <ion-button mode="ios" [ngClass]="{
+              'product-button': isRelatedPost===false,
+              'product-button-focused': isRelatedPost ===true
+            }" class="{{product_info.first_category}}"
+              (click)="toggleRelatedPost()">相關帖子</ion-button>
+          </ion-col>
+        </ion-row>
+      </div>
+
+      <div class="flex-box">
+        <div *ngIf="isProductDescription===true" class="middle-grid">
+          <div class="middle-grid-description">
+            <p>
+              {{product_info.description}}
+            </p>
+          </div>
+          <div class="middle-grid-picture">
+            <ion-img [src]= "product_image_url"></ion-img>
+            <ion-icon class="middle-grid-picture-youtube-icon" src="../../../../../assets/icon/youtube-icon.svg"></ion-icon>
+          </div>
+        </div>
+        <div *ngIf="isShippingMethod===true" class="middle-grid">
+          <div class="middle-grid-description">
+            <div>
+              <!-- f2f -->
+              <span>1. 面交</span>
+            </div>
+            <div>
+              <span style="padding-left: 1rem">備註: {{product_info.f2f}}</span>
+            </div>
+            <hr style="border-top: 1px solid #C4C4C4">
+            <div>
+              <!-- parcel -->
+              <span>2. 速遞</span>
+            </div>
+            <div>
+              <p style="margin-left: 1rem">
+                {{product_info.parcel}}
+                <!-- 寄件地址： 新界荃灣區<br>
+                營業時間： 9:30AM - 4PM (休息日：星期一)<br>
+                備註： 預計時間1-2天,買家自行支付運費 -->
+              </p>
+            </div>
+            <hr style="border-top: 1px solid #C4C4C4">
+            <div>
+              <!-- express -->
+              <span>3. 郵寄</span>
+            </div>
+            <div>
+              <p style="margin-left: 1rem">
+                {{product_info.express}}
+                <!-- 寄件地址： 新界荃灣區<br>
+                營業時間： 9:30AM - 4PM (休息日：星期一)<br>
+                備註： 預計時間1-2天,買家自行支付運費 -->
+              </p>
+            </div>
+            <hr style="border-top: 1px solid #C4C4C4">
+            <div>
+              <!-- Store arrange -->
+              <span>4. 店舖安排送貨</span>
+            </div>
+            <div>
+              <p style="margin-left: 1rem">
+                {{product_info.store_arrange}}
+                <!-- 備註: 預計時間3-4天，買家自行支付運費<br> -->
+              </p>
+            </div>
+          </div>
+        </div>    
+        <div *ngIf="isRelatedPost===true" class="middle-grid">
+          <!-- TODO: Related Post -->
+          <ion-grid>
+            <div>
+              <ion-row>
+                <ion-col>
+                  <ion-text style="float: right; color: #49AAE8; font-size: 14px;">總數: 10</ion-text>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  <ion-text>用戶名稱</ion-text>
+                </ion-col>
+                <ion-col>
+                  <ion-text style="float: right; font-size: 12px;">30/06/2021</ion-text>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col size="8">
+                  <p>
+                    FOT為海水魚缸,海水魚能人工繁殖的很少, 所以一般來說都是野生居多, 海水魚種類繁多, 一般觀賞的分為仙類, 蝶類, 魨類, 蝦虎類。。。
+                  </p>
+                </ion-col>
+                <ion-col style="padding: 0;">
+                  <ion-img style="width: 6.5rem; height: 6.5rem; float: right;" src="../../../../../assets/BUYER/fish-product/related-post-img.png"></ion-img>
+                </ion-col>
+              </ion-row>
+            </div>
+            <hr style="border-top: 1px solid #C4C4C4">
+            <div>
+              <ion-row>
+                <ion-col>
+                  <ion-text>用戶名稱</ion-text>
+                </ion-col>
+                <ion-col>
+                  <ion-text style="float: right; font-size: 12px;">30/06/2021</ion-text>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col size="8">
+                  <p>
+                    FOT為海水魚缸,海水魚能人工繁殖的很少, 所以一般來說都是野生居多, 海水魚種類繁多, 一般觀賞的分為仙類, 蝶類, 魨類, 蝦虎類。。。
+                  </p>
+                </ion-col>
+                <ion-col style="padding: 0;">
+                  <ion-img style="width: 6.5rem; height: 6.5rem; float: right;" src="../../../../../assets/BUYER/fish-product/related-post-img.png"></ion-img>
+                </ion-col>
+              </ion-row>
+            </div>
+            <hr style="border-top: 1px solid #C4C4C4">
+            <div>
+              <ion-row>
+                <ion-col>
+                  <ion-text>用戶名稱</ion-text>
+                </ion-col>
+                <ion-col>
+                  <ion-text style="float: right; font-size: 12px;">30/06/2021</ion-text>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col size="8">
+                  <p>
+                    FOT為海水魚缸,海水魚能人工繁殖的很少, 所以一般來說都是野生居多, 海水魚種類繁多, 一般觀賞的分為仙類, 蝶類, 魨類, 蝦虎類。。。
+                  </p>
+                </ion-col>
+                <ion-col style="padding: 0;">
+                  <ion-img style="width: 6.5rem; height: 6.5rem; float: right;" src="../../../../../assets/BUYER/fish-product/related-post-img.png"></ion-img>
+                </ion-col>
+              </ion-row>
+            </div>
+          </ion-grid>
+        </div>   
+      </div>
+
+      <div class="flex-box">
+        <div class="bottom-grid">
+          <ion-img class="store-icon" src=""></ion-img>
+          <ion-row>
+            <ion-col>
+              <ion-text class="store-name">{{shop_info.name}}</ion-text>
+              <ion-button mode="ios" class="enter-store-button" (click)="openStore()">進入商店</ion-button>
+            </ion-col>
+          </ion-row>
+        </div>
+      </div>
+      
+      <ion-row style="display: flex">
+        <ion-col style="flex:1">
+          <div class="latest-product-bar">
+            <ion-label class="latest-product-bar-text">商店產品</ion-label>
+            <ion-img class="latest-product-bar-img" src="../../../../../assets/BUYER/fish-product/latest-product.png"></ion-img>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <!-- <ion-row style="display: flex">
+        <ion-col style="flex:1">
+          <app-fish-category-card></app-fish-category-card>
+        </ion-col>
+        <ion-col style="flex:1"
+          <app-fish-category-card></app-fish-category-card>
+        </ion-col>
+      </ion-row> -->
+    </div>
+  </div>
+</ion-content>
+
+<app-toolbar-product-page></app-toolbar-product-page>

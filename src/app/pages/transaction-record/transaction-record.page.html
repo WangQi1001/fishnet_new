@@ -1,0 +1,86 @@
+<ion-content>
+    <div class="setting-inner-content">
+      <div mode="ios" class="toolbar">
+        <ion-buttons (click)="goBack()">
+          <ion-icon mode="ios-person" class="back-icon" slot="icon-only" name="chevron-back-outline"></ion-icon>
+        </ion-buttons>
+        <ion-row>
+          <ion-col>
+            <div class="title">
+              <ion-icon mode="ios" class="back-icon2" slot="icon-only" src="../../../assets/icon/transaction-record-light-icon.svg"></ion-icon>
+              銷售紀錄及表現
+            </div>
+          </ion-col>
+        </ion-row>
+        <div class="div-search-bar">
+          <ion-row>
+            <ion-col>
+              <div class="search-bar">
+                <ion-input type="text" mode="ios" class="search-input" [(ngModel)]="searchInput" (change)="searchInputted($event)"></ion-input>
+                <ion-icon mode="ios" class="search-icon" slot="icon-only" src="../../../assets/icon/search-icon.svg"></ion-icon>
+              </div>
+            </ion-col>
+          </ion-row>
+        </div>
+      </div>
+    
+      <ion-grid class="ion-padding-horizontal">
+        <ion-row style="margin-top:10px;">
+          <ion-col class="sales-figure">
+            <div>
+            <ion-text>總銷售額</ion-text>
+            </div>
+            <div class="figure">
+            <ion-text>$1,200.00</ion-text>
+            </div>
+          </ion-col>
+          <ion-col class="sales-figure">
+            <div>
+            <ion-text>平台交易手續費</ion-text>
+            </div>
+            <div class="figure">
+            <ion-text>$54.00</ion-text>
+            </div>
+          </ion-col>
+          <ion-col class="sales-figure">
+            <div>
+            <ion-text>收入</ion-text>
+            </div>
+            <div class="figure">
+            <ion-text>$1,146.00</ion-text>
+            </div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="margin-top:-10px;">
+          <ion-col>
+            <ion-button class="buttons">
+            銷售表現
+            </ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button class="buttons">
+            商品瀏覽量
+            </ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button class="buttons">
+            各個時段瀏覽量
+            </ion-button>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="ion-padding-horizontal">
+          <ion-col>           
+              <div style="display: inline; float:right;" (click)="presentFilterModal()">
+                <ion-icon class="filter-icon" src="../../../../../assets/icon/filter-icon.svg"></ion-icon>
+                <ion-label class="sort-filter-text">篩選</ion-label>
+              </div>            
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  
+  
+  </ion-content>
+  

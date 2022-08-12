@@ -1,0 +1,66 @@
+<ion-content class="ion-no-padding" content="light dark">
+  <div class="setting-inner-content">
+    <!-- Toolbar contains the background image -->
+    <div mode="ios" class="toolbar">
+      <ion-row>
+        <ion-col>
+          <div class="title">
+            <!-- Chatroom icon -->
+            <ion-icon mode ="ios" class="back-icon" slot="icon-only" src="../../../../assets/icon/chatroom-icon.svg"></ion-icon>
+            聊天室
+          </div>
+        </ion-col>
+      </ion-row>
+      <!-- Search Bar is ingrained in the toolbar -->
+      <div>
+        <ion-row>
+          <ion-col>
+            <div class="search-bar">
+              <ion-input type="text" mode="ios" class="search-input" [(ngModel)]="searchInput" (change)="searchInputted($event)"></ion-input>
+              <ion-icon mode="ios" class="search-icon" slot="icon-only" src="../../../../assets/icon/search-icon.svg"></ion-icon>
+            </div>
+          </ion-col>
+        </ion-row>
+      </div>
+    </div>
+
+    <!-- ngFor is a for loop that connects to the .ts file-->
+    <ng-container *ngFor="let chat of chats">
+      <!-- Main Row Of Each Message -->
+      <ion-row class="ion-padding-horizontal chats-container" (click)="enterChatroom(chat)"> 
+        <!-- Column - Message Icon -->
+        <ion-col size="2" class="message-icon">
+          <!-- 'message' from for loop, if message's iconURL is not empty, make the src of image the icon's URL -->
+          <img *ngIf="chat.avatar_url!==''" src="{{chat.avatar_url}}" alt="">
+          <!-- if message's iconURL is empty, show the no message icon -->
+          <img *ngIf="chat.avatar_url===''" src="../../../../assets/icon/no-message-icon.svg" alt="">
+        </ion-col>
+
+        <!-- Column - Actual Message -->
+        <ion-col class="message-right">
+          <!-- Row: ID and Date -->
+          <ion-row style="font-weight: 700">
+            <ion-col>
+              {{chat.display_name}}
+            </ion-col>
+            <ion-col size="3" class="message-date">
+              {{chat.latest_message_datetime}}
+            </ion-col>
+          </ion-row>
+          <!-- Row: Main Message -->
+          <ion-row>
+            <ion-col>
+              {{chat.message}}
+            </ion-col>
+            <!-- Unread Message -->
+            <!-- <ion-col size="1" class="unread-mes" *ngIf="message.numberOfUnreadMessages>0">
+              <div>{{chat.numberOfUnreadMessages}}</div>
+            </ion-col> -->
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ng-container>
+  </div>  
+</ion-content>
+
+<app-toolbar-buyer></app-toolbar-buyer>

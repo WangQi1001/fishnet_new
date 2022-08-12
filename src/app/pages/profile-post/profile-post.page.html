@@ -1,0 +1,34 @@
+<ion-content class="ion-no-padding" content="light dark">
+  <div class="setting-inner-content">
+    <div class="toolbar">
+      <ion-buttons (click)="goBack()">
+        <ion-icon mode="ios-person" class="back-icon" slot="icon-only" name="chevron-back-outline"></ion-icon>
+      </ion-buttons>
+      <ion-row>
+        <ion-col>
+          <div class="title">
+            <ion-icon mode="ios-create" class="back-icon" slot="icon-only" src="../../../assets/icon/mypost-icon-light.svg"></ion-icon>
+            我的帖子
+          </div>
+        </ion-col>
+      </ion-row>
+      <div>
+        <ion-row>
+          <ion-col class="edit-col">
+            <div class="edit-div">
+              管理
+            </div>
+          </ion-col>
+        </ion-row>
+      </div>
+    </div>
+
+    <div *ngFor="let post of posts; let i=index">
+      <div>
+        <app-post-card [post_info]="post"></app-post-card>
+      </div>
+    </div>
+  </div>
+
+
+</ion-content>

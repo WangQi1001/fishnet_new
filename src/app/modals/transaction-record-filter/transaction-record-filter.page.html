@@ -1,0 +1,104 @@
+<ion-content>
+    <ion-grid class="ion-padding">
+      <ion-row>
+        <ion-col size="7">
+          <ion-text style="float:right" class="ion-text-1">篩選</ion-text>
+        </ion-col>
+        <ion-col>
+          <ion-icon style="float:right; width: 22px; height: 22px" mode="ios" src="../../../assets/icon/close-icon.svg" (click)="close()"></ion-icon>
+        </ion-col>
+      </ion-row>
+  
+      <form [formGroup]="formData" (ngSubmit)="onSubmit()">
+        
+  
+        <ion-row>
+          <ion-col>
+            <ion-text class="ion-text">產品類別</ion-text>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col style="padding: 0 5px">
+            <!-- Rare -->
+            <ion-button mode="ios" class="label-button" [ngClass]="{
+                'active': this.productCategory=== 'Fish'}"
+                (click)="selectProductCategory('Fish')">魚類</ion-button>
+          </ion-col>
+          <ion-col style="padding: 0 5px">
+            <!-- Special -->
+            <ion-button mode="ios" class="label-button" [ngClass]="{
+                'active': this.productCategory=== 'Bird'}"
+                (click)="selectProductCategory('Bird')">鳥類</ion-button>
+          </ion-col>
+          <ion-col style="padding: 0 5px">
+            <!-- ??? -->
+            <ion-button mode="ios" class="label-button" [ngClass]="{
+                'active': this.productCategory=== 'Flower'}"
+                (click)="selectProductCategory('Flower')">花類</ion-button>
+          </ion-col>
+          <ion-col style="padding: 0 5px">
+            <!-- Rare -->
+            <ion-button mode="ios" class="label-button" [ngClass]="{
+                'active': this.productCategory=== 'Insect'}"
+                (click)="selectProductCategory('Insect')">蟲類</ion-button>
+          </ion-col>
+        </ion-row>
+  
+        <ion-row>
+            <ion-col>
+              <ion-text class="ion-text">記錄類別</ion-text>
+            </ion-col>
+        </ion-row>
+          <ion-row>
+            <ion-col style="padding: 0 5px">
+              <!-- ??? -->
+              <ion-button mode="ios" class="label-button" [ngClass]="{
+                'active': this.recordCategory=== 'Sales'}"
+                (click)="selectRecordCategory('Sales')">銷售記錄</ion-button>
+            </ion-col>
+            <ion-col style="padding: 0 5px">
+              <!-- Rare -->
+              <ion-button mode="ios" class="label-button" [ngClass]="{
+                'active': this.recordCategory=== 'Handling Fee'}"
+                (click)="selectRecordCategory('Handling Fee')">平台交易手續費</ion-button>
+            </ion-col>
+          </ion-row>
+
+        <ion-row>
+            <ion-col>
+              <ion-text class="ion-text">開始日期</ion-text>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+            <ion-item mode="ios" class="input-form-item">
+                <ion-input mode="ios" class="form-input name-input" type="date"></ion-input>
+              </ion-item>
+            </ion-col>
+        </ion-row>
+
+        <ion-row>
+            <ion-col>
+              <ion-text class="ion-text">結束日期</ion-text>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+            <ion-item mode="ios" class="input-form-item">
+                <ion-input mode="ios" class="form-input name-input" type="date"></ion-input>
+              </ion-item>
+            </ion-col>
+        </ion-row>
+  
+        <ion-row>
+          <ion-col class="submit-button">
+            <ion-button mode="ios" type="submit" (click)="close()">
+              <ion-text style="font-weight: 700; font-size: 16.5px; margin: 3px 0px 1px 0px;">套用</ion-text>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </form>
+  
+    
+    </ion-grid>
+  </ion-content>

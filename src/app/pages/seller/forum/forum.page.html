@@ -1,0 +1,188 @@
+<ion-content class="ion-no-padding">
+  <div class="setting-inner-content">
+    <div mode="ios" class="toolbar">
+      <ion-row>
+        <ion-col>
+          <div class="title">
+            <!-- Chatroom icon -->
+            <ion-icon mode ="ios" class="forum-icon" slot="icon-only" src="../../../../assets/icon/forum-icon.svg"></ion-icon>
+            討論區
+          </div>
+        </ion-col>
+      </ion-row>
+      <!-- Search Bar is ingrained in the toolbar -->
+      <div>
+        <ion-row>
+          <ion-col>
+            <div class="search-bar">
+              <ion-input type="text" mode="ios" class="search-input" [(ngModel)]="searchInput" (change)="searchInputted($event)"></ion-input>
+              <ion-icon mode="ios" class="search-icon" slot="icon-only" src="../../../assets/icon/search-icon.svg"></ion-icon>
+            </div>
+          </ion-col>
+        </ion-row>
+      </div>
+    </div>   
+    
+    <div>
+      <ion-grid style="background: #F0F0F0; height: 7rem" class="ion-padding-horizontal">
+        <ion-row>
+          <ion-col size="1.5">
+            <ion-icon class="forum-profile" src="../../../../assets/icon/forum-profile.svg"></ion-icon>
+          </ion-col>
+          <ion-col>
+            <span class="forum-text-3">在此輸入你的訊息</span>
+          </ion-col>
+        </ion-row>
+        <ion-row style="padding: 1rem 0 0.5rem 2.5rem">
+          <ion-col>
+            <ion-button mode="ios" class="forum-profile-button btn1">
+              <ion-img src="../../../../assets/BUYER/forum/forum-button-image.svg"></ion-img>
+              添加照片
+            </ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button mode="ios" class="forum-profile-button btn2">發佈</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-grid style="background: #F4FBFF; height: 60rem" class="ion-padding-horizontal">
+        <ion-row>
+          <ion-col>
+            <img class="forum-profile" src="../../../../assets/icon/forum-profile.svg">
+          </ion-col>
+          <ion-col>
+            <div style="color: #000000" class="forum-text-1">
+              用戶名稱
+            </div>
+          </ion-col>
+          <ion-col>
+            <div style="color: #000000" class="forum-text-1">
+              30/06/2021
+            </div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <p class="forum-text-2">
+            FOT為海水魚缸，海水魚能人工繁殖的很少，所以一般來說都是野生居多，海水魚種類繁多，一般觀賞的分為仙類，蝶類，魨類，蝦虎類，雀鯛類。
+          </p>
+        </ion-row>
+        <ion-row>
+          <img src="../../../../assets/BUYER/forum/forum-image-1.png">
+        </ion-row>
+        <ion-row>
+          <ion-col style="margin: 0.5rem 0.5rem 0.5rem 0rem" class="ion-no-padding">
+            <img src="../../../../assets/BUYER/forum/forum-image-2.png">
+          </ion-col>
+          <ion-col class="ion-no-padding">
+            <img style="margin: 0.5rem 0.25rem 0.5rem 0rem" src="../../../../assets/BUYER/forum/forum-image-3.png">
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <img src="../../../../assets/BUYER/forum/heart-icon.svg">
+            28
+          </ion-col>
+          <ion-col>
+            <img src="../../../../assets/BUYER/forum/message-icon.svg">
+            2
+          </ion-col>
+          <ion-col>
+            <div class="comment-bar">
+              Comment Bar
+            </div>
+          </ion-col>
+        </ion-row>
+
+        <div>
+          <ion-row>
+            <ion-col>
+              <img class="forum-profile" src="../../../../assets/icon/forum-profile.svg">
+            </ion-col>
+            <div style="position: absolute; left: 15%">
+              <ion-col>
+                Test Test
+              </ion-col>
+            </div>
+          </ion-row>
+          <ion-row>
+            <p class="forum-text-2">
+              飼養珊瑚的話那就是比較麻煩的事情了，應為自然界中NO3的消除要求十分簡單（無光，無氧，弱水流）。
+            </p>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <img class="forum-profile" src="../../../../assets/icon/forum-profile.svg">
+            </ion-col>
+            <div style="position: absolute; left: 15%">
+              <ion-col>
+                User ABC
+              </ion-col>
+            </div>
+          </ion-row>
+          <ion-row>
+            <p class="forum-text-2">
+              混養缸的要求在於飼養者必須對所養的生物要求和習性十分了解。因為魚不僅會生產大量的NO3而且部分魚種是以珊瑚為食的，所以如果你對所養生物不很了解的話那很可能今天缸看上去十分和諧。
+            </p>
+          </ion-row>
+        </div>
+      </ion-grid>
+
+      <ion-grid style="background: #F4FBFF; height: 30rem" class="ion-padding-horizontal">
+        <ion-row>
+          <ion-col>
+            <img class="forum-profile" src="../../../../assets/icon/forum-profile.svg">
+          </ion-col>
+          <ion-col>
+            <div style="color: #000000" class="forum-text-1">
+              商店名稱
+            </div>
+          </ion-col>
+          <ion-col>
+            <div style="color: #000000" class="forum-text-1">
+              30/06/2021
+            </div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <img src="../../../../assets/BUYER/forum/forum-image-4.png">
+          </ion-col>
+          <ion-col>
+            <img style="height: 98%" src="../../../../assets/BUYER/forum/forum-image-6.png">
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <img src="../../../../assets/BUYER/forum/forum-image-5.png">
+          </ion-col>
+          <ion-col>
+            <img style="height: 98%" src="../../../../assets/BUYER/forum/forum-image-7.png">
+          </ion-col>
+        </ion-row>  
+        
+        <ion-row>
+          <ion-col>
+            <img src="../../../../assets/BUYER/forum/heart-icon.svg">
+            28
+          </ion-col>
+          <ion-col>
+            <img src="../../../../assets/BUYER/forum/message-icon.svg">
+            2
+          </ion-col>
+          <ion-col>
+            <div class="comment-bar">
+              Comment Bar
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+</ion-content>
+
+<app-toolbar-seller></app-toolbar-seller>

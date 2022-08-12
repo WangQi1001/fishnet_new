@@ -1,0 +1,78 @@
+<ion-content class="ion-no-padding">
+  <div class="header">
+    <ion-toolbar color="#ffff">
+      <ion-title style="text-align: center">優惠資訊通知</ion-title>
+      <ion-buttons slot="end">
+        <ion-icon mode="ios" class="back-icon" slot="icon-only" name="close-outline" (click)="close()"></ion-icon>
+      </ion-buttons>
+    </ion-toolbar>
+  </div>
+  <ion-grid class="ion-padding-horizontal">
+    <form class="form" >
+      <ion-row style="margin-bottom: 0em">
+        <ion-col class="no-pad-bot">
+          <div class="required-form-title">接收優惠資訊</div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="address">
+        <ion-col>
+          <ion-button mode="ios" class="type-button" >開啟</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button mode="ios" class="type-button">關閉</ion-button>
+        </ion-col>
+      </ion-row>
+
+      <ion-row style="margin-bottom: 0em">
+        <ion-col class="no-pad-bot">
+          <div class="required-form-title">優惠資訊類型</div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="address">
+        <ion-col>
+          <div mode="ios" class="check-button" >魚類商品</div>
+        </ion-col>
+        <ion-col>
+          <div class="ion-button active">
+            <img src="../../../assets/icon/check-icon.svg">
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="address">
+        <ion-col>
+          <div mode="ios" class="check-button" >鳥類商品</div>
+        </ion-col>
+        <ion-col>
+          <div class="ion-button active">
+            <img src="../../../assets/icon/check-icon.svg">
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="address">
+        <ion-col>
+          <div mode="ios" class="check-button" >花類商品</div>
+        </ion-col>
+        <ion-col>
+          <div class="ion-button">
+            <img src="../../../assets/icon/check-icon.svg">
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="address">
+        <ion-col>
+          <div mode="ios" class="check-button" >蟲類商品</div>
+        </ion-col>
+        <ion-col>
+          <div class="ion-button active">
+            <img src="../../../assets/icon/check-icon.svg">
+          </div>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-grid>
+</ion-content>

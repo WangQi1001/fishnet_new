@@ -1,0 +1,91 @@
+<ion-content>
+  <ion-grid class="ion-padding">
+    <ion-row>
+      <ion-col size="7">
+        <ion-text style="float:right" class="ion-text-1">提取</ion-text>
+      </ion-col>
+      <ion-col>
+        <ion-icon style="float:right; width: 22px; height: 22px" mode="ios" src="../../../assets/icon/close-icon.svg" (click)="close()"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <form [formGroup]="formData" (ngSubmit)="onSubmit()" style="margin-top: 2rem">
+      <ion-row>
+        <ion-col>
+          <!-- Withdrawal Amount -->
+          <ion-text class="ion-text-2">提取金額</ion-text>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item mode="ios" class="input-form-item">
+            <ion-input mode="ios" formControlName="withdrawalAmount" type="number" placeholder="HKD"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <!-- Payment Method -->
+      <ion-row style="margin-top: 2rem">
+        <ion-col>
+          <ion-text class="ion-text-2">收款方式</ion-text>
+        </ion-col>
+      </ion-row>
+        <!-- Payment Method -->
+      <ion-grid class="ion-padding-horizontal">
+        <div class="paragraph">
+          <ion-row>
+            <ion-col class="sub-title">
+              <ion-text>銀行名稱</ion-text>
+            </ion-col>
+          </ion-row>
+          <ion-row class="card-number-row">
+            <ion-col size="5">
+              <ion-text>信用卡號碼</ion-text>
+            </ion-col>
+            <ion-col>
+              <ion-text>{{cardNumber}}</ion-text>
+            </ion-col>
+            <ion-col size="2" class="card-icon">
+              <ion-icon [src]="cardImg"></ion-icon>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="5">
+              <ion-text>到期日</ion-text>
+            </ion-col>
+            <ion-col>
+              <ion-text>{{cardDate}}</ion-text>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="5">
+              <ion-text>支票抬頭名稱</ion-text>
+            </ion-col>
+            <ion-col>
+              <ion-text>{{cardHolderName}}</ion-text>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="edit-button-col">
+              <ion-button mode="ios" class="edit-button">
+                <ion-icon mode="ios-pencil" class="edit-icon" slot="icon-only" src="../../../assets/icon/edit-icon.svg"></ion-icon>
+                <ion-text>
+                  更新信息
+                </ion-text> 
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </div>
+      </ion-grid>
+
+      <ion-row style="margin-top: 4rem">
+        <ion-col style="display: flex; justify-content: center;">
+          <ion-button mode="ios" type="submit" (click)="close()">
+            <ion-text class="ion-text-3">增值</ion-text>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-grid>
+
+
+</ion-content>

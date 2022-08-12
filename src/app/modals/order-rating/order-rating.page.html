@@ -1,0 +1,37 @@
+<ion-content class="ion-no-padding">
+  <div class="header">
+    <ion-toolbar color="#ffff">
+      <ion-title>評分</ion-title>
+      <ion-buttons slot="end">
+        <ion-icon mode="ios" class="back-icon" slot="icon-only" name="close-outline" (click)="close()"></ion-icon>
+      </ion-buttons>
+    </ion-toolbar>
+  </div>
+
+  <ion-grid class="ion-padding-horizontal">
+    <ion-row>
+      <ion-col>
+        <p>評分</p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="rating">
+        <div>
+          <ion-icon color="primary" *ngFor="let item of list;let i = index" [name]="condition <= i? 'star-outline' :'star' "
+         (click)="review(i)">
+          </ion-icon>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="submit-button">
+        <ion-button mode="ios" (click)="determineRating()">
+          修改
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+

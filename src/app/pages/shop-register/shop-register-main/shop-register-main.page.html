@@ -1,0 +1,425 @@
+<ion-content class="ion-no-padding">
+  <div class="setting-inner-content">
+    <div mode="ios" class="toolbar">
+      <ion-row>
+        <ion-col>
+          <div class="title">
+            <ion-icon mode="ios" class="back-icon" slot="icon-only" src="../../../../assets/icon/back-icon.svg" (click)="previousPage()"></ion-icon>
+            登記成為商家
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <div mode="ios" class="main-body">
+      <!-- Form Validation -->
+      <form [formGroup]="formData" (ngSubmit)="onSubmit()">
+        <!-- Page: 1 -->
+        <div *ngIf="this.pageNumber===1" formGroupName="formData_1">
+          <div class="header">
+            <ion-row>
+              <ion-col>
+                <!-- Please Enter Store Info -->
+                <ion-text class="header-text">請輸入商店資料</ion-text>
+              </ion-col>
+            </ion-row>
+          </div>
+          <!-- Store Name -->
+          <ion-row>
+            <ion-col>
+              <div class="required-form-title" [ngClass]="{'active': f.shop_name.errors && this.isPageTwoClicked}">商店名稱</div>
+              <ion-item mode="ios" class="input-form-item" [ngClass]="{'active': f.shop_name.errors && this.isPageTwoClicked}">
+                <ion-input mode="ios" formControlName="shop_name" type="text"></ion-input>
+              </ion-item>
+              <div *ngIf="f.shop_name.errors && this.isPageTwoClicked" class="invalid-feedback">*required</div>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <div class="required-form-title" [ngClass]="{'active': f.last_name.errors && this.isPageTwoClicked}">姓氏</div>
+              <ion-item mode="ios" class="input-form-item" [ngClass]="{'active': f.last_name.errors && this.isPageTwoClicked}">
+                <ion-input mode="ios" formControlName="last_name" type="text"></ion-input>
+              </ion-item>
+              <div *ngIf="f.last_name.errors && this.isPageTwoClicked" class="invalid-feedback">*required</div>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <div class="required-form-title" [ngClass]="{'active': f.first_name.errors && this.isPageTwoClicked}">名字</div>
+              <ion-item mode="ios" class="input-form-item" [ngClass]="{'active': f.first_name.errors && this.isPageTwoClicked}">
+                <ion-input mode="ios" formControlName="first_name" type="text"></ion-input>
+              </ion-item>
+              <div *ngIf="f.first_name.errors && this.isPageTwoClicked" class="invalid-feedback">*required</div>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <div class="required-form-title" [ngClass]="{'active': f.email.errors && this.isPageTwoClicked}">電子郵件</div>
+              <ion-item mode="ios" class="input-form-item" [ngClass]="{'active': f.email.errors && this.isPageTwoClicked}">
+                <ion-input mode="ios" formControlName="email" type="text"></ion-input>
+              </ion-item>
+              <div *ngIf="f.email.errors && this.isPageTwoClicked" class="invalid-feedback">*required</div>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <div class="required-form-title" [ngClass]="{'active': f.phone_no.errors && this.isPageTwoClicked}">電話</div>
+              <ion-item mode="ios" class="input-form-item" [ngClass]="{'active': f.phone_no.errors && this.isPageTwoClicked}">
+                <ion-input mode="ios" formControlName="phone_no" type="text"></ion-input>
+              </ion-item>
+              <div *ngIf="f.phone_no.errors && this.isPageTwoClicked" class="invalid-feedback">*required</div>
+            </ion-col>
+          </ion-row>
+
+          <!-- Time Menu-->
+          <ion-row>
+            <ion-col>
+              <div class="required-form-title" [ngClass]="{'active': (f.store_close_time.errors || f.store_open_time.errors) && this.isPageTwoClicked}">營業時間</div>
+              <!-- Shop Opening Time-->
+              <ion-row style= "margin: 1rem">
+                <ion-col class="ion-no-padding">
+                  <div style= "position: absolute; top:15%" class="required-form-title" [ngClass]="{'active': f.store_open_time.errors && this.isPageTwoClicked}">開店時間</div>
+                </ion-col>
+                <ion-col class="ion-no-padding">
+                  <div style="width: 2rem; height: 3rem">
+                    <ion-icon class="clock-icon" src="../../../../assets/icon/clock.svg"></ion-icon>
+                  </div>
+                </ion-col>
+                <ion-col>
+                  <ion-item style = "width: 5.5rem" mode="ios" class="input-form-item" [ngClass]="{'active': f.store_open_time.errors && this.isPageTwoClicked}">
+                    <!-- TODO: Use a different time API -->
+                    <ion-input mode="ios" formControlName="store_open_time" type="time" placeholder="00:00">
+                    </ion-input>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item style = "width: 5.0rem" mode="ios" class="input-form-item" [ngClass]="{'active': f.store_open_time.errors && this.isPageTwoClicked}">
+                    <!-- TODO: Try to implement a non-ionic select option -->
+                    <ion-select formControlName="store_open_time_2" placeholder="AM">
+                      <ion-select-option>AM</ion-select-option>
+                      <ion-select-option>PM</ion-select-option>
+                    </ion-select>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+              <!-- Shop Closing Time-->
+              <ion-row style= "margin: 1rem">
+                <ion-col class="ion-no-padding">
+                  <div style= "position: absolute; top:15%" class="required-form-title" [ngClass]="{'active': f.store_close_time.errors && this.isPageTwoClicked}">關店時間</div>
+                </ion-col>
+                <ion-col class="ion-no-padding">
+                  <div style="width: 2rem; height: 3rem">
+                    <ion-icon class="clock-icon" src="../../../../assets/icon/clock.svg"></ion-icon>
+                  </div>
+                </ion-col>
+                <ion-col>
+                  <ion-item style = "width: 5.5rem" mode="ios" class="input-form-item" [ngClass]="{'active': f.store_close_time.errors && this.isPageTwoClicked}">
+                    <ion-input mode="ios" formControlName="store_close_time" placeholder= "00:00" type="time"></ion-input>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item style = "width: 5.0rem" mode="ios" class="input-form-item" [ngClass]="{'active': f.store_close_time.errors && this.isPageTwoClicked }">
+                    <ion-select formControlName="store_close_time_2" placeholder="AM">
+                      <ion-select-option>AM</ion-select-option>
+                      <ion-select-option>PM</ion-select-option>
+                    </ion-select>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+              <div *ngIf="(f.store_close_time.errors || f.store_open_time.errors) && this.isPageTwoClicked" class="invalid-feedback">*required</div>
+            </ion-col>
+          </ion-row>
+
+          <!-- !Tickbar Menu-->
+          <ion-row>
+            <ion-col>
+              <div class="required-form-title">休息日</div>
+              <ion-row>
+                <div *ngFor="let day of days_off; let i=index" style="padding: 8px 4px 8px 4px">
+                  <input type="checkbox" formArrayName="days_off" [value]="day.value" (change)="onCheckboxChange($event)"/>
+                  <ion-text style="padding-left: 1rem">{{day.name}}</ion-text> 
+                </div>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col class="next-button">
+              <ion-button mode="ios" (click)="nextPage()">
+                <ion-text style="font-weight: 700; font-size: 16.5px; margin: 3px 0px 1px 0px;">下一步</ion-text>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </div>
+
+        <!-- Page: 2 -->
+        <div *ngIf="this.pageNumber===2" formGroupName="formData_2">
+          <ion-row>
+            <ion-col>
+              <ion-text class="header-text">請輸入商店資料</ion-text>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <div class="required-form-title">地址</div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="ion-no-padding">
+              <div style="margin:0px; padding-left: 5px;" class="required-form-title" [ngClass]="{'active': form_2.address_room.errors && this.isPageThreeClicked}">室/單位</div>
+            </ion-col>
+            <ion-col class="ion-no-padding">
+              <div style="margin:0px; padding-left: 5px;" class="required-form-title" [ngClass]="{'active': form_2.address_floor.errors && this.isPageThreeClicked}">樓層</div>
+            </ion-col>
+            <ion-col class="ion-no-padding">
+              <div style="margin:0px; padding-left: 5px;" class="required-form-title">座數</div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-item mode="ios" class="input-form-item" [ngClass]="{'active': form_2.address_room.errors && this.isPageThreeClicked}">
+                <!-- Room Unit -->
+                <ion-input mode="ios" class="form-input name-input" formControlName="address_room" type="text"></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col>
+              <ion-item mode="ios" class="input-form-item" [ngClass]="{'active': form_2.address_floor.errors && this.isPageThreeClicked}">
+                <!-- Floor -->
+                <ion-input mode="ios" class="form-input name-input" formControlName="address_floor" type="text"></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col>
+              <ion-item mode="ios" class="input-form-item">
+                <!-- ! Seat No  -->
+                <ion-input mode="ios" class="form-input name-input" formControlName="address_seat_no" type="text"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <div *ngIf="(form_2.address_room.errors || form_2.address_floor.errors) && this.isPageThreeClicked" class="invalid-feedback">*required</div>
+          
+          <ion-row>
+            <ion-col>
+              <div class="required-form-title" [ngClass]="{'active': form_2.address_building_name.errors && this.isPageThreeClicked}">大廈名稱</div>
+              <ion-item mode="ios" class="input-form-item" [ngClass]="{'active': form_2.address_building_name.errors && this.isPageThreeClicked}">
+                <!-- Building Name -->
+                <ion-input mode="ios" class="form-input name-input" formControlName="address_building_name" type="text"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <div *ngIf="form_2.address_building_name.errors && this.isPageThreeClicked" class="invalid-feedback">*required</div>
+
+  
+          <ion-row>
+            <ion-col>
+              <div class="required-form-title">街道名稱</div>
+              <ion-item mode="ios" class="input-form-item">
+                <!-- !Street Name -->
+                <ion-input mode="ios" class="form-input name-input" formControlName="address_street_name" type="text"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+  
+          <ion-row>
+            <ion-col>
+              <div class="required-form-title" [ngClass]="{'active': form_2.address_area.errors && this.isPageThreeClicked}">地區</div>
+              <ion-item mode="ios" class="input-form-item" [ngClass]="{'active': form_2.address_area.errors && this.isPageThreeClicked}">
+                <!-- District Name -->
+                <ion-input mode="ios" class="form-input name-input" formControlName="address_area" type="text"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <div *ngIf="form_2.address_area.errors && this.isPageThreeClicked" class="invalid-feedback">*required</div>
+
+  
+          <ion-row style="margin-top: 0.5rem">
+            <ion-col>
+              <ion-button mode="ios" class="type-button" [ngClass]="{
+              'active': this.region=== 'Hong Kong'}"
+              (click)="selectRegion('Hong Kong')">香港</ion-button>
+            </ion-col>
+            <ion-col>
+              <ion-button mode="ios" class="type-button" [ngClass]="
+              {'active': this.region === 'Kowloon'}"
+              (click)="selectRegion('Kowloon')">九龍</ion-button>
+            </ion-col>
+            <ion-col>
+              <ion-button mode="ios" class="type-button" [ngClass]="
+              {'active': this.region === 'New Territories'}"
+              (click)="selectRegion('New Territories')">新界</ion-button>
+            </ion-col>
+          </ion-row>
+
+          <ion-row style="margin-top: 0.5rem">
+            <ion-col>
+              <ion-text class="header-text" [ngClass]="{'active': (form_2.bank.errors || form_2.bank_account_no.errors || form_2.check_payable_name.errors) && this.isPageThreeClicked}">收款方式</ion-text>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <div class="required-form-title" [ngClass]="{'active': form_2.bank.errors && this.isPageThreeClicked}">收款銀行</div>
+              <ion-item mode="ios" class="input-form-item" [ngClass]="{'active': form_2.bank.errors && this.isPageThreeClicked}">
+                <!-- Bank -->
+                <ion-input mode="ios" placeholder="請選擇收款銀行" formControlName="bank" type="list"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <div *ngIf="form_2.bank.errors && this.isPageThreeClicked" class="invalid-feedback">*required</div>
+
+          
+
+          <ion-row>
+            <ion-col>
+              <div class="required-form-title" [ngClass]="{'active': form_2.bank_account_no.errors && this.isPageThreeClicked}">銀行賬戶號碼</div>
+              <ion-item mode="ios" class="input-form-item" [ngClass]="{'active': form_2.bank_account_no.errors && this.isPageThreeClicked}">
+                <!-- Bank Account Number -->
+                <ion-input mode="ios" placeholder="銀行賬戶號碼" formControlName="bank_account_no" type="text"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <div *ngIf="form_2.bank_account_no.errors && this.isPageThreeClicked" class="invalid-feedback">*required</div>
+
+
+          <ion-row>
+            <ion-col>
+              <div class="required-form-title" [ngClass]="{'active': form_2.check_payable_name.errors && this.isPageThreeClicked}">支票抬頭名稱</div>
+              <ion-item mode="ios" class="input-form-item" [ngClass]="{'active': form_2.check_payable_name.errors && this.isPageThreeClicked}">
+                <!-- Cheque Payable Name -->
+                <ion-input mode="ios" placeholder="輸入支票抬頭名稱" formControlName="check_payable_name" type="text"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <div *ngIf="form_2.check_payable_name.errors && this.isPageThreeClicked" class="invalid-feedback">*required</div>
+
+          <ion-row>
+            <ion-col class="next-button">
+              <ion-button mode="ios" (click)="nextPage()">
+                <ion-text style="font-weight: 700; font-size: 16.5px; margin: 3px 0px 1px 0px;">下一步</ion-text>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </div>
+
+        <!-- Page - 3 -->
+        <div *ngIf="this.pageNumber===3">
+          <div class="header">
+            <ion-row style="padding-left: 0.5rem">
+              <ion-col>
+                <ion-text class="header-text">請上載商業登記證 / 身份證</ion-text>
+              </ion-col>
+            </ion-row>
+          </div>
+
+          <ion-grid class="ion-padding-horizontal">
+            <ion-row>
+              <ion-col>
+                <ion-item mode="ios" class="input-form-item" [ngClass]="{'active': !this.file && this.isPageFourClicked}">
+                  <ion-row>
+                    <ion-col>
+                      <div>{{fileName || "No file uploaded"}}</div>
+                    </ion-col>
+                    <ion-col class="upload-button">
+                      <!-- File Upload -->
+                      <ion-button mode="ios" (click)="fileUpload.click()">
+                        <ion-icon style="padding:2px; margin: 0px 10px 3px 0px; " src="../../../../assets/icon/upload-icon.svg">
+                        </ion-icon>
+                        <input type="file" (change)="loadImageFromDevice($event)" style="display:none" #fileUpload>
+                        上載
+                      </ion-button>
+                    </ion-col>
+                  </ion-row>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <div *ngIf="!this.file && this.isPageFourClicked" class="invalid-feedback">*required</div>
+
+
+            <ion-row>
+              <ion-col class="next-button">
+                <ion-button mode="ios" (click)="nextPage()">
+                  <ion-text style="font-weight: 700; font-size: 16.5px; margin: 3px 0px 1px 0px;">下一步</ion-text>
+                </ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+
+        <!-- Page - 4 -->
+        <div *ngIf="this.pageNumber===4">
+          <div class="header">
+            <ion-row style="padding-left: 0.5rem">
+              <ion-col>
+                <ion-text class="header-text">請選擇商品類別</ion-text>
+              </ion-col>
+            </ion-row>
+          </div>
+
+          <ion-grid class="ion-padding-horizontal">
+            <ion-row style="display: flex">
+              <ion-col style="flex:1">
+                <div [ngClass]="{'category fish': this.categories.includes('Fish')}" (click)="selectCategories('Fish')">
+                  <ion-img src="../../../../assets/shop-register/category-fish.png"></ion-img>
+                  <ion-label class="category-text">魚類</ion-label>
+                </div>
+              </ion-col>
+            </ion-row>
+
+            <ion-row style="display: flex">
+              <ion-col style="flex:1">
+                <div [ngClass]="{'category bird': this.categories.includes('Bird')}" (click)="selectCategories('Bird')">
+                  <ion-img src="../../../../assets/shop-register/category-bird.png"></ion-img>
+                  <ion-label class="category-text">鳥類</ion-label>
+                </div>
+              </ion-col>
+            </ion-row>
+            <ion-row style="display: flex">
+              <ion-col style="flex:1">
+                <div [ngClass]="{'category flower': this.categories.includes('Flower')}" (click)="selectCategories('Flower')">
+                  <ion-img src="../../../../assets/shop-register/category-flower.png"></ion-img>
+                  <ion-label class="category-text">花類</ion-label>
+                </div>
+              </ion-col>
+            </ion-row>
+
+            <ion-row style="display: flex">
+              <ion-col style="flex:1">
+                <div [ngClass]="{'category insect': this.categories.includes('Insect')}" (click)="selectCategories('Insect')">
+                  <ion-img src="../../../../assets/shop-register/category-insect.png"></ion-img>
+                  <ion-label class="category-text">蟲類</ion-label>
+                </div>
+              </ion-col>
+            </ion-row>
+
+            <ion-row style="display: flex">
+              <ion-col class="next-button">
+                <ion-button mode="ios" type="submit">
+                  <ion-text style="font-weight: 700; font-size: 16.5px; margin: 3px 0px 1px 0px;">完成</ion-text>
+                </ion-button>
+              </ion-col>
+            </ion-row>
+
+          </ion-grid>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</ion-content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,213 @@
+<ion-content class="ion-no-padding">
+  <div class="setting-inner-content">
+    <div mode="ios" class="toolbar">
+      <ion-row>
+        <ion-col style="margin-left: 8rem">
+          <div class="title">
+            歡迎回來！
+          </div>
+        </ion-col>
+        <ion-col class="ion-no-padding">
+          <ion-icon class="forum-icon" mode="ios" src="../../../../../assets/icon/notification-icon.svg" (click)="openNotification()"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <app-search-bar></app-search-bar>
+
+      <ion-row>
+        <ion-col style="margin-left: 1rem">
+          <div class="coupon">
+            優惠券
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <div mode="ios" class="main-body">
+      <ion-grid style="margin: 0.25rem 0; padding: 0;">
+        <!-- Top Grid -->
+        <ion-row style="display: flex">
+          <ion-col style="flex: 1">
+            <div class="top-grid">
+              <ion-img src="../../../../../assets/BUYER/home/homepage/buy-item.png"></ion-img>
+              <ion-label class="top-grid-text">
+                  購買任何商品
+                1件8折, 3件7折
+              </ion-label>
+            </div>
+          </ion-col>
+          <ion-col style="flex: 1">
+            <div class="top-grid">
+              <ion-img src="../../../../../assets/BUYER/home/homepage/buy-item.png"></ion-img>
+              <ion-label class="top-grid-text">
+                  購買任何商品
+                  滿$100使用
+              </ion-label>
+            </div>
+          </ion-col>
+        </ion-row>
+
+        <!-- Middle Grid -->
+        <ion-row style="display: flex">
+          <ion-col style="flex:1">
+            <div style="background: #E3F0FB;" class="middle-grid" (click)="openCategory('fish')">
+              <div class="middle-grid-top-bar">
+                <ion-img src="../../../../../assets/BUYER/home/homepage/fish-category-item-top.png"></ion-img>
+                <ion-text>魚類</ion-text>
+              </div>
+              <div class="middle-grid-bottom-bar">
+                <ion-row>
+                  <ion-col>
+                    <ion-img src="../../../../../assets/BUYER/home/homepage/fish-category-item-bottom-1.png"></ion-img>
+                  </ion-col>
+                  <ion-col>
+                    <ion-img src="../../../../../assets/BUYER/home/homepage/fish-category-item-bottom-2.png"></ion-img>
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                    <ion-img src="../../../../../assets/BUYER/home/homepage/fish-category-item-bottom-3.png"></ion-img>
+                  </ion-col>
+                  <ion-col>
+                    <ion-img src="../../../../../assets/BUYER/home/homepage/fish-category-item-bottom-4.png"></ion-img>
+                  </ion-col>
+                </ion-row>
+              </div>
+            </div>
+          </ion-col>
+          <ion-col style="flex:1">
+            <div style="background: #FFF7C6;" class="middle-grid" (click)="openCategory('bird')">
+              <div class="middle-grid-top-bar">
+                <ion-img src="../../../../../assets/BUYER/home/homepage/bird-category-item-top.png"></ion-img>
+                <ion-text>鳥類</ion-text>
+              </div>
+              <div class="middle-grid-bottom-bar">
+                <ion-row>
+                  <ion-col>
+                    <ion-img src="../../../../../assets/BUYER/home/homepage/bird-category-item-bottom-1.png"></ion-img>
+                  </ion-col>
+                  <ion-col>
+                    <ion-img src="../../../../../assets/BUYER/home/homepage/bird-category-item-bottom-2.png"></ion-img>
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                    <ion-img src="../../../../../assets/BUYER/home/homepage/bird-category-item-bottom-3.png"></ion-img>
+                  </ion-col>
+                  <ion-col>
+                    <ion-img src="../../../../../assets/BUYER/home/homepage/all-category-item-bottom-blank.png"></ion-img>
+                  </ion-col>
+                </ion-row>
+              </div>
+            </div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="display: flex">
+          <ion-col style="flex:1">
+            <div style="background: #FEDEDA;" class="middle-grid" (click)="openCategory('flower')">
+              <div class="middle-grid-top-bar">
+                <ion-img src="../../../../../assets/BUYER/home/homepage/flower-category-item-top.png"></ion-img>
+                <ion-text>花類</ion-text>
+              </div>
+              <div class="middle-grid-bottom-bar">
+                <ion-row>
+                  <ion-col>
+                    <ion-img src="../../../../../assets/BUYER/home/homepage/flower-category-item-bottom-1.png"></ion-img>
+                  </ion-col>
+                  <ion-col>
+                    <ion-img src="../../../../../assets/BUYER/home/homepage/flower-category-item-bottom-2.png"></ion-img>
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                    <ion-img src="../../../../../assets/BUYER/home/homepage/flower-category-item-bottom-3.png"></ion-img>
+                  </ion-col>
+                  <ion-col>
+                    <ion-img src="../../../../../assets/BUYER/home/homepage/all-category-item-bottom-blank.png"></ion-img>
+                  </ion-col>
+                </ion-row>
+              </div>
+            </div>
+          </ion-col>
+          <ion-col style="flex:1">
+            <div style="background: #DAE7D0;" class="middle-grid" (click)="openCategory('insect')">
+              <div class="middle-grid-top-bar">
+                <ion-img src="../../../../../assets/BUYER/home/homepage/insect-category-item-top.png"></ion-img>
+                <ion-text>蟲類</ion-text>
+              </div>
+              <div class="middle-grid-bottom-bar">
+                <ion-row>
+                  <ion-col>
+                    <ion-img src="../../../../../assets/BUYER/home/homepage/insect-category-item-bottom-1.png"></ion-img>
+                  </ion-col>
+                  <ion-col>
+                    <ion-img src="../../../../../assets/BUYER/home/homepage/insect-category-item-bottom-2.png"></ion-img>
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                    <ion-img src="../../../../../assets/BUYER/home/homepage/insect-category-item-bottom-3.png"></ion-img>
+                  </ion-col>
+                  <ion-col>
+                    <ion-img src="../../../../../assets/BUYER/home/homepage/all-category-item-bottom-blank.png"></ion-img>
+                  </ion-col>
+                </ion-row>
+              </div>
+            </div>
+          </ion-col>
+        </ion-row>
+
+        <!-- Bottom Grid -->
+        <ion-row style="display: flex">
+          <ion-col style="flex:1">
+            <div class="latest-product-bar">
+              <!-- Latest Product -->
+              <ion-label class="latest-product-bar-text">最新產品</ion-label>
+              <ion-img class="latest-product-bar-img" src="../../../../../assets/BUYER/home/homepage/latest-product.png"></ion-img>
+            </div>
+          </ion-col>
+        </ion-row>
+
+        <!-- Newest Product -->
+        <ul style="padding: 0; margin:0">
+          <div *ngFor="let product_info of api_newest_product_result | slice:0:20; let i = index">
+            <ion-row *ngIf="i % 2 == 0" style="display: flex">
+              <ion-col style="flex:1">
+                <app-product-card [product_info] = "product_info" [parent_url] = "parent_url"></app-product-card>
+              </ion-col>
+              <ion-col style="flex:1" *ngIf="i + 1 < api_newest_product_result.length">
+                <app-product-card [product_info] = "api_newest_product_result[i+1]" [parent_url] = "parent_url"></app-product-card>
+              </ion-col>
+            </ion-row>
+          </div>
+        </ul>
+        
+        <ion-row style="display: flex">
+          <ion-col style="flex:1">
+            <div class="latest-product-bar">
+              <!-- Hot Deals -->
+              <ion-label class="latest-product-bar-text">熱賣產品</ion-label>
+              <ion-img class="latest-product-bar-img" src="../../../../../assets/BUYER/home/homepage/latest-product-2.png"></ion-img>
+            </div>
+          </ion-col>
+        </ion-row>
+
+        <!-- Hot Product/All Product -->
+        <ul style="padding: 0; margin:0">
+          <div *ngFor="let product_info of api_all_product_result | slice:0:20; let i = index">
+            <ion-row *ngIf="i % 2 == 0" style="display: flex">
+              <ion-col style="flex:1">
+                <app-product-card [product_info] = "product_info" [parent_url] = "parent_url"></app-product-card>
+              </ion-col>
+              <ion-col style="flex:1" *ngIf="i + 1 < api_all_product_result.length">
+                <app-product-card [product_info] = "api_all_product_result[i+1]" [parent_url] = "parent_url"></app-product-card>
+              </ion-col>
+            </ion-row>
+          </div>
+        </ul>
+    </ion-grid>
+    </div>
+  </div>
+</ion-content>
+
+<app-toolbar-buyer></app-toolbar-buyer>

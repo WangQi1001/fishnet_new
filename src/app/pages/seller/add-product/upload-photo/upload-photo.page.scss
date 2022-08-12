@@ -1,0 +1,156 @@
+ion-content{
+    --background: #F8F8F8;
+    font-family: Yuanti TC;
+    .toolbar{
+        background: url('../../../../../assets/icon/toolbar-background.svg');
+        background-repeat: no-repeat;
+        height: 8rem;
+        width: 25rem;
+        .back-icon{
+            width: 20px;
+            height: 30px;
+        }
+        .title{
+            font-weight: 700;
+            font-size: 20px;
+            color: #FFFFFF;
+        }
+    }
+    .main-body{
+        font-style: normal;
+        font-size: 16px;
+        line-height:22px;
+        color: #000000;
+        .header-text{
+            font-weight: 700;
+        }      
+        .required-form-title{
+            margin:0.5rem 0;
+            font-weight: 400;
+          }
+        .input-form-item{
+        --border-width: 0;
+        --inner-border-width: 0px;
+        --background: #F4FBFF;
+        --background-activated: #F4FBFF;
+        --background-focused: #F4FBFF;
+        --background-hover: #F4FBFF;
+        --border-radius: 0.5rem;
+        text-align: center;
+        color: black;
+        border-radius: 0.5em;
+        border: 1px solid #49AAE8;
+        width: 100%;
+        }
+        .form-select{
+        max-width: 100%;
+        width: 100%;
+        text-align: center;
+        }
+
+        .next-button{
+            display: flex;
+            justify-content: center;
+            ion-button{
+                --background: #49AAE8;
+                --background-activated: #49AAE8;
+                --background-focused: #49AAE8;
+                --background-hover: #49AAE8;
+                --color: white;
+                overflow-y:visible;
+                font-weight: 700;
+                width: 6.5rem;
+                height: 2rem;
+                border-radius: 0.5rem;
+            }
+            margin: 1rem 0;
+        }
+
+        .upload-button{
+            display: flex;
+            justify-content: center;
+            ion-button{
+                --background: #49AAE8;
+                --background-activated: #49AAE8;
+                --background-focused: #49AAE8;
+                --background-hover: #49AAE8;
+                --color: white;
+                overflow-y:visible;
+                font-weight: 700;
+                width: 10rem;
+                height: 2rem;
+                border-radius: 0.5rem;
+            }
+            //margin: 1rem 0;
+        }
+
+        .upload-helptext{
+            display: flex;
+            justify-content: center;
+        }
+
+    }
+
+    .main-grid-button{
+        height: 145px;
+        width:145px;
+        border-radius: 0.625rem;
+        //background: #bbb9b9;
+        background: url("../../../../../assets/SELLER/item/fish.png");
+        background-size: cover;
+        cursor: move;
+        position: relative;
+        .main-grid-button-top-bar{
+            //background: url("../../../../../assets/SELLER/item/fish.png");
+            //height: calc(50vw - 15px);
+            //display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+            border-radius: 0.625rem 0.625rem 0 0;
+            .bin-div{
+                //position: absolute;
+                width: 2rem;
+                height: 2rem;
+                background: #49AAE8;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 0.25rem;
+                .bin-icon{
+                    
+                    width: 1.4rem;
+                    height: 1.25rem;
+                }
+            }
+            
+        }
+
+        .main-grid-button-bottom-bar{
+            //background: url("../../../../../assets/SELLER/item/fish.png");
+            height: 113px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+            border-radius: 0.625rem 0.625rem 0 0;
+            .edit-div{
+                //position: absolute;
+                width: 2rem;
+                height: 2rem;
+                background: #49AAE8;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 0.25rem;
+                
+                .edit-icon{
+                    
+                    width: 1.4rem;
+                    height: 1.25rem;
+                }
+            }
+        }
+    }
+
+
+
+}

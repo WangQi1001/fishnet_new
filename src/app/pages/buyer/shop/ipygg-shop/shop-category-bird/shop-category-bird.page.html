@@ -1,0 +1,77 @@
+<ion-content class="ion-no-padding">
+  <div class="setting-inner-content">
+    <div mode="ios" class="toolbar">
+      <ion-row>
+        <ion-col>
+          <ion-icon style="width: 20px; height: 30px; padding: 0.5rem 0 0 0.5rem;" mode="ios" src="../../../../../../assets/icon/back-icon.svg" (click)="goBack()"></ion-icon>
+        </ion-col>
+        <ion-col style="padding: 1rem 0rem 0rem 1.5rem;">
+          <ion-text class="title">iPYGG</ion-text>
+        </ion-col>
+        <ion-col>
+          <ion-icon class="forum-icon" mode="ios" src="../../../../../../assets/icon/ipygg-icon-2.svg"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div class="search-bar">
+            <ion-input type="text" mode="ios" class="search-input" [(ngModel)]="searchInput" (change)="searchInputted($event)"></ion-input>
+            <ion-icon mode="ios" class="search-icon" slot="icon-only" src="../../../assets/icon/search-icon.svg"></ion-icon>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-padding-horizontal">
+        <ion-col>
+          <ion-text style="color: #49AAE8">魚類產品</ion-text>
+        </ion-col>
+        <ion-col>
+          <div style="float:right;">
+            <ion-icon class="sort-icon" src="../../../../../assets/icon/sort-icon.svg" (click)="presentSortModal()"></ion-icon>
+            <ion-label class="sort-filter-text">排序</ion-label>
+            <ion-icon class="filter-icon" src="../../../../../assets/icon/filter-icon.svg" (click)="presentFilterModal()"></ion-icon>
+            <ion-label class="sort-filter-text">篩選</ion-label>
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <div mode="ios" class="main-body">
+      <ion-grid>
+        <ion-row style="display: flex">
+          <ion-col style="flex:1">
+            <app-bird-category-card></app-bird-category-card>
+          </ion-col>
+          <ion-col style="flex:1">
+            <app-bird-category-card></app-bird-category-card>
+          </ion-col>
+        </ion-row>
+        <ion-row style="display: flex">
+          <ion-col style="flex:1">
+            <app-bird-category-card></app-bird-category-card>
+          </ion-col>
+          <ion-col style="flex:1">
+            <app-bird-category-card></app-bird-category-card>
+          </ion-col>
+        </ion-row>
+        <ion-row style="display: flex">
+          <ion-col style="flex:1">
+            <app-bird-category-card></app-bird-category-card>
+          </ion-col>
+          <ion-col style="flex:1">
+            <app-bird-category-card></app-bird-category-card>
+          </ion-col>
+        </ion-row>
+        <ion-row style="display: flex">
+          <ion-col style="flex:1">
+            <app-bird-category-card></app-bird-category-card>
+          </ion-col>
+          <ion-col style="flex:1">
+            <app-bird-category-card></app-bird-category-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+</ion-content>
+
+<app-toolbar-shop-page></app-toolbar-shop-page>

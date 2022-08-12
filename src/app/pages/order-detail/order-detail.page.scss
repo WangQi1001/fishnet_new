@@ -1,0 +1,124 @@
+ion-content{
+    --ion-background-color: #ffff;
+    --ion-text-color: #000000;
+    --highlight-color-focused: #000000;
+    --highlight-color-valid: #000000; 
+    --highlight-color-invalid: #000000;
+    font-family: Yuanti TC;
+    .toolbar{
+        padding-top: 2rem;
+        background: url('../../../assets/icon/toolbar-background.svg');
+        background-repeat: no-repeat;
+        height: 130px;
+        .back-icon2{
+            font-size: 24px;
+            color: #FFFFFF;
+            padding: 10px;
+            vertical-align: middle;
+        }
+        .title{
+            vertical-align: middle;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+        ion-buttons{
+            position: absolute;
+            left: 5%;
+            top: 5%;
+            .back-icon{
+                size: 20px;
+                color:#ffffff;
+            }
+        }
+    }
+}
+
+
+
+.profile-items{
+    width: 100%;
+    height: 20vw;
+    --background: #49AAE812;
+    --background-activated: #49AAE812;
+    --background-focused: #49AAE812;
+    --background-hover: #49AAE812;
+    --color: #000000;
+    // border-radius: 30px;
+    .button-text{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 14px;
+        ion-icon{
+            font-size: 25px;
+            margin-bottom: 0.5rem;
+        }
+    }
+}
+.profile-items.active{
+    border-radius: 0.5rem;
+    border: 1.5px solid #49AAE8;
+}
+
+.logistics-status{
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    ion-col{
+        width: 30%;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+p{
+    margin: 0;
+}
+
+.shopID{
+    font-size: 16px;
+    padding-top: 1rem;
+}
+
+.bold-title{
+    font-weight: 700;
+    font-size: 14px;
+    .big{
+        font-size: 16px;
+    }
+}
+
+.image{
+    ion-img{
+        height: 100%; 
+        width: 100%; 
+        object-fit:cover; 
+    }
+}
+
+.map{
+    padding: 1rem 0;
+}
+
+.go-button{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    ion-button{
+        --background: #49AAE8;
+        --background-activated: #49AAE8;
+        --background-focused: #49AAE8;
+        --background-hover: #49AAE8;
+        --color: white;
+        overflow-y:visible;
+        width: 100%;
+        margin: 0;
+        font-size: 14px;
+        font-weight: bold;
+        width: 70%;
+        height: 100%;
+    }
+}

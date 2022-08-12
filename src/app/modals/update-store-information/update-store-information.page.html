@@ -1,0 +1,185 @@
+<ion-content class="ion-no-padding">
+  <div class="header">
+    <ion-toolbar color="#ffff">
+      <ion-title style="text-align: center">更新商店資料</ion-title>
+      <ion-buttons slot="end">
+        <ion-icon mode="ios" class="back-icon" slot="icon-only" name="close-outline" (click)="close()"></ion-icon>
+      </ion-buttons>
+    </ion-toolbar>
+  </div>
+  <ion-grid class="ion-padding-horizontal">
+    <form class="form" >
+      <ion-row style="margin-bottom: 0em">
+        <ion-col>
+          <div class="required-form-title">商店名稱</div>
+          <ion-item mode="ios" class="input-form-item">
+            <ion-input mode="ios" class="form-input" type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row style="margin-bottom: 0em">
+        <ion-col>
+          <div class="required-form-title">姓氏</div>
+          <ion-item mode="ios" class="input-form-item">
+            <ion-input mode="ios" class="form-input" type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row style="margin-bottom: 0em">
+        <ion-col>
+          <div class="required-form-title">名字</div>
+          <ion-item mode="ios" class="input-form-item">
+            <ion-input mode="ios" class="form-input" type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row style="margin-bottom: 0em">
+        <ion-col>
+          <div class="required-form-title">電子郵件</div>
+          <ion-item mode="ios" class="input-form-item">
+            <ion-input mode="ios" class="form-input" type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row style="margin-bottom: 0em">
+        <ion-col class="no-pad-bot">
+          <div class="required-form-title">商店地址</div>
+        </ion-col>
+      </ion-row>
+      <ion-row style="margin-bottom: 0em">
+        <ion-col>
+          <div class="required-form-title">室/單位</div>
+          <ion-item mode="ios" class="input-form-item">
+            <ion-input mode="ios" class="form-input" type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <div class="required-form-title">樓層</div>
+          <ion-item mode="ios" class="input-form-item">
+            <ion-input mode="ios" class="form-input" type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <div class="required-form-title">座數</div>
+          <ion-item mode="ios" class="input-form-item">
+            <ion-input mode="ios" class="form-input" type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row style="margin-bottom: 0em">
+        <ion-col>
+          <div class="required-form-title">大廈名稱</div>
+          <ion-item mode="ios" class="input-form-item">
+            <ion-input mode="ios" class="form-input" type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row style="margin-bottom: 0em">
+        <ion-col>
+          <div class="required-form-title">街道名稱</div>
+          <ion-item mode="ios" class="input-form-item">
+            <ion-input mode="ios" class="form-input" type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row style="margin-bottom: 0em">
+        <ion-col>
+          <div class="required-form-title">地區</div>
+          <ion-item mode="ios" class="input-form-item">
+            <ion-input mode="ios" class="form-input" type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="address">
+        <ion-col>
+          <ion-button mode="ios" class="type-button" >香港</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button mode="ios" class="type-button">九龍</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button mode="ios" class="type-button">新界</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row style="margin-bottom: 0em">
+        <ion-col>
+          <div class="required-form-title">商店電話</div>
+          <ion-item mode="ios" class="input-form-item">
+            <ion-input mode="ios" class="form-input" type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div class="required-form-title">營業時間</div>
+          <!-- Shop Opening Time-->
+          <ion-row style= "margin: 1rem">
+            <ion-col class="ion-no-padding">
+              <div style= "position: absolute; top:15%" class="required-form-title">開店時間</div>
+            </ion-col>
+            <ion-col class="ion-no-padding">
+              <div class="clock-container">
+                <ion-icon class="clock-icon" src="../../../../assets/icon/clock.svg"></ion-icon>
+              </div>
+            </ion-col>
+            <ion-col>
+              <ion-item style = "width: 5.5rem" mode="ios" class="input-form-item">
+                <ion-input mode="ios" formControlName="storeOpenTime" placeholder= "00:00" type="number"></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col>
+              <ion-item style = "width: 5.0rem" mode="ios" class="input-form-item">
+                <!-- TODO: Try to implement a non-ionic select option -->
+                <ion-select placeholder="AM">
+                  <ion-select-option>AM</ion-select-option>
+                  <ion-select-option>PM</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <!-- Shop Closing Time-->
+          <ion-row style= "margin: 1rem">
+            <ion-col class="ion-no-padding">
+              <div style= "position: absolute; top:15%" class="required-form-title">關店時間</div>
+            </ion-col>
+            <ion-col class="ion-no-padding">
+              <div class="clock-container">
+                <ion-icon class="clock-icon" src="../../../../assets/icon/clock.svg"></ion-icon>
+              </div>
+            </ion-col>
+            <ion-col>
+              <ion-item style = "width: 5.5rem" mode="ios" class="input-form-item">
+                <ion-input mode="ios" formControlName="storeCloseTime" placeholder= "00:00" type="number"></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col>
+              <ion-item style = "width: 5.0rem" mode="ios" class="input-form-item">
+                <ion-select placeholder="AM">
+                  <ion-select-option>AM</ion-select-option>
+                  <ion-select-option>PM</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+
+      <ion-row style="margin-bottom: 0em">
+        <ion-col class="no-pad-bot">
+          <div class="required-form-title">休息日</div>
+        </ion-col>
+      </ion-row>
+    </form>
+
+    <ion-row>
+      <ion-col class="submit-button">
+        <ion-button mode="ios" (click)="close()">
+          修改
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

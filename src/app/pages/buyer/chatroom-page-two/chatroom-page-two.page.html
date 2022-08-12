@@ -1,0 +1,101 @@
+<ion-header>
+  <div mode="ios" class="toolbar">
+    <ion-row>
+    <ion-col size="2">
+    <ion-buttons (click)="goBack()">
+      <ion-icon mode="ios-person" class="back-icon" slot="icon-only" name="chevron-back-outline"></ion-icon>
+    </ion-buttons>
+    </ion-col>
+    
+    <div class="shop">
+      <ion-col size="1" class="message-icon">
+        <img src="../../../../assets/icon/message-icon.svg" alt="">
+      </ion-col>                     
+      <ion-col size="2">
+        <ion-text class="shopName"> Fishnet</ion-text>  
+      </ion-col>
+    </div>
+    </ion-row>    
+  </div>
+</ion-header>
+
+<ion-content class="ion-no-padding" content="light dark">
+  <div class="setting-inner-content">
+    <ion-grid style="margin-top: 30px; padding-left:15px; padding-right:15px;">
+      <ion-row *ngFor="let message of messages">
+        <ion-col size="9" *ngIf="message.id === 'Fishnet'" class="message other-message">
+          <span style="font-size:14px;">{{ message.message }}</span>
+          <ion-col text-right class="time">{{ message.time }}</ion-col>
+        </ion-col>
+
+        <ion-col offset="4" size="8" *ngIf="message.id === 'userID'" class="message my-message">
+          <span style="font-size:14px;">{{ message.message }}</span>
+          <ion-col text-right class="time">{{ message.time }}</ion-col>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngFor="let file of files">
+        <ion-col offset="4" size="8" *ngIf="file.id === 'userID'" class="message my-message">
+          <ion-col>
+          <ion-img src="../../../../assets/icon/chatroom-uploaded-file-icon.svg" style="width:50px; height:50px;"></ion-img>
+          </ion-col>
+          <ion-col size="6">
+          <p style="font-size:14px;">{{ file.fileName }}</p>
+          <p style="font-size:12px; color:#707C97;">{{ file.fileSize }}</p>
+          </ion-col>
+          <ion-col text-right class="time">{{ file.time }}</ion-col>
+        </ion-col>
+      </ion-row>
+    </ion-grid>    
+  </div>  
+</ion-content>
+
+<ion-footer>
+  <ion-row class="sendArea">
+    <ion-col size="2">
+
+    <ion-buttons (click)="activateAddButton()">
+      <ion-icon mode="ios" class="add-icon" slot="icon-only" src="../../../../assets/icon/chatroom-add-icon.svg"></ion-icon>
+    </ion-buttons>
+    
+    </ion-col>
+    <ion-col size="8">
+      <div class="comment-bar" style="background:white;">
+        <!--<ion-text style="font-size: 14px; padding-left: 0.5rem;">在此輸入訊息</ion-text>-->
+        <ion-input type="text" placeholder=" 在此輸入訊息" [(ngModel)]="newMsg"></ion-input>
+        <ion-icon style="width: 25px; height: 25px; padding-right: 0.5rem" src="../../../../assets/icon/emoji-icon.svg"></ion-icon>
+      </div>
+    </ion-col>
+    <ion-col size="2">
+      <ion-buttons (click)="sendMessage()">
+        <ion-icon mode="ios" class="send-icon" slot="icon-only" src="../../../../assets/icon/chatroom-send-icon.svg"></ion-icon>
+      </ion-buttons>
+      </ion-col>
+  </ion-row>
+
+  <div mode="ios" *ngIf="addButtonActivated == true" class="buttons">
+    <ion-row>
+    <ion-col size="2">
+      <ion-buttons mode="ios" (click)="fileUpload.click()">
+        <ion-icon mode="ios" class="video-icon" slot="icon-only" src="../../../../assets/icon/chatroom-video-icon.svg"></ion-icon>
+        <input type="file" (change)="loadFileFromDevice($event)" style="display:none" #fileUpload>
+      </ion-buttons> 
+    </ion-col>     
+   </ion-row>
+   <ion-row>
+    <ion-col size="2">
+      <ion-buttons mode="ios" (click)="fileUpload.click()">
+        <ion-icon mode="ios" class="photo-icon" slot="icon-only" src="../../../../assets/icon/chatroom-photo-icon.svg"></ion-icon>
+        <input type="file" (change)="loadFile2FromDevice($event)" style="display:none" #fileUpload>
+      </ion-buttons> 
+    </ion-col>
+   </ion-row>
+   <ion-row>
+    <ion-col size="2">
+      <ion-buttons mode="ios" (click)="fileUpload.click()">
+        <ion-icon mode="ios" class="file-icon" slot="icon-only" src="../../../../assets/icon/chatroom-file-icon.svg"></ion-icon>
+        <input type="file" (change)="loadFile3FromDevice($event)" style="display:none" #fileUpload>
+      </ion-buttons> 
+    </ion-col>
+   </ion-row>    
+  </div>
+</ion-footer>

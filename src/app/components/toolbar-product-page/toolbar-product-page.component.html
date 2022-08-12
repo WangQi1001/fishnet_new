@@ -1,0 +1,41 @@
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button class="bottom-bar" (click)="openHomePage()">
+          <div>
+            <ion-icon mode="ios" class="bottom-bar-home-icon" slot="icon-only" src="../../../assets/icon/toolbar-product-page-homepage.svg" ></ion-icon>
+          </div>
+        </ion-tab-button>
+
+        <ion-tab-button class="bottom-bar">
+          <div>
+            <ion-icon mode="ios" class="bottom-bar-favorite-icon" slot="icon-only" src="../../../assets/icon/product-page-favorite-icon.svg" (click)="saveProduct()"></ion-icon>
+          </div>
+        </ion-tab-button>
+
+        <ion-tab-button class="bottom-bar">
+          <div>
+            <ion-icon mode="ios" class="bottom-bar-comment-icon" slot="icon-only" src="../../../assets/icon/product-page-comment-icon.svg"></ion-icon>
+          </div>
+        </ion-tab-button>
+
+        <ion-tab-button class="bottom-bar">
+          <div>
+            <ion-button mode="ios" class="toolbar-button-add-to-shopping-cart">
+              <ion-label class="toolbar-button-text">加入購物車</ion-label>
+            </ion-button>
+          </div>
+        </ion-tab-button>
+
+        <ion-tab-button class="bottom-bar">
+          <div>
+            <ion-button mode="ios" class="toolbar-button-buy-now">
+              <ion-label class="toolbar-button-text">立即購買</ion-label>
+            </ion-button>
+          </div>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>

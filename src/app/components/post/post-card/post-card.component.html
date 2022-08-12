@@ -1,0 +1,81 @@
+<ion-grid style="background: #F4FBFF" class="ion-padding-horizontal">
+  <ion-row>
+    <ion-col size="1.5">
+      <ion-img class="forum-profile" src="{{post_info.avatar_url}}"></ion-img>
+    </ion-col>
+    <ion-col>
+      <ion-text style="color: #000000" class="forum-text-1">{{post_info.display_name}}</ion-text>
+    </ion-col>
+    <ion-col>
+      <ion-text style="color: #000000; float:right" class="forum-text-1">{{post_info.datetime}}</ion-text>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <p class="forum-text-2">
+      {{post_info.content}}
+    </p>
+  </ion-row>
+  
+
+  <ul style="padding: 0; margin: 0;">
+    <div *ngFor="let media of post_info.media; let i=index">
+      <ion-row *ngIf="i%2==0" style="display: flex;">
+        <ion-col style="margin: 0.5rem 0.5rem 0.5rem 0rem; flex: 1" class="ion-no-padding">
+          <img src="{{media}}">
+        </ion-col>
+        <ion-col class="ion-no-padding" style="flex: 1">
+          <img *ngIf="i+1 < post_info.media.length" style="margin: 0.5rem 0.25rem 0.5rem 0rem" src="{{post_info.media[i+i]}}">
+        </ion-col>
+      </ion-row>
+    </div>
+    
+  </ul>
+  <ion-row>
+    <img src=>
+  </ion-row>
+
+  
+
+  <!-- Comment Bar -->
+  <ion-row>
+    <ion-col size="1">
+      <ion-icon style="width: 17px; height: 15px" src="../../../../assets/BUYER/forum/heart-icon.svg"></ion-icon>
+    </ion-col>
+    <ion-col size="1">
+      <ion-text>{{this.post_info.likes}}</ion-text>
+    </ion-col>
+    <ion-col size="1">
+      <ion-icon style="width: 18px; height: 18px" src="../../../../assets/BUYER/forum/message-icon.svg"></ion-icon>
+    </ion-col>
+    <ion-col size="1">
+      <ion-text>{{this.comments.length}}</ion-text>
+    </ion-col>
+    <ion-col size="1">
+      <ion-icon style="width: 18px; height: 18px" src="../../../../assets/icon/share-icon.svg"></ion-icon>
+    </ion-col>
+    <ion-col class="ion-no-padding">
+      <div class="comment-bar">
+        <ion-text style="font-size: 14px; padding-left: 0.5rem;">留言</ion-text>
+        <ion-input type="text"></ion-input>
+        <ion-icon style="width: 20px; height: 20px; padding-right: 0.5rem" src="../../../../assets/icon/emoji-icon.svg"></ion-icon>
+      </div>
+    </ion-col>
+  </ion-row>
+
+  <div>
+    <div *ngFor="let comment of comments; let i=index;">
+      <app-post-comment-card [comment]="comment"></app-post-comment-card>
+    </div>
+
+    <!-- <div></div> -->
+    <!-- <p>this is no right</p> -->
+    
+  </div>
+
+  <ion-row>
+    <div>
+      <img src="../../../../assets/icon/baseless_arrow.svg">
+    </div>
+  </ion-row>
+</ion-grid>

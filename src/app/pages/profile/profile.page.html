@@ -1,0 +1,176 @@
+<ion-content class="ion-no-padding" content="light dark" scroll-y="true">
+  <div class="setting-inner-content">
+    <div class="toolbar">
+      <ion-row>
+        <ion-col>
+          <div class="title">
+            <ion-icon mode="ios" class="back-icon2" slot="icon-only" src="../../../assets/icon/profile-page-icon.svg"></ion-icon>
+            我的帳戶
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
+  
+    <ion-grid class="ion-padding-horizontal">
+      <ion-row >
+        <ion-col>
+          <ion-button mode="ios" class="profile-items" (click)="enterMyLike()">
+            <div class="button-text">
+              <div>
+                <ion-icon mode="ios" class="back-icon" slot="icon-only" name="heart-outline"></ion-icon>
+              </div>
+              <div>
+                <span>收藏</span>
+              </div>
+            </div>
+          </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button mode="ios" class="profile-items" (click)="enterMyPost()">
+            <div class="button-text">
+              <div>
+                <ion-icon mode="ios-create" class="back-icon" slot="icon-only" src="../../../assets/icon/mypost-icon-dark.svg"></ion-icon>
+              </div>
+              <div>
+                <ion-label>我的帖子</ion-label>
+              </div>
+            </div>
+          </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button mode="ios" class="profile-items" (click)="enterMyShop()">
+            <div class="button-text">
+              <div>
+                <ion-icon mode="ios-home" class="back-icon" slot="icon-only" src="../../../assets/icon/myshop-icon-dark.svg"></ion-icon>
+              </div>
+              <div>
+                <ion-label>關注商店</ion-label>
+              </div>
+            </div>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button mode="ios" class="profile-items" (click)="enterMyPayment()">
+            <div class="button-text">
+              <div>
+                <ion-icon mode="ios-card" class="back-icon" slot="icon-only" src="../../../assets/icon/mypayment-icon-dark.svg"></ion-icon>
+              </div>
+              <div>
+                <ion-label>付款方式</ion-label>
+              </div>
+            </div>  
+          </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button mode="ios" class="profile-items" (click)="enterMyOrder()">
+            <div class="button-text">
+              <div>
+                <ion-icon mode="ios-copy" class="back-icon" slot="icon-only" src="../../../assets/icon/myorder-icon-dark.svg"></ion-icon>
+              </div>
+              <div>
+                <ion-label>訂單狀態</ion-label>
+              </div>
+            </div>
+          </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button mode="ios" class="profile-items" (click)="enterMySetting()">
+            <div class="button-text">
+              <div>
+                <ion-icon mode="ios-settings" class="back-icon" slot="icon-only" name="settings-outline"></ion-icon>
+              </div>
+              <div>
+                <ion-label>設定</ion-label>
+              </div>
+            </div>
+        </ion-button> 
+        </ion-col>
+      </ion-row>
+      <ion-row >
+        <ion-col size="4">
+          <ion-button mode="ios" class="profile-items" (click)="enterCouponSaved()">
+            <div class="button-text">
+              <div>
+                <ion-icon mode="ios-card" class="back-icon" slot="icon-only" src="../../../assets/icon/coupon-icon.svg"></ion-icon>
+              </div>
+              <div>
+                <ion-label>已領取的</ion-label>
+              </div>
+              <div>
+                <ion-label>優惠券</ion-label>
+              </div>
+            </div>  
+          </ion-button>
+        </ion-col>
+        <ion-col size="4">
+          <ion-button mode="ios" class="profile-items" (click)="openShopRegister()">
+            <div class="button-text">
+              <div>
+                <ion-icon mode="ios-briefcase" class="back-icon" slot="icon-only" src="../../../assets/icon/myconvert-icon-dark.svg"></ion-icon>
+              </div>
+              <div>
+                <ion-label>申請/轉換成</ion-label>
+              </div>
+              <div>
+                <ion-label>商家頁面</ion-label>
+              </div>
+            </div>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row class="bottom-items">
+        <ion-col size ="4">
+          <ion-button mode="ios" class="profile-items">
+            <div class="button-text" (click)="enterAboutUs()">
+              <div>
+                <ion-icon mode="ios-crop" class="back-icon" slot="icon-only" src="../../../assets/icon/aboutus-icon-dark.svg"></ion-icon>
+              </div>
+              <div>
+                <ion-label>關於我們</ion-label>
+              </div>
+            </div>
+          </ion-button>
+        </ion-col>
+        <ion-col size ="4">
+          <ion-button mode="ios" class="profile-items" (click)="enterPrivacyPolicy()">
+            <div class="button-text">
+              <div>
+                <ion-icon mode="ios-key" class="back-icon" slot="icon-only" src="../../../assets/icon/privacy-icon-dark.svg"></ion-icon>
+              </div>
+              <div>
+                <ion-label>隱私政策</ion-label>
+              </div>
+            </div>
+          </ion-button>
+        </ion-col>
+        <ion-col size ="4">
+          <ion-button mode="ios" class="profile-items" (click)="enterContactUs()">
+            <div class="button-text">
+              <div>
+                <ion-icon mode="ios-cal" class="back-icon" slot="icon-only" name="call-outline"></ion-icon>
+              </div>
+              <div>
+                <ion-label>聯絡我們</ion-label>
+              </div>
+            </div>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+  
+      <ion-row style="margin-top: 2rem;">
+        <ion-col class="submit-button">
+         
+          <ion-button mode="ios" (click)="logout()">
+            <ion-icon mode="ios-log-out" class="back-icon" slot="icon-only" src="../../../assets/icon/logout-icon.svg"></ion-icon>
+            登出
+          </ion-button>
+        </ion-col>
+      </ion-row>
+  
+    </ion-grid>
+  </div>
+</ion-content>
+
+<app-toolbar-buyer></app-toolbar-buyer>

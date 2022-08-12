@@ -1,0 +1,307 @@
+ion-content{
+    --background: #ffffff;
+    font-family: Yuanti TC;
+    .toolbar{
+        margin-bottom: 1rem;
+        padding-top: 2rem;
+        background-image: url('../../../../assets/icon/toolbar-background.svg');
+        background-repeat: no-repeat;
+        height: 130px;
+        .title{
+            font-weight: 700;
+            font-size: 20px;
+            text-align: center;
+            color: #FFFFFF;
+
+            vertical-align: middle;
+            margin-bottom: 1rem;
+        }
+        .back-icon{
+            font-size: 24px;
+            position: absolute;
+            left: 10%;
+        }
+        .edit-col{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            .edit-div{
+                text-align: center;
+                width: 33%;
+                color: #FFFFFF;
+                background: #123D58;
+                border-radius: 30px;
+                height: 40px;
+                line-height: 40px;
+                font-size: 16px;
+                font-weight: 400;
+                .edit-icon{
+                    font-size: 20px;
+                    vertical-align: middle;
+                }
+            }
+
+        }
+
+
+    }
+    .shop-row{
+        background-color: #49AAE812 !important;
+        border-radius: 10px;
+        margin: 0.5rem 0.5rem;
+        color: #000;
+        font-size: 14px;
+        .first-row{
+            .name-col{
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                text-decoration: underline;
+            }
+            .date-col{
+                display: flex;
+                align-items: center;
+                justify-content: end;
+                gap: 0.3rem;
+            }
+        }
+        .check-col{
+            display: flex;
+            align-items: center;
+            .ion-button{
+                width: 19px;
+                height: 19px;
+                padding: 0px;
+                margin: 0px;
+                width: 100%;
+                border: 1px solid #49AAE8;
+                --background: #ffffff;
+                --background-activated: #ffffff;
+                --background-focused: #ffffff;
+                --background-hover: #ffffff;
+                border-radius: 0rem;
+                --inner-border-width: 0px;
+            }
+            .ion-button.active{
+                img{
+                    transform: scale(0.8);
+                }
+                background-color: #49AAE8;
+                --background: #49AAE8 !important;
+                --background-activated: #49AAE8;
+                --background-focused: #49AAE8;
+                --background-hover: #49AAE8;
+                --inner-border-width: 0px;
+                border: none;
+            }
+        }
+        .discount-price{
+            text-decoration: line-through;
+        }
+        .discount-col{
+            background-color: #ffffff;
+            border-radius: 10px;
+            color: #49AAE8;
+        }
+        .quan-col{
+            display: flex;
+            align-items: flex-end;
+        }
+        .quan-div{
+            flex-grow:1;
+            border: 1px solid #123D58;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: row;
+            justify-content:space-between;
+            text-align: center;
+            .sign-but{
+                padding: 5px;
+                width: 20px;
+            }
+            .quan-but{
+                flex-grow:1;
+                box-sizing: border-box;
+                padding: 5px;
+                border-right: 1px solid #123D58;
+                border-left:  1px solid #123D58;;
+            }
+        }
+
+    }
+    .coupon-row{
+        background-color: #F3F3F3 !important;
+        border-radius: 10px;
+        margin: 0.5rem 0.5rem;
+        color: #000;
+        font-size: 14px;
+        .first-row{
+            //margin-bottom:10px;
+            margin-top:10px;
+            .name-col{
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                text-decoration: underline;
+            }
+            .date-col{
+                display: flex;
+                align-items: center;
+                justify-content: end;
+                gap: 0.3rem;
+            }
+        }
+        .coupon-details {
+            //justify-content: end;
+            background: #ffffff;
+            //margin-left:30px;
+            width:150px;
+            height:60px;
+            border-radius: 10px;
+            align-items: center;
+            vertical-align: middle;
+             text-align: center;
+             display: flex;        
+         }
+         .button-class{
+            padding-bottom: 0;
+            align-items: center;
+            vertical-align: middle;
+            text-align: center;
+             display: flex;
+            justify-content: end;
+            ion-button{
+                --background: #123D58;
+                --background-activated: #123D58;
+                --background-focused: #123D58;
+                --background-hover: #123D58;
+                --color: white;
+                overflow-y:visible;
+                width: 90px;
+                margin: 0;
+                font-size: 14px;
+                font-weight: 700;
+                height: 30px;
+            }
+        }
+        .discount-price{
+            text-decoration: line-through;
+        }
+        .discount-col{
+            background-color: #ffffff;
+            border-radius: 10px;
+            color: #49AAE8;
+        }
+        .quan-col{
+            display: flex;
+            align-items: flex-end;
+        }
+        .quan-div{
+            flex-grow:1;
+            border: 1px solid #123D58;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: row;
+            justify-content:space-between;
+            text-align: center;
+            .sign-but{
+                padding: 5px;
+                width: 20px;
+            }
+            .quan-but{
+                flex-grow:1;
+                box-sizing: border-box;
+                padding: 5px;
+                border-right: 1px solid #123D58;
+                border-left:  1px solid #123D58;;
+            }
+        }
+
+    }
+
+}
+
+.summary-row{
+    bottom: 0;
+    padding-top: 0.6rem;
+    background-color: #E9F5FF;
+    color: #000;
+    font-size: 16px;
+    .middle{
+        display: flex;
+        align-items: center;
+        padding-bottom: 0;
+    }
+    .dis-col{
+        font-size: 14px;
+    }
+    .price-data{
+        color: #49AAE8;
+        vertical-align: middle;
+        font-weight: 700;
+    }
+    .price-col{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .button-class{
+        padding-bottom: 0;
+        ion-button{
+            --background: #49AAE8;
+            --background-activated: #49AAE8;
+            --background-focused: #49AAE8;
+            --background-hover: #49AAE8;
+            --color: white;
+            overflow-y:visible;
+            width: 100%;
+            margin: 0;
+            font-size: 14px;
+            font-weight: 700;
+            height: 30px;
+        }
+    }
+    .second-row{
+        padding-top: 0;
+        ion-col{
+            padding-top: 0;
+        }
+    }
+
+}
+
+ion-footer{
+    background: url('../../../../assets/icon/Ellipse.svg'), #E9F5FF;
+    background-repeat: no-repeat;
+    height: 80px;
+    display: flex;
+    align-items: flex-end;
+    --border-width: 0px;
+    border: none !important;
+
+    ion-toolbar{
+        --border-width: 0px;
+        height: 65px;
+        --background: #49AAE8;
+        --color: #FFFFFF;
+        display: flex;
+        align-items: center;
+    }
+    ion-tab-bar{
+        border: none !important;
+        --background: #49AAE8;
+        --color: #FFFFFF;
+        .bottom-bar{
+            .bottom-bar-home-icon{
+                font-size: 47px;
+            }
+            .bottom-bar-icon{
+                font-size: 24px;
+            }
+        }
+
+    }
+}

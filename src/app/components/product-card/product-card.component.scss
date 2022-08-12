@@ -1,0 +1,62 @@
+.main-grid-button{
+    border-radius: 0.625rem;
+    background: #FFFFFF;
+    .main-grid-button-top-bar{
+        background-size: contain;
+        height: calc(50vw - 15px);
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        border-radius: 0.625rem 0.625rem 0 0;
+        .shopping-cart-div{
+            width: 2rem;
+            height: 2rem;
+            background: #49AAE8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 0.25rem;
+            .shopping-cart-icon{
+                width: 1.4rem;
+                height: 1.25rem;
+            }
+        }
+    }
+    .main-grid-button-middle-bar{
+        width: 100%;
+        height: 0.75rem;
+    }
+    .main-grid-button-middle-bar.fish{
+        background: #E3F0FB;
+    }
+    .main-grid-button-middle-bar.flower{
+        background: #FEDEDA;
+    }
+    .main-grid-button-middle-bar.bird{
+        background: #FFF7C6;
+    }
+    .main-grid-button-middle-bar.insect{
+        background: #DAE7D0;
+    }
+    .main-grid-button-bottom-bar{
+        // background: red;
+        .main-grid-bottom-bar-text{
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+        }
+        .main-grid-bottom-bar-text-2{
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            color: #979797;
+            line-height: 15px;
+        }
+        .main-grid-bottom-bar-icon{
+            width: 5.4rem;
+            height: 1rem;
+            padding-top: 0.25rem;
+        }
+    }
+
+}

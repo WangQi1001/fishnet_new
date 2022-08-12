@@ -1,0 +1,206 @@
+<ion-content class="ion-no-padding" content="light dark">
+  <div class="setting-inner-content">
+    <div class="toolbar">
+      <ion-buttons (click)="goBack()">
+        <ion-icon mode="ios-person" class="back-icon" slot="icon-only" name="chevron-back-outline" (click)="goBack()"></ion-icon>
+      </ion-buttons>
+      <ion-row>
+        <ion-col>
+          <div class="title">
+            <ion-icon mode="ios-create" class="back-icon" slot="icon-only" src="../../../assets/icon/coupon-icon-light.svg"></ion-icon>
+            優惠券
+          </div>
+        </ion-col>
+      </ion-row>
+      <div>
+        <ion-row>
+          <ion-col class="add-col">
+            <div class="add-div" (click)="presentCouponAddModal()">
+              <ion-icon mode ="ios" class="edit-icon" slot="icon-only" src="../../../../assets/icon/add-icon.svg"></ion-icon>
+              新增
+            </div>
+            <div class="delete-div">
+              <ion-icon mode ="ios" class="edit-icon" slot="icon-only" src="../../../../assets/icon/bin-icon.svg"></ion-icon>
+              刪除
+            </div>
+          </ion-col>
+        </ion-row>
+      </div>
+    </div>
+
+    <ion-grid class="ion-padding-horizontal">
+      <ion-row >
+        <div class="coupon-item">
+          <div class="coupon-header">
+            <span class="coupon-title">優惠券名稱</span>
+            <span class="coupon-number">編號：123456</span>
+          </div>
+          <div class="coupon-content">
+            <div>
+              <span class="coupon-detail">優惠券類型：</span>
+              <span class="coupon-info">百分比</span>
+            </div>
+            <div>
+              <span class="coupon-detail">商品類別：</span>
+              <span class="coupon-info">貨物</span>
+            </div>
+            <div>
+              <span class="coupon-detail">最低消費金額：</span>
+              <span class="coupon-info">HKD 200</span>
+            </div>
+            <div>
+              <span class="coupon-detail">折扣(百分比)：</span>
+              <span class="coupon-info">20% OFF</span>
+            </div>
+            <div>
+              <span class="coupon-detail">每位客人可使用次數：</span>
+              <span class="coupon-info">1</span>
+            </div>
+            <div>
+              <span class="coupon-detail">優惠券數目：</span>
+              <span class="coupon-info">100</span>
+            </div>
+            <div>
+              <span class="coupon-detail">最高總折扣金額：</span>
+              <span class="coupon-info">HKD 400</span>
+            </div>
+            <div>
+              <span class="coupon-detail">有效日期：</span>
+              <span class="coupon-info">22/12/2021 - 31/12/2021</span>
+            </div>
+          </div>
+          <div class="coupon-buttons">
+            <div class="coupon-counts">
+              <div>
+                <span>使用次數</span>
+                <span>20</span>
+              </div>
+              <div>
+                <span>總折扣金額</span>
+                <span>HKD 400</span>
+              </div>
+            </div>
+            <div class="coupon-edit">
+              <div (click)="presentCouponEditModal()">
+                <ion-icon mode="ios-pencil" class="edit-icon" slot="icon-only" src="../../../assets/icon/edit-icon.svg"></ion-icon>
+                <span class="edit-button-label">編輯</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ion-row>
+      <ion-row >
+        <div class="coupon-item">
+          <div class="coupon-header">
+            <span class="coupon-title">優惠券名稱</span>
+            <span class="coupon-number">編號：123457</span>
+          </div>
+          <div class="coupon-content">
+            <div>
+              <span class="coupon-detail">優惠券類型：</span>
+              <span class="coupon-info">固定金額</span>
+            </div>
+            <div>
+              <span class="coupon-detail">商品類別：</span>
+              <span class="coupon-info">貨物</span>
+            </div>
+            <div>
+              <span class="coupon-detail">最低消費金額：</span>
+              <span class="coupon-info">HKD 100</span>
+            </div>
+            <div>
+              <span class="coupon-detail">扣除金額：</span>
+              <span class="coupon-info">HKD 20</span>
+            </div>
+            <div>
+              <span class="coupon-detail">每位客人可使用次數：</span>
+              <span class="coupon-info">1</span>
+            </div>
+            <div>
+              <span class="coupon-detail">優惠券數目：</span>
+              <span class="coupon-info">100</span>
+            </div>
+            <div>
+              <span class="coupon-detail">最高總折扣金額：</span>
+              <span class="coupon-info">HKD 400</span>
+            </div>
+            <div>
+              <span class="coupon-detail">有效日期：</span>
+              <span class="coupon-info">12/01/2022 - 20/01/2022</span>
+            </div>
+          </div>
+          <div class="coupon-buttons">
+            <div class="coupon-counts">
+              <div>
+                <span>使用次數</span>
+                <span>-</span>
+              </div>
+              <div>
+                <span>總折扣金額</span>
+                <span>-</span>
+              </div>
+            </div>
+            <div class="coupon-edit">
+              <div (click)="presentCouponEditModal()">
+                <ion-icon mode="ios-pencil" class="edit-icon" slot="icon-only" src="../../../assets/icon/edit-icon.svg"></ion-icon>
+                <span class="edit-button-label">編輯</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ion-row>
+      <ion-label>已過期</ion-label>
+      <ion-row >
+        <div class="coupon-item">
+          <div class="coupon-header">
+            <span class="coupon-title">優惠券名稱</span>
+            <span class="coupon-number">編號：123456</span>
+          </div>
+          <div class="coupon-content">
+            <div>
+              <span class="coupon-detail">優惠券類型：</span>
+              <span class="coupon-info">百分比</span>
+            </div>
+            <div>
+              <span class="coupon-detail">商品類別：</span>
+              <span class="coupon-info">生物</span>
+            </div>
+            <div>
+              <span class="coupon-detail">商品數目：</span>
+              <span class="coupon-info">1 (20% OFF)</span>
+            </div>
+            <div>
+              <span class="coupon-detail">商品數目：</span>
+              <span class="coupon-info">2 (30% OFF)</span>
+            </div>
+            <div>
+              <span class="coupon-detail">每位客人可使用次數：</span>
+              <span class="coupon-info">1</span>
+            </div>
+            <div>
+              <span class="coupon-detail">優惠券數目：</span>
+              <span class="coupon-info">100</span>
+            </div>
+            <div>
+              <span class="coupon-detail">最高總折扣金額：</span>
+              <span class="coupon-info">HKD 400</span>
+            </div>
+            <div>
+              <span class="coupon-detail">有效日期：</span>
+              <span class="coupon-info">22/12/2021 - 31/12/2021</span>
+            </div>
+          </div>
+          <div class="coupon-buttons">
+            <div class="coupon-edit">
+              <div>
+                <span class="edit-button-label">重新發佈</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+
+</ion-content>

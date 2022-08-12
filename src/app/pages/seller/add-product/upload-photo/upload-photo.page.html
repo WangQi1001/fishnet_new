@@ -1,0 +1,224 @@
+<ion-content class="ion-no-padding">
+  <div class="setting-inner-content">
+    <div mode="ios" class="toolbar">
+      <ion-row style="padding: 2.5rem 0 0.5rem 0;">
+        <ion-col size="4" style="margin-left: 1rem;">
+          <ion-icon mode="ios" class="back-icon" src="../../../../assets/icon/back-icon.svg" (click)="previousPage()"></ion-icon>
+        </ion-col>
+        <ion-col>
+          <ion-label class="title">新增商品</ion-label>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <div mode="ios" class="main-body">
+      <ion-grid class="ion-padding">
+        <ion-row>
+          <ion-col>
+            <ion-text class="header-text">上載照片或影片</ion-text>
+          </ion-col>
+        </ion-row>
+        <form [formGroup]="formData" (ngSubmit)="onSubmit()">
+          <ion-grid class="ion-padding-horizontal">
+            <ion-row>
+              <ion-col class="upload-button">
+                <ion-button mode="ios" (click)="fileUpload.click()">
+                  <input type="file" (change)="loadImageFromDevice($event)" style="display:none" #fileUpload>
+                  <div>{{fileName ||"上載照片或影片"}}</div>
+                </ion-button>
+                
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col class="upload-helptext">
+                <ion-text style="font-size: 13px;">媒體上限為10個</ion-text>
+              </ion-col>
+            </ion-row>
+
+            <ion-grid>
+              <ion-row>
+                <ion-col size="1" style="margin-top: 15px;">
+                  <ion-img src="../../../../assets/SELLER/item/pin.svg"></ion-img>
+                </ion-col>
+                <ion-col>                  
+                    <ion-text style="font-size: 13px;">第一張為封面照，影片將自動排列到最前位置你可透過拖曳的方式重新排列照片順序</ion-text>
+                </ion-col>
+              </ion-row>
+
+              <!--<ion-row style="margin-top: -35px; margin-left: -20px;">
+
+                  <ion-col size="6">
+                  <ion-card class="uploaded-file">
+                    <div>
+                    <img src="../../../../assets/SELLER/item/fish.png">
+                    <ion-icon class="shopping-cart-icon" src="../../../../assets/icon/bin-icon.svg"></ion-icon>
+                    </div>                  
+                  </ion-card>
+                </ion-col>
+                <ion-col size="6">
+                  <ion-card class="uploaded-file">
+                    <img src="../../../../assets/SELLER/item/fish.png">
+                  </ion-card>
+                </ion-col>
+              </ion-row>
+
+              <ion-row style="margin-top: -35px; margin-left: -20px;">
+
+                  <ion-col size="6">
+                  <ion-card class="uploaded-file">
+                    <img src="../../../../assets/SELLER/item/fish.png">                  
+                  </ion-card>
+                </ion-col>
+                <ion-col size="6">
+                  <ion-card class="uploaded-file">
+                    <img src="../../../../assets/BUYER/bird-product/store-icon.png" style="height:145px; width:145px;">
+                  </ion-card>
+                </ion-col>
+              </ion-row>
+
+              <ion-row style="margin-top: -35px; margin-left: -20px;">
+
+                  <ion-col size="6">
+                  <ion-card class="uploaded-file">
+                    <img src="../../../../assets/BUYER/bird-product/store-icon.png" style="height:145px; width:145px;">                 
+                  </ion-card>
+                </ion-col>
+                <ion-col size="6">
+                  <ion-card class="uploaded-file">
+                    <img src="../../../../assets/BUYER/bird-product/store-icon.png" style="height:145px; width:145px;">
+                  </ion-card>
+                </ion-col>
+              </ion-row>-->
+
+              <ion-row style="margin-left: -25px; margin-top: -35px;">
+                
+                <ion-col size="6">
+              
+                  <ion-card style="height:145px; width:145px; "> 
+                    <div class="main-grid-button">
+                      <div class="main-grid-button-top-bar">
+                        <div class="bin-div">
+                          <ion-icon class="bin-icon" src="../../../../assets/icon/bin-icon.svg"></ion-icon>
+                        </div>    
+                      </div>
+                      
+                      <div class="main-grid-button-bottom-bar">
+                        <div class="edit-div" (click)="presentUploadVideoFilterModal()">       
+                          <ion-icon class="edit-icon" src="../../../../assets/icon/edit-icon.svg"></ion-icon>                                                                                 
+                        </div>
+                      </div>
+                    </div> 
+                   <div class="main-grid-middle-bar" style="margin-top:-85px; display: flex; justify-content: center; align-items: center;">
+                        <ion-icon src="../../../../assets/icon/video-play-icon.svg" style="width: 2rem; height: 2rem;"></ion-icon>
+                      </div>  
+                  </ion-card>  
+                                  
+                </ion-col>
+                            
+                <ion-col size="6">                                   
+                  <ion-card style="height:145px; width:145px;"> 
+                    <div class="main-grid-button">
+                      <div class="main-grid-button-top-bar">
+                        <div class="bin-div">
+                          <ion-icon class="bin-icon" src="../../../../assets/icon/bin-icon.svg"></ion-icon>
+                        </div>  
+                      </div>
+                      <div class="main-grid-button-bottom-bar">
+                        <div class="edit-div" (click)="presentUploadPhotoFilterModal()">       
+                          <ion-icon class="edit-icon" src="../../../../assets/icon/edit-icon.svg"></ion-icon>                                                        
+                        </div>
+                      </div>
+                    </div>   
+                  </ion-card>                                  
+                </ion-col>               
+              </ion-row>
+
+              <ion-row style="margin-left: -25px; margin-top: -35px;">
+                <ion-col size="6">
+                  <ion-card style="height:145px; width:145px; ">
+
+                    <div class="main-grid-button">
+                      <div class="main-grid-button-top-bar">
+                        <div class="bin-div">
+                          <ion-icon class="bin-icon" src="../../../../assets/icon/bin-icon.svg"></ion-icon>
+                        </div>    
+                      </div>
+                      <div class="main-grid-button-bottom-bar">
+                        <div class="edit-div" (click)="presentUploadPhotoFilterModal()">       
+                          <ion-icon class="edit-icon" src="../../../../assets/icon/edit-icon.svg"></ion-icon>                                                        
+                        </div>
+                      </div>
+                    </div>
+  
+                  </ion-card>
+                </ion-col>
+                <ion-col size="6">
+                  <ion-card style="height:145px; width:145px;">
+
+                    <div class="main-grid-button">
+                      <div class="main-grid-button-top-bar">
+                        <div class="bin-div">
+                          <ion-icon class="bin-icon" src="../../../../assets/icon/bin-icon.svg"></ion-icon>
+                        </div>  
+                      </div>
+                      <div class="main-grid-button-bottom-bar">
+                        <div class="edit-div" (click)="presentUploadPhotoFilterModal()">         
+                          <ion-icon class="edit-icon" src="../../../../assets/icon/edit-icon.svg"></ion-icon>                                                        
+                        </div>
+                      </div>
+                    </div> 
+                  </ion-card>
+                </ion-col>
+              </ion-row>
+
+              <ion-row style="margin-left: -25px; margin-top: -35px;">
+                <ion-col size="6">
+                  <ion-card style="height:145px; width:145px; "> 
+                    <div class="main-grid-button">
+                      <div class="main-grid-button-top-bar">
+                        <div class="bin-div">
+                          <ion-icon class="bin-icon" src="../../../../assets/icon/bin-icon.svg"></ion-icon>
+                        </div>    
+                      </div>
+                      <div class="main-grid-button-bottom-bar">
+                        <div class="edit-div" (click)="presentUploadPhotoFilterModal()">         
+                          <ion-icon class="edit-icon" src="../../../../assets/icon/edit-icon.svg"></ion-icon>                                                        
+                        </div>
+                      </div>
+                    </div>
+                  </ion-card>
+                </ion-col>
+                <ion-col size="6">
+                  <ion-card style="height:145px; width:145px;">
+                    <div class="main-grid-button">
+                      <div class="main-grid-button-top-bar">
+                        <div class="bin-div">
+                          <ion-icon class="bin-icon" src="../../../../assets/icon/bin-icon.svg"></ion-icon>
+                        </div>  
+                      </div>
+                      <div class="main-grid-button-bottom-bar">
+                        <div class="edit-div" (click)="presentUploadPhotoFilterModal()">         
+                          <ion-icon class="edit-icon" src="../../../../assets/icon/edit-icon.svg"></ion-icon>                                                        
+                        </div>
+                      </div>
+                    </div>
+                  </ion-card>
+                </ion-col>
+              </ion-row>               
+            </ion-grid>
+          </ion-grid>
+        </form>
+      </ion-grid>
+
+
+      <!-- Next Button -->
+      <ion-row style="margin-top:-55px;">
+        <ion-col class="next-button">
+          <ion-button mode="ios" type="submit" (click)="nextPage()">
+            <ion-text style="font-weight: 700; font-size: 16.5px; margin: 3px 0px 1px 0px;">下一步</ion-text>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+</ion-content>

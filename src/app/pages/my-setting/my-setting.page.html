@@ -1,0 +1,109 @@
+<ion-content>
+  <div class="setting-inner-content">
+    <div mode="ios" class="toolbar">
+      <ion-buttons (click)="goBack()">
+        <ion-icon mode="ios-person" class="back-icon" slot="icon-only" name="chevron-back-outline"></ion-icon>
+      </ion-buttons>
+      <ion-row>
+        <ion-col>
+          <div class="title">
+            <ion-icon mode="ios" class="back-icon2" slot="icon-only" name="settings-outline"></ion-icon>
+            設定
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
+  
+    <ion-grid class="ion-padding-horizontal">
+      <div class="paragraph">
+        <ion-row>
+          <ion-col class="sub-title">
+            <ion-text>個人資料</ion-text>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-text>帳戶名稱</ion-text>
+          </ion-col>
+          <ion-col>
+            <ion-text>{{"username"}}</ion-text>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-text>用戶顯示名稱</ion-text>
+          </ion-col>
+          <ion-col>
+            <ion-text>{{"fullName"}}</ion-text>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-text>電話</ion-text>
+          </ion-col>
+          <ion-col>
+            <ion-text>{{"number"}}</ion-text>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-text>電子郵件</ion-text>
+          </ion-col>
+          <ion-col>
+            <ion-text>{{"email"}}</ion-text>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-text>出生日期</ion-text>
+          </ion-col>
+          <ion-col>
+            <ion-text>{{"dateOfBirth"}}</ion-text>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-text>地址</ion-text>
+          </ion-col>
+          <ion-col>
+            <ion-text>{{"address"}}</ion-text>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="edit-button">
+            <ion-button (click)="presentPersonalInfoEditModal()">
+              <ion-icon mode="ios-pencil" class="edit-icon" slot="icon-only" src="../../../assets/icon/edit-icon.svg"></ion-icon>
+              <ion-text>
+                更新信息
+              </ion-text> 
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </div>
+      <div class="paragraph">
+        <ion-row>
+          <ion-col class="sub-title">
+            <ion-text>個人資料</ion-text>
+          </ion-col>
+          <ion-col class="edit-button2">
+            <ion-button (click)="presentPasswordChangeModal()">
+              <ion-icon mode="ios-pencil" class="edit-icon" slot="icon-only" src="../../../assets/icon/edit-icon.svg"></ion-icon>
+              <ion-text>
+                更改密碼
+              </ion-text> 
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </div>
+      <div class="paragraph">
+        <ion-row>
+          <ion-col class="sub-title" (click)="presentPromotionNotificationChangeModal()">
+            <ion-text>優惠資訊通知</ion-text>
+          </ion-col>
+        </ion-row>
+      </div>
+    </ion-grid>
+  </div>
+
+
+</ion-content>

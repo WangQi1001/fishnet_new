@@ -1,0 +1,123 @@
+ion-img{
+    height: 100%;
+}
+
+ion-content{
+    --ion-background-color: #ffff;
+    --ion-text-color: #000000;
+    --highlight-color-focused: #000000;
+    --highlight-color-valid: #000000; 
+    --highlight-color-invalid: #000000;
+    font-family: Yuanti TC;
+    
+    .setting-inner-content{
+        background-repeat: no-repeat;
+    }
+    .toolbar{
+        padding-top: 2rem;
+        background: url('../../../assets/icon/toolbar-background.svg');
+        background-repeat: no-repeat;
+        height: 130px;
+        .back-icon2{
+            font-size: 24px;
+            color: #FFFFFF;
+            padding: 10px;
+            vertical-align: middle;
+        }
+        .title{
+            color: #FFFFFF;
+            vertical-align: middle;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        ion-buttons{
+            position: absolute;
+            left: 5%;
+            top: 5%;
+            .back-icon{
+                size: 20px;
+                color:#ffffff;
+            }
+        }
+    }
+}
+
+
+
+
+
+.edit-button2{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    ion-button{
+        --background: #49AAE8;
+        --background-activated: #49AAE8;
+        --background-focused: #49AAE8;
+        --background-hover: #49AAE8;
+        --color: white;
+        overflow-y:visible;
+        width: 100%;
+        margin: 0;
+        font-size: 14px;
+        font-weight: bold;
+        width: 70%;
+        height: 140%;
+        ion-icon{
+            font-size: 16px;
+        }
+        ion-text{
+            margin-left: 0.5rem;
+        }
+    }
+}
+
+
+
+.paragraph{
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background: #49AAE812;
+    .sub-title{
+        font-weight: 700; 
+    }
+    .card-number-row{
+        ion-col{
+            display: flex;
+            align-items: center;
+            padding-bottom: 0;
+        }
+    }
+    .card-icon{
+        font-size: 2rem;
+    }
+    .edit-button{
+        display: flex;
+        justify-content: end;
+        ion-button{
+            --background: #49AAE8;
+            --background-activated: #49AAE8;
+            --background-focused: #49AAE8;
+            --background-hover: #49AAE8;
+            --color: white;
+            overflow-y:visible;
+            width: 100%;
+            margin: 0;
+            font-size: 14px;
+            font-weight: bold;
+            width: 35%;
+            height: 150%;
+            ion-icon{
+                font-size: 16px;
+            }
+            ion-text{
+                margin-left: 0.5rem;
+            }
+        }
+        margin: 1rem 0;
+    }
+}

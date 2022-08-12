@@ -1,0 +1,65 @@
+<ion-content class="ion-no-padding">
+  <div class="setting-inner-content">
+    <div mode="ios" class="toolbar">
+      <ion-row>
+        <ion-col>
+          <ion-icon style="width: 20px; height: 30px; padding: 0.5rem 0 0 0.5rem;" mode="ios" src="../../../../../../assets/icon/back-icon.svg" (click)="goBack()"></ion-icon>
+        </ion-col>
+        <ion-col style="padding: 1rem 0rem 0rem 1.5rem;">
+          <ion-text class="title">iPYGG</ion-text>
+        </ion-col>
+        <ion-col>
+          <ion-icon class="forum-icon" mode="ios" src="../../../../../../assets/icon/ipygg-icon-2.svg"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <div mode="ios" class="main-body">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-text style="color: #49AAE8">類別</ion-text>
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="display: flex">
+          <ion-col style="flex: 1">
+            <div (click)="openShopCategoryFish()">
+              <ion-img class="category-button" src="../../../../../assets/shop-register/category-fish.png"></ion-img>
+              <ion-label class="category-text">魚類</ion-label>
+            </div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="display: flex">
+          <ion-col style="flex: 1">
+            <div (click)="openShopCategoryBird()">
+              <ion-img class="category-button" src="../../../../../assets/shop-register/category-bird.png"></ion-img>
+              <ion-label class="category-text">鳥類</ion-label>
+            </div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="display: flex">
+          <ion-col style="flex: 1">
+            <div (click)="openShopCategoryFlower()">
+              <ion-img class="category-button" src="../../../../../assets/shop-register/category-flower.png"></ion-img>
+              <ion-label class="category-text">花類</ion-label>
+            </div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="display: flex">
+          <ion-col style="flex: 1">
+            <div (click)="openShopCategoryInsect()">
+              <ion-img class="category-button" src="../../../../../assets/shop-register/category-insect.png"></ion-img>
+              <ion-label class="category-text">蟲類</ion-label>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+</ion-content>
+
+<app-toolbar-shop-page></app-toolbar-shop-page>

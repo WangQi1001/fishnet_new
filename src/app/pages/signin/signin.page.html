@@ -1,0 +1,87 @@
+<ion-content class="ion-no-padding">
+  <div class="setting-inner-content">
+    <div mode="ios" class="toolbar">
+      <ion-row>
+        <ion-col>
+          <div class="title">
+              登入
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <div class="main-body">
+      <ion-grid class="ion-padding-horizontal">
+          <form [formGroup]="formData" (ngSubmit)="onSubmit()" #localForm="ngForm" novalidate>
+            <ion-row>
+              <ion-col>
+                <!--Account Name/ Email-->
+                <div class="required-form-title" [ngClass]="{'active': this.invalidLogin === true}">帳戶名稱/電子郵件</div>
+                <ion-item mode="ios" class="input-form-item" [ngClass]="{'active': this.invalidLogin === true}">
+                  <ion-input mode="ios" formControlName= "account_name" type="text"></ion-input> 
+                </ion-item>
+                <div *ngIf="localForm.submitted && this.invalidLogin === true" class="invalid-feedback">帳戶名稱/電子郵件無效，請重新輸入</div>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col>
+                <!--Password-->
+                <div class="required-form-title" [ngClass]="{'active': this.invalidLogin === true}">密碼</div>
+                <ion-item mode="ios" class="input-form-item" [ngClass]="{'active': this.invalidLogin === true}">
+                  <ion-input mode="ios" formControlName= "password" type="password"></ion-input>  
+                </ion-item>
+                <div *ngIf="localForm.submitted && this.invalidLogin === true" class="invalid-feedback">密碼錯誤，請重新輸入</div>
+
+              </ion-col>
+            </ion-row>
+        
+            <ion-row>
+              <ion-col class="forgot-password">
+                <!--Forgot Password-->
+                <ion-button color="transparent" class="forgot-password-button" mode="ios" (click)="forgotPassword()">忘記密碼</ion-button>
+              </ion-col>
+            </ion-row>
+
+            <div style="width: 100%">
+              <div style="display: flex; justify-content: center; align-items: center; width: 100%">
+                <ion-row>
+                  <ion-col class="submit-button">
+                    <!--Submit-->
+                    <ion-button mode="ios" type="submit">
+                      登入
+                    </ion-button>
+                  </ion-col>
+                  <ion-col class="face-id">
+                    <!-- Face Id -->
+                    <ion-icon class="face-id-icon" src="../../../assets/icon/face-id-icon.svg" (click)="faceIdVerification()"></ion-icon>
+                  </ion-col>
+                </ion-row>
+              </div>
+            </div>
+          </form>
+
+          
+          <!--Login Facebook-->
+          <ion-row>
+            <ion-col>
+              <ion-button mode="ios" class="facebook" (click)="loginFacebook()">
+                <ion-icon mode="ios" class="back-icon" slot="icon-only" name="logo-facebook"></ion-icon>
+                使用Facebook帳號註冊
+              </ion-button>
+            </ion-col>
+          </ion-row>
+
+          <!--Register-->
+          <ion-row >
+            <ion-col class= "register">
+              <ion-button color="transparent" class="register-button" mode="ios" (click)="registerPage()">
+                還不是會員？ 註冊
+              </ion-button>
+            </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+</ion-content>
+

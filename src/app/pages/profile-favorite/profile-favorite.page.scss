@@ -1,0 +1,95 @@
+ion-content{
+  --ion-background-color: #ffff;
+  --ion-text-color: #000000;
+  --highlight-color-focused: #000000;
+  --highlight-color-valid: #000000;
+  --highlight-color-invalid: #000000;
+  --background: #F9F9F9;
+  font-family: Yuanti TC;
+  .setting-inner-content{
+      background-repeat: no-repeat;
+  }
+  .toolbar{
+        padding-top: 2rem;
+        background: url('../../../assets/icon/toolbar-background.svg');
+        background-repeat: no-repeat;
+        height: 130px;
+        .back-icon2{
+            font-size: 24px;
+            color: #FFFFFF;
+            padding: 10px;
+            vertical-align: middle;
+        }
+        .title{
+            color: #FFFFFF;
+            vertical-align: middle;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        ion-buttons{
+            position: absolute;
+            left: 5%;
+            top: 5%;
+            .back-icon{
+                size: 20px;
+                color:#ffffff;
+            }
+        }
+    }
+
+  ion-row {
+    display: flex;
+  }
+  ion-col {
+    flex: 1;
+  }
+  .product-item {
+    border-radius: 10px;
+    cursor: pointer;
+    .product-image {
+      position: relative;
+      width: calc(50vw - 30px);
+      height: calc(50vw - 30px);
+      border-radius: 10px 10px 0 0;
+      background: #C4C4C4;
+      ion-icon {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding: 7px;
+        background-color: #49AAE8;
+        border-radius: 5px;
+      }
+    }
+    display: block;
+    .product-info {
+      display: block;
+      background: #ffffff;
+      padding: 10px;
+      border-radius: 0 0 10px 10px;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+      & > div {
+        display: flex;
+        align-items: center;
+      }
+      & > div:nth-child(2) {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 17px;
+        text-decoration-line: line-through;
+        color: #979797;
+      }
+      & > div:nth-child(3) {
+        color: #49AAE8;
+      }
+      & > div > :nth-child(2) {
+        margin-left: auto;
+      }
+    }
+  }
+}

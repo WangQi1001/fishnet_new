@@ -1,0 +1,86 @@
+ion-content{
+  --ion-background-color: #ffff;
+  --ion-text-color: #000000;
+  --highlight-color-focused: #000000;
+  --highlight-color-valid: #000000;
+  --highlight-color-invalid: #000000;
+  --background: #F9F9F9;
+  font-family: Yuanti TC;
+  .setting-inner-content{
+      background-repeat: no-repeat;
+  }
+  .toolbar{
+        padding-top: 2rem;
+        background: url('../../../assets/icon/toolbar-background.svg');
+        background-repeat: no-repeat;
+        height: 130px;
+        .title{
+            color: #FFFFFF;
+            vertical-align: middle;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        ion-buttons{
+            position: absolute;
+            left: 5%;
+            top: 5%;
+            .back-icon{
+                size: 20px;
+                color:#ffffff;
+            }
+        }
+    }
+  .shop-list {
+    display: block;
+    .shop-item {
+      display: flex;
+      align-items: center;
+      padding: 22px 17px;
+      background-image: url('../../../assets/icon/shop-bg-1.png');
+      border-radius: 10px;
+
+      .shop-logo {
+        width: 42px;
+        height: 42px;
+        margin-right: 20px;
+        background: #FFFFFF;
+        border-radius: 25px;
+      }
+      .shop-title {
+        span {
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 19px;
+          color: #FFFFFF;
+        }
+        display: block;
+        & > div {
+          display: flex;
+          margin-top: 4px;
+          & > div {
+            margin-right: 4px;
+          }
+        }
+      }
+      .shop-button {
+        margin-left: auto;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #2E73A0;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 10px;
+        padding: 4px 29px;
+      }
+    }
+    & > div {
+      margin-bottom: 10px;
+    }
+  }
+}

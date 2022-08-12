@@ -1,0 +1,139 @@
+<ion-content class="ion-no-padding">
+  <div class="header">
+    <ion-toolbar color="#ffff">
+      <ion-title style="text-align: center">修改送貨信息</ion-title>
+      <ion-buttons slot="end">
+        <ion-icon mode="ios" class="back-icon" slot="icon-only" name="close-outline" (click)="close()"></ion-icon>
+      </ion-buttons>
+    </ion-toolbar>
+  </div>
+
+  <ion-grid class="ion-padding-horizontal">
+    <form class="form" [formGroup]="form">
+      <ion-row style="margin-bottom: 0em">
+        <ion-col>
+          <div class="required-form-title">寄送方式</div>
+          <ion-item mode="ios" class="input-form-item">
+            <ion-select interface="action-sheet" mode="ios" class="form-select" [formControl]="shippingMethod"
+                type="text">
+                <ion-select-option value="速遞">速遞</ion-select-option>
+                <!-- <ion-select-option *ngFor="let type of shippingTypes" [value]="type">{{type}}</ion-select-option> -->
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row style="margin-bottom: 0em">
+        <ion-col class="no-pad-bot">
+          <div class="required-form-title">收貨地址</div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row style="margin-bottom: 0em">
+        <ion-col class="address">
+            <ion-col class="no-pad-top">
+              <div class="form-title">室/單位</div>
+              <ion-item mode="ios" class="input-form-item">
+                <ion-input mode="ios" class="form-input name-input" [formControl]="room" type="text"
+                  ></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col class="no-pad-top">
+              <div class="form-title">樓層</div>
+              <ion-item mode="ios" class="input-form-item">
+                <ion-input mode="ios" class="form-input name-input" [formControl]="floor" type="text"
+                  ></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col class="no-pad-top">
+              <div class="form-title">座數</div>
+              <ion-item mode="ios" class="input-form-item">
+                <ion-input mode="ios" class="form-input name-input" [formControl]="numberOfSeats" type="text"
+                  ></ion-input>
+              </ion-item>
+            </ion-col>
+        </ion-col>
+      </ion-row>
+
+      <ion-row style="margin-bottom: 0em">
+        <ion-col>
+          <div class="form-title">大廈名稱</div>
+          <ion-item mode="ios" class="input-form-item">
+            <ion-input mode="ios" class="form-input" [formControl]="buildingName" type="text"
+              ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row style="margin-bottom: 0em">
+        <ion-col>
+          <div class="form-title">街道名稱</div>
+          <ion-item mode="ios" class="input-form-item">
+            <ion-input mode="ios" class="form-input" [formControl]="streetName" type="text"
+              ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row style="margin-bottom: 0em">
+        <ion-col>
+          <div class="form-title">地區</div>
+          <ion-item mode="ios" class="input-form-item">
+            <ion-input mode="ios" class="form-input" [formControl]="map" type="text"
+              ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="address">
+        <ion-col>
+          <ion-button mode="ios" class="type-button" [ngClass]="{'active': this.region=== 'Hong Kong' }"
+            (click)="selectRegion('Hong Kong')">香港</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button mode="ios" class="type-button" [ngClass]="{'active': this.region === 'Kowloon' }"
+            (click)="selectRegion('Kowloon')">九龍</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button mode="ios" class="type-button" [ngClass]="{'active': this.region === 'New Territories' }"
+            (click)="selectRegion('New Territories')">新界</ion-button>
+        </ion-col>
+      </ion-row>
+
+
+      <ion-row style="margin-bottom: 0em">
+        <ion-col>
+          <div class="required-form-title">收件人</div>
+          <ion-item mode="ios" class="input-form-item">
+            <ion-input mode="ios" class="form-input name-input" [formControl]="recipient" type="text" placeholder="xxxxxxxxxxx"
+              ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row style="margin-bottom: 0em">
+        <ion-col>
+          <div class="required-form-title">收件人電話</div>
+          <ion-item mode="ios" class="input-form-item">
+            <ion-input mode="ios" class="form-input name-input" [formControl]="phone" type="number" placeholder="xxxxxxxxxxx"
+              ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row style="margin-bottom: 0em">
+        <ion-col>
+          <div class="blue-title">運費：$ 20</div>
+        </ion-col>
+      </ion-row>
+    </form>
+
+    <ion-row>
+      <ion-col class="submit-button">
+        <ion-button mode="ios" (click)="updateRecipient()">
+          修改
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

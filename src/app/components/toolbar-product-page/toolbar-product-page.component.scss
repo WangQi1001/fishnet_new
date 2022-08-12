@@ -1,0 +1,67 @@
+ion-button{
+    --background: #49AAE8;
+    --background-activated: #49AAE8;
+    --background-focused: #49AAE8;
+    --background-hover: #49AAE8;
+    --color: white;
+    overflow-y:visible;
+    font-weight: 400;
+    width: 6rem;
+    height: 2.5rem;
+  }
+ion-footer{
+    background: url('../../../assets/icon/Ellipse.svg'), #ffffff;
+    background-repeat: no-repeat;
+    height: 80px;
+    display: flex;
+    align-items: flex-end;
+    --border-width: 0px; 
+    border: none !important;
+
+    ion-toolbar{
+        --border-width: 0px; 
+        height: 65px;
+        --background: #49AAE8;
+        --color: #FFFFFF;
+        display: flex;
+        align-items: center;
+    }
+    ion-tab-bar{
+        border: none !important;
+        --background: #49AAE8;
+        --color: #FFFFFF;
+        .bottom-bar{
+            .bottom-bar-home-icon{
+                width: 36px;
+                height: 36px;
+            }
+            .bottom-bar-icon{
+                font-size: 24px;
+            }
+            .bottom-bar-favorite-icon{
+                width: 27px;
+                height: 25px;
+            }
+            .bottom-bar-comment-icon{
+                width: 27px;
+                height: 25px;
+            }
+            .toolbar-button-add-to-shopping-cart{
+                border: 1px solid #FFFFFF;
+                border-radius: 9.4px;
+            }
+            .toolbar-button-buy-now{
+                --background: #FFFFFF;
+                --color: #49AAE8; 
+            }
+            .toolbar-button-text{
+                font-family: 'Yuanti TC';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 16px;
+                text-align: center;
+            }
+        }
+        
+    }
+}

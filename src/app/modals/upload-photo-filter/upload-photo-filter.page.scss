@@ -1,0 +1,138 @@
+.header{
+    ion-toolbar{
+      padding-top: 2rem;
+      padding-right: 0.5rem;
+      padding-left: 0rem;
+      color: #000000;
+    }
+    .back-icon{
+      size: 20px;
+      color:#000000;
+    }
+  
+  
+  }
+  
+  ion-content{
+    --ion-background-color: #ffff;
+    --ion-text-color: #000000;
+    --highlight-color-focused: #000000;
+    --highlight-color-valid: #000000;
+    --highlight-color-invalid: #000000;
+    font-family: Yuanti TC;
+  }
+
+  .top-buttons{
+    justify-content: end;
+  }
+
+  .photo{
+    justify-content:center;
+    align-items: center;
+        //display: flex;    
+    height:355px;
+    width:355px;
+    border-radius: 5px;
+    border: 1px solid #C4C4C4;
+    background-image: url('../../../assets/SELLER/add-product/upload-photo-filter-background.svg');
+    margin-bottom:10px;
+  }
+
+  .category-button{
+    --background: #F4FBFF;
+    --background-activated: #F4FBFF;
+    --background-focused: #F4FBFF;
+    width: 100%;
+    height: 2.9375rem;
+    border: 1px solid #49AAE8;
+    border-radius: 10px;
+    color:#000000;
+    
+}
+.category-button-focused{
+    --background: #49AAE8;
+    --background-activated: #49AAE8;
+    --background-focused: #49AAE8;
+    width: 100%;
+    height: 2.9375rem;
+    border-radius: 10px;
+    color:#FFFFFF;
+}
+
+.category2-button{
+    --background: #F4FBFF;
+    --background-activated: #F4FBFF;
+    --background-focused: #F4FBFF;
+    width: 2.9375rem;
+    height: 2.9375rem;
+    border: 1px solid #49AAE8;
+    border-radius: 10px;
+    color:#000000;   
+}
+
+.category3-button{
+    --background: #F4FBFF;
+    --background-activated: #F4FBFF;
+    --background-focused: #F4FBFF;
+    width: 2.64rem;
+    height: 2.64rem;
+    margin-right: -15px;
+    border: 1px solid #49AAE8;
+    border-radius: 10px;
+    color:#000000;   
+}
+
+.category3-button-focused{
+    --background: #49AAE8;
+    --background-activated: #49AAE8;
+    --background-focused: #49AAE8;
+    width: 2.64rem;
+    height: 2.64rem;
+    margin-right: -15px;
+    border: 1px solid #49AAE8;
+    border-radius: 10px;
+    color:#FFFFFF;   
+}
+
+ion-range {
+    --bar-background: #E3F0FB;
+    --bar-background-active: #E3F0FB;
+    --bar-height: 6.59px;
+    --bar-border-radius: 10px;
+    --knob-background: #3486BB;
+    --knob-size: 16px;
+    --pin-background: #FFFFFF;
+    --pin-color: #000000;
+  }
+  
+
+  .no-pad-top{
+    padding-top: 0;
+  }
+  
+
+  
+  .submit-button{
+    display: flex;
+    justify-content: center;
+    ion-button{
+      --background: #49AAE8;
+      --background-activated: #49AAE8;
+      --background-focused: #49AAE8;
+      --background-hover: #49AAE8;
+      --color: white;
+      overflow-y:visible;
+      width: 100%;
+      margin: 0;
+      font-size: 18px;
+      font-weight: bold;
+      width: 30%;
+      height: 150%;
+    }
+    margin: 1rem 0;
+  }
+  
+  .blue-title{
+    color: #49AAE8;
+  }
+  

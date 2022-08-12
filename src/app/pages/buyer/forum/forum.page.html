@@ -1,0 +1,119 @@
+<ion-content class="ion-no-padding">
+  <div class="setting-inner-content">
+    <div mode="ios" class="toolbar">
+      <ion-row>
+        <ion-col>
+          <div class="title">
+            <ion-icon mode ="ios" class="forum-icon" slot="icon-only" src="../../../../assets/icon/forum-icon.svg"></ion-icon>
+            討論區
+          </div>
+        </ion-col>
+      </ion-row>
+      <div>
+        <ion-row>
+          <ion-col>
+            <div class="search-bar">
+              <ion-input type="text" mode="ios" class="search-input" [(ngModel)]="searchInput" (change)="searchInputted($event)"></ion-input>
+              <ion-icon mode="ios" class="search-icon" slot="icon-only" src="../../../assets/icon/search-icon.svg"></ion-icon>
+            </div>
+          </ion-col>
+        </ion-row>
+      </div>
+    </div>   
+    
+    <div>
+      <ion-grid style="background: #F0F0F0" class="ion-padding-horizontal">
+        <ion-row>
+          <ion-col size="1.5">
+            <ion-icon class="forum-profile" src="../../../../assets/icon/forum-profile.svg"></ion-icon>
+          </ion-col>
+          <ion-col>
+            <span class="forum-text-3">在此輸入你的訊息</span>
+          </ion-col>
+        </ion-row>
+        <ion-row style="margin-top: 0.5rem ">
+          <ion-col>
+            <ion-button mode="ios" class="forum-profile-button btn1">
+              <ion-img src="../../../../assets/BUYER/forum/forum-button-image.svg"></ion-img>
+              <ion-text>添加照片</ion-text>
+            </ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button mode="ios" class="forum-profile-button btn1">添加影片</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button mode="ios" class="forum-profile-button btn2">發佈</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ul style="padding: 0; margin: 0">
+        <div *ngFor="let post_info of posts; let i = index">
+          <app-post-card [post_info]="post_info"></app-post-card>
+        </div>
+      
+      
+      </ul>
+      
+
+      <ion-grid style="background: #F4FBFF" class="ion-padding-horizontal">
+        <ion-row>
+          <ion-col size="1.5">
+            <ion-img class="forum-profile" src="../../../../assets/icon/forum-profile.svg"></ion-img>
+          </ion-col>
+          <ion-col>
+            <ion-text style="color: #000000" class="forum-text-1">商店名稱</ion-text>
+          </ion-col>
+          <ion-col>
+            <ion-text style="color: #000000; float: right" class="forum-text-1">30/06/2021</ion-text>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <img src="../../../../assets/BUYER/forum/forum-image-4.png">
+          </ion-col>
+          <ion-col>
+            <img style="height: 98%" src="../../../../assets/BUYER/forum/forum-image-6.png">
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <img src="../../../../assets/BUYER/forum/forum-image-5.png">
+          </ion-col>
+          <ion-col>
+            <img style="height: 98%" src="../../../../assets/BUYER/forum/forum-image-7.png">
+          </ion-col>
+        </ion-row>  
+        
+        <!-- Comment Bar -->
+        <ion-row>
+          <ion-col size="1">
+            <ion-icon style="width: 17px; height: 15px" src="../../../../assets/BUYER/forum/heart-icon.svg"></ion-icon>
+          </ion-col>
+          <ion-col size="1">
+            <ion-text>28</ion-text>
+          </ion-col>
+          <ion-col size="1">
+            <ion-icon style="width: 18px; height: 18px" src="../../../../assets/BUYER/forum/message-icon.svg"></ion-icon>
+          </ion-col>
+          <ion-col size="1">
+            <ion-text>2</ion-text>
+          </ion-col>
+          <ion-col size="1">
+            <ion-icon style="width: 18px; height: 18px" src="../../../../assets/icon/share-icon.svg"></ion-icon>
+          </ion-col>
+          <ion-col class="ion-no-padding">
+            <div class="comment-bar">
+              <ion-text style="font-size: 14px; padding-left: 0.5rem;">留言</ion-text>
+              <ion-input type="text"></ion-input>
+              <ion-icon style="width: 20px; height: 20px; padding-right: 0.5rem" src="../../../../assets/icon/emoji-icon.svg"></ion-icon>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+</ion-content>
+
+<app-toolbar-buyer></app-toolbar-buyer>

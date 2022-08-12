@@ -1,0 +1,223 @@
+<ion-content class="ion-no-padding">
+    <div class="header">
+      <ion-toolbar color="#ffff">
+        <ion-title style="text-align: center">編輯照片</ion-title>
+        <ion-buttons slot="end">
+          <ion-icon mode="ios" class="back-icon" slot="icon-only" name="close-outline" (click)="close()"></ion-icon>
+        </ion-buttons>
+      </ion-toolbar>
+    </div>
+    <ion-grid  class="ion-padding-horizontal">
+      <form class="form" >
+        <ion-row style="margin-bottom: 10px;">
+          <ion-col>
+            <ion-buttons class="top-buttons">
+                <ion-icon mode="ios" class="undo-icon" slot="icon-only" src="../../../../assets/icon/undo-icon.svg" style="margin-right: 10px;"></ion-icon>
+                <ion-icon mode="ios" class="redo-icon" slot="icon-only" src="../../../../assets/icon/redo-icon.svg" style="margin-right: 10px;"></ion-icon>
+                <ion-icon mode="ios" class="reset-icon" slot="icon-only" src="../../../../assets/icon/reset-icon.svg" (click)="reset()"></ion-icon>
+            </ion-buttons>
+          </ion-col>
+        </ion-row>
+
+        <!--<ion-row class="photo">
+            <ion-col>
+            <ion-img src="../../../../assets/SELLER/add-product/upload-photo-filter-fish.png"></ion-img>
+            </ion-col>
+        </ion-row>-->
+
+        <ion-row class="photo">
+          
+          <image-cropper [imageBase64]="myImage"
+          [maintainAspectRatio]="false"
+          [aspectRatio]="4/3"
+          [canvasRotation]="canvasRotation"
+          [transform]="transform"
+          format="png"
+          outputType="base64">
+          </image-cropper>
+          
+      </ion-row>
+
+        <ion-row>
+            <ion-col>
+              <ion-button mode="ios" [ngClass]="{
+                'category-button-focused': moreDetail===false,
+                'category-button': moreDetail===true}" 
+                (click)="openLessDetail()">
+                <ion-icon *ngIf="moreDetail === false" mode="ios" class="crop-icon" slot="icon-only" src="../../../../assets/icon/crop-icon.svg" style="height:20px;"></ion-icon>
+                <ion-icon *ngIf="moreDetail === true" mode="ios" class="crop-icon" slot="icon-only" src="../../../../assets/icon/crop-icon-dark.svg" style="height:20px;"></ion-icon>
+                裁剪與調整大小
+            </ion-button>
+            </ion-col>
+            <ion-col>
+              <ion-button mode="ios" [ngClass]="{
+                'category-button-focused': moreDetail===true,
+                'category-button': moreDetail===false}"
+                (click)="openMoreDetail()">
+                <ion-icon *ngIf="moreDetail === false" mode="ios" class="adjust-icon" slot="icon-only" src="../../../../assets/icon/adjust-icon-dark.svg" style="height:20px;"></ion-icon>
+                <ion-icon *ngIf="moreDetail === true" mode="ios" class="adjust-icon" slot="icon-only" src="../../../../assets/icon/adjust-icon.svg" style="height:20px;"></ion-icon>
+                調整
+            </ion-button>
+            </ion-col>
+          </ion-row>
+
+          <ion-row *ngIf="moreDetail === false">
+            <ion-col size="2">
+              <ion-button mode="ios" class="category2-button" (click)="rotateRight()">
+                <ion-icon mode="ios" class="rotate-button" slot="icon-only" src="../../../../assets/icon/rotate-icon.svg" style="height:20px;"></ion-icon>
+              </ion-button>
+            </ion-col>
+            <ion-col size="2">
+                <ion-button mode="ios" class="category2-button" (click)="flipHorizontal()">
+                    <ion-icon mode="ios" class="flip-horizontally-icon" slot="icon-only" src="../../../../assets/icon/flip-horizontally-icon.svg" style="height:20px;"></ion-icon>
+                </ion-button>
+            </ion-col>
+            <ion-col size="2">
+                <ion-button mode="ios" class="category2-button" (click)="flipVertical()">
+                    <ion-icon mode="ios" class="flip-vertically-icon" slot="icon-only" src="../../../../assets/icon/flip-vertically-icon.svg" style="height:20px;"></ion-icon>
+                </ion-button>
+            </ion-col>
+          </ion-row>
+
+          <div *ngIf="moreDetail === true">
+            <ion-row>
+            <ion-col>
+              <ion-button mode="ios" [ngClass]="{
+                'category3-button-focused': adjustment === 1,
+                'category3-button': adjustment !== 1}" (click)="brightness()">
+                <ion-icon mode="ios" *ngIf="adjustment !== 1" class="brightness-icon" slot="icon-only" src="../../../../assets/icon/brightness-dark-icon.svg"></ion-icon>
+                <ion-icon mode="ios" *ngIf="adjustment === 1" class="brightness-icon" slot="icon-only" src="../../../../assets/icon/brightness-light-icon.svg"></ion-icon>
+              </ion-button>
+            </ion-col>
+            <ion-col>
+                <ion-button mode="ios" [ngClass]="{
+                    'category3-button-focused': adjustment === 2,
+                    'category3-button': adjustment !== 2}" (click)="contrast()">
+                    <ion-icon mode="ios" class="contrast-icon" slot="icon-only" src="../../../../assets/icon/contrast-icon.svg"></ion-icon>
+                </ion-button>
+            </ion-col>
+            <ion-col>
+                <ion-button mode="ios" [ngClass]="{
+                    'category3-button-focused': adjustment === 3,
+                    'category3-button': adjustment !== 3}" (click)="highlights()">
+                    <ion-icon mode="ios" class="highlights-icon" slot="icon-only" src="../../../../assets/icon/highlights-icon.svg"></ion-icon>
+                </ion-button>
+            </ion-col>
+            <ion-col>
+                <ion-button mode="ios" [ngClass]="{
+                    'category3-button-focused': adjustment === 4,
+                    'category3-button': adjustment !== 4}" (click)="shadows()">
+                  <ion-icon mode="ios" class="shadows-button" slot="icon-only" src="../../../../assets/icon/shadows-icon.svg"></ion-icon>
+                </ion-button>
+              </ion-col>
+              <ion-col>
+                <ion-button mode="ios" [ngClass]="{
+                    'category3-button-focused': adjustment === 5,
+                    'category3-button': adjustment !== 5}" (click)="saturation()">
+                  <ion-icon mode="ios" class="saturation-button" slot="icon-only" src="../../../../assets/icon/saturation-icon.svg"></ion-icon>
+                </ion-button>
+              </ion-col>
+              <ion-col>
+                <ion-button mode="ios" [ngClass]="{
+                    'category3-button-focused': adjustment === 6,
+                    'category3-button': adjustment !== 6}" (click)="temperature()">
+                  <ion-icon mode="ios" class="temperature-button" slot="icon-only" src="../../../../assets/icon/temperature-icon.svg"></ion-icon>
+                </ion-button>
+              </ion-col>
+              <ion-col>
+                <ion-button mode="ios" [ngClass]="{
+                    'category3-button-focused': adjustment === 7,
+                    'category3-button': adjustment !== 7}" (click)="exposure()">
+                  <ion-icon mode="ios" class="exposure-button" slot="icon-only" src="../../../../assets/icon/exposure-icon.svg"></ion-icon>
+                </ion-button>
+              </ion-col>
+             </ion-row>
+             
+             <div class="brightness-adjustment" *ngIf="adjustment === 1">
+            <ion-row style="margin-top:10px;">
+                <ion-col>
+                <ion-text>亮度</ion-text>
+                </ion-col>
+            </ion-row>
+            <ion-row style="margin-top:-15px;">
+                <ion-range [value]="50" [pin]="true"></ion-range>
+            </ion-row>
+          </div>
+
+          <div class="contrast-adjustment" *ngIf="adjustment === 2">
+            <ion-row style="margin-top:10px;">
+                <ion-col>
+                <ion-text>對比</ion-text>
+                </ion-col>
+            </ion-row>
+            <ion-row style="margin-top:-15px;">
+                <ion-range [value]="50" [pin]="true"></ion-range>
+            </ion-row>
+          </div>
+
+          <div class="highlights-adjustment" *ngIf="adjustment === 3">
+            <ion-row style="margin-top:10px;">
+                <ion-col>
+                <ion-text>亮部</ion-text>
+                </ion-col>
+            </ion-row>
+            <ion-row style="margin-top:-15px;">
+                <ion-range [value]="50" [pin]="true"></ion-range>
+            </ion-row>
+          </div>
+
+          <div class="shadows-adjustment" *ngIf="adjustment === 4">
+            <ion-row style="margin-top:10px;">
+                <ion-col>
+                <ion-text>陰影</ion-text>
+                </ion-col>
+            </ion-row>
+            <ion-row style="margin-top:-15px;">
+                <ion-range [value]="50" [pin]="true"></ion-range>
+            </ion-row>
+          </div>
+
+          <div class="saturation-adjustment" *ngIf="adjustment === 5">
+            <ion-row style="margin-top:10px;">
+                <ion-col>
+                <ion-text>色彩飽和度</ion-text>
+                </ion-col>
+            </ion-row>
+            <ion-row style="margin-top:-15px;">
+                <ion-range [value]="50" [pin]="true"></ion-range>
+            </ion-row>
+          </div>
+
+          <div class="temperature-adjustment" *ngIf="adjustment === 6">
+            <ion-row style="margin-top:10px;">
+                <ion-col>
+                <ion-text>色溫</ion-text>
+                </ion-col>
+            </ion-row>
+            <ion-row style="margin-top:-15px;">
+                <ion-range [value]="50" [pin]="true"></ion-range>
+            </ion-row>
+          </div>
+
+          <div class="exposure-adjustment" *ngIf="adjustment === 7">
+            <ion-row style="margin-top:10px;">
+                <ion-col>
+                <ion-text>曝光</ion-text>
+                </ion-col>
+            </ion-row>
+            <ion-row style="margin-top:-15px;">
+                <ion-range [value]="50" [pin]="true"></ion-range>
+            </ion-row>
+          </div>
+            </div>
+      </form>
+  
+      <ion-row>
+        <ion-col class="submit-button">
+          <ion-button mode="ios" (click)="close()">
+            儲存
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>

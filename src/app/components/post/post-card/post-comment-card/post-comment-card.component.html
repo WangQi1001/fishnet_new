@@ -1,0 +1,17 @@
+<!-- <p>post comment card works</p> -->
+<ion-row>
+  <ion-col size="1.5"> 
+    <ion-img class="forum-profile" src="{{comment.avatar_url}}"></ion-img>
+  </ion-col>
+  <ion-col>
+    <ion-text style="line-height: 25px">{{comment["display_name"]}}</ion-text>
+  </ion-col>
+  <ion-col>
+    <ion-text style="color: #000000; float:right" class="forum-text-1">{{comment.datetime}}</ion-text>
+  </ion-col>
+</ion-row>
+<ion-row>
+  <p class="forum-text-2">
+    {{comment["content"]}}
+  </p>
+</ion-row>

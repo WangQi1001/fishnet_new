@@ -1,0 +1,320 @@
+<ion-header>
+    <!-- Header-Image-->
+    <img class="header-image" src="assets/BUYER/home/homepage/img1.png"/>
+    <div class="myOverlay">
+        <ion-title class="header-title">歡迎回來！</ion-title>
+        <button class = "image-notification" (click)="openNotification()">
+            <img src="assets/BUYER/home/homepage/notifications.png"/>
+        </button>
+    </div>
+    <!-- Search-Bar -->
+    <div class="div-search-bar">
+      <ion-row>
+        <ion-col>
+          <div class="search-bar">
+            <ion-input type="text" mode="ios" class="search-input" [(ngModel)]="searchInput" (change)="searchInputted($event)"></ion-input>
+            <ion-icon mode="ios" class="search-icon" slot="icon-only" src="../../../assets/icon/search-icon.svg"></ion-icon>
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
+</ion-header>
+
+    <!--Coupon-->
+    <div class="coupon">優惠券</div>
+
+  <!-- Page Body -->
+<ion-content content="light dark" [scrollEvents]="true">
+  <ion-grid class="ion-padding-horizontal">
+    <div class="homepage">
+      <!-- Each ion-row has 2 ion-columns that contain the buttons -->
+      <ion-row>
+        <!-- Ion-column 1 -->
+        <ion-column>
+          <ion-button class="homepage-items-small">
+            <div>
+              <ion-row class="button-image-small">
+                <ion-label class="button-text">購買任何商品</ion-label>
+                <ion-label class = "button-text">1件8折, 3件7折</ion-label>
+                <ion-img src="../../../assets/BUYER/home/homepage/homepage-items-small-btn1-1.png"></ion-img>
+              </ion-row>
+            </div>
+          </ion-button>
+        </ion-column>
+        <!-- Ion-column 2 -->
+        <ion-column>
+          <ion-button class="homepage-items-small">
+            <div>
+              <ion-row class="button-image-small">
+                <ion-label class="button-text">免運費</ion-label>
+                <ion-label class = "button-text">免運費</ion-label>
+                <ion-img src = "../../../assets/BUYER/home/homepage/homepage-items-small-btn1-1.png"></ion-img>
+              </ion-row>
+            </div>
+          </ion-button>
+        </ion-column>
+      </ion-row>
+
+      <ion-row>
+        <!-- Ion-column 1 -->
+        <ion-column>
+          <ion-button class="homepage-items-large btn1" (click)="openCategory()">
+            <div>
+              <!-- Top image -->
+              <ion-row class="button-image-top">
+                <ion-label class="button-text">魚類</ion-label>
+                <ion-img src = "../../../assets/BUYER/home/homepage/homepage-items-large-btn1-1.png"></ion-img>
+              </ion-row>
+              <!-- Bottom 4 image -->
+              <ion-grid>
+                <div class = "homepage">
+                  <ion-row>
+                    <ion-column class="button-image-bottom">
+                      <ion-img src = "../../../assets/BUYER/home/homepage/homepage-items-large-btn1-2.png"></ion-img>
+                    </ion-column>
+                    <ion-column class="button-image-bottom">
+                      <ion-img src = "../../../assets/BUYER/home/homepage/homepage-items-large-btn1-3.png"></ion-img>
+                    </ion-column>
+                  </ion-row>
+                  <ion-row>
+                    <ion-column class="button-image-bottom">
+                      <ion-img src = "../../../assets/BUYER/home/homepage/homepage-items-large-btn1-4.png"></ion-img>
+                    </ion-column>
+                    <ion-column class="button-image-bottom">
+                      <ion-img src = "../../../assets/BUYER/home/homepage/homepage-items-large-btn1-5.png"></ion-img>
+                    </ion-column>
+                  </ion-row>
+                </div>
+              </ion-grid>
+            </div>
+          </ion-button>
+        </ion-column>
+
+        <!-- Ion-column 2 -->
+        <ion-column>
+          <ion-button class="homepage-items-large btn2" (click)="openBirdCategory()">
+            <div>
+              <!-- Top image -->
+              <ion-row class="button-image-top">
+                <ion-label class="button-text">鳥類</ion-label>
+                <ion-img src = "../../../assets/BUYER/home/homepage/homepage-items-large-btn2-1.png"></ion-img>
+              </ion-row>
+              <!-- Bottom 4 image -->
+              <ion-grid>
+                <div class = "homepage">
+                  <ion-row>
+                    <ion-column class="button-image-bottom">
+                      <ion-img src = "../../../assets/BUYER/home/homepage/homepage-items-large-btn2-2.png"></ion-img>
+                    </ion-column>
+                    <ion-column class="button-image-bottom">
+                      <ion-img src = "../../../assets/BUYER/home/homepage/homepage-items-large-btn2-3.png"></ion-img>
+                    </ion-column>
+                  </ion-row>
+                  <ion-row>
+                    <ion-column class="button-image-bottom">
+                      <ion-img src = "../../../assets/BUYER/home/homepage/homepage-items-large-btn2-4.png"></ion-img>
+                    </ion-column>
+                    <ion-column class="button-image-bottom">
+                      <ion-img src = "../../../assets/BUYER/home/homepage/homepage-items-large-btn2-5.svg"></ion-img>
+                    </ion-column>
+                  </ion-row>
+                </div>
+              </ion-grid>
+            </div>
+          </ion-button>
+        </ion-column>
+      </ion-row>
+
+
+      <!-- Each ion-row has 2 ion-columns that contain the buttons -->
+      <ion-row>
+        <!-- Ion-column 1 -->
+        <ion-column>
+          <ion-button class="homepage-items-large btn3" (click)="openFlowerCategory()">
+            <div>
+              <!-- Top image -->
+              <ion-row class="button-image-top">
+                <ion-label class="button-text">花類</ion-label>
+                <ion-img src = "../../../assets/BUYER/home/homepage/homepage-items-large-btn3-1.png"></ion-img>
+              </ion-row>
+              <!-- Bottom 4 image -->
+              <ion-grid>
+                <div class = "homepage">
+                  <ion-row>
+                    <ion-column class="button-image-bottom">
+                      <ion-img src = "../../../assets/BUYER/home/homepage/homepage-items-large-btn3-2.png"></ion-img>
+                    </ion-column>
+                    <ion-column class="button-image-bottom">
+                      <ion-img src = "../../../assets/BUYER/home/homepage/homepage-items-large-btn3-3.png"></ion-img>
+                    </ion-column>
+                  </ion-row>
+                  <ion-row>
+                    <ion-column class="button-image-bottom">
+                      <ion-img src = "../../../assets/BUYER/home/homepage/homepage-items-large-btn2-4.png"></ion-img>
+                    </ion-column>
+                    <ion-column class="button-image-bottom">
+                      <ion-img src = "../../../assets/BUYER/home/homepage/homepage-items-large-btn2-5.svg"></ion-img>
+                    </ion-column>
+                  </ion-row>
+                </div>
+              </ion-grid>
+            </div>
+          </ion-button>
+        </ion-column>
+
+        <!-- Ion-column 2 -->
+        <ion-column>
+          <ion-button class="homepage-items-large btn4" (click)="openInsectCategory()">
+            <div>
+              <!-- Top image -->
+              <ion-row class="button-image-top">
+                <ion-label class="button-text">蟲類</ion-label>
+                <ion-img src = "../../../assets/BUYER/home/homepage/homepage-items-large-btn4-1.png"></ion-img>
+              </ion-row>
+              <!-- Bottom 4 image -->
+              <ion-grid>
+                <div class = "homepage">
+                  <ion-row>
+                    <ion-column class="button-image-bottom">
+                      <ion-img src = "../../../assets/BUYER/home/homepage/homepage-items-large-btn4-2.png"></ion-img>
+                    </ion-column>
+                    <ion-column class="button-image-bottom">
+                      <ion-img src = "../../../assets/BUYER/home/homepage/homepage-items-large-btn4-3.png"></ion-img>
+                    </ion-column>
+                  </ion-row>
+                  <ion-row>
+                    <ion-column class="button-image-bottom">
+                      <ion-img src = "../../../assets/BUYER/home/homepage/homepage-items-large-btn4-4.png"></ion-img>
+                    </ion-column>
+                    <ion-column class="button-image-bottom">
+                      <ion-img src = "../../../assets/BUYER/home/homepage/homepage-items-large-btn1-5.png"></ion-img>
+                    </ion-column>
+                  </ion-row>
+                </div>
+              </ion-grid>
+            </div>
+          </ion-button>
+        </ion-column>
+      </ion-row>
+
+
+           <!-- Each ion-row has 2 ion-columns that contain the buttons -->
+           <ion-row>
+            <!-- Ion-column 1 -->
+            <ion-column>
+              <ion-button class="homepage-items-large btn3">
+                <div>
+                  <!-- Top image -->
+                  <ion-row class="button-image-top">
+                    <ion-label class="button-text">花類</ion-label>
+                    <ion-img src = "../../../assets/BUYER/home/homepage/homepage-items-large-btn3-1.png"></ion-img>
+                  </ion-row>
+                  <!-- Bottom 4 image -->
+                  <ion-grid>
+                    <div class = "homepage">
+                      <ion-row>
+                        <ion-column class="button-image-bottom">
+                          <ion-img src = "../../../assets/BUYER/home/homepage/homepage-items-large-btn3-2.png"></ion-img>
+                        </ion-column>
+                        <ion-column class="button-image-bottom">
+                          <ion-img src = "../../../assets/BUYER/home/homepage/homepage-items-large-btn3-3.png"></ion-img>
+                        </ion-column>
+                      </ion-row>
+                      <ion-row>
+                        <ion-column class="button-image-bottom">
+                          <ion-img src = "../../../assets/BUYER/home/homepage/homepage-items-large-btn2-4.png"></ion-img>
+                        </ion-column>
+                        <ion-column class="button-image-bottom">
+                          <ion-img src = "../../../assets/BUYER/home/homepage/homepage-items-large-btn2-5.svg"></ion-img>
+                        </ion-column>
+                      </ion-row>
+                    </div>
+                  </ion-grid>
+                </div>
+              </ion-button>
+            </ion-column>
+
+            <!-- Ion-column 2 -->
+            <ion-column>
+              <ion-button class="homepage-items-large btn4">
+                <div>
+                  <!-- Top image -->
+                  <ion-row class="button-image-top">
+                    <ion-label class="button-text">蟲類</ion-label>
+                    <ion-img src = "../../../assets/BUYER/home/homepage/homepage-items-large-btn4-1.png"></ion-img>
+                  </ion-row>
+                  <!-- Bottom 4 image -->
+                  <ion-grid>
+                    <div class = "homepage">
+                      <ion-row>
+                        <ion-column class="button-image-bottom">
+                          <ion-img src = "../../../assets/BUYER/home/homepage/homepage-items-large-btn4-2.png"></ion-img>
+                        </ion-column>
+                        <ion-column class="button-image-bottom">
+                          <ion-img src = "../../../assets/BUYER/home/homepage/homepage-items-large-btn4-3.png"></ion-img>
+                        </ion-column>
+                      </ion-row>
+                      <ion-row>
+                        <ion-column class="button-image-bottom">
+                          <ion-img src = "../../../assets/BUYER/home/homepage/homepage-items-large-btn4-4.png"></ion-img>
+                        </ion-column>
+                        <ion-column class="button-image-bottom">
+                          <ion-img src = "../../../assets/BUYER/home/homepage/homepage-items-large-btn1-5.png"></ion-img>
+                        </ion-column>
+                      </ion-row>
+                    </div>
+                  </ion-grid>
+                </div>
+              </ion-button>
+            </ion-column>
+          </ion-row>
+
+    </div>
+  </ion-grid>
+</ion-content>
+
+
+
+
+
+<!--Sample for Refernce-->
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <!-- <div> -->
+        <ion-tab-bar slot="bottom">
+          <ion-tab-button class="bottom-bar" (click)="openHomepage()">
+            <div>
+              <ion-icon mode="ios" class="bottom-bar-home-icon" slot="icon-only" src="../../../../assets/icon/homepage-icon.svg"></ion-icon>
+            </div>
+          </ion-tab-button>
+
+          <ion-tab-button class="bottom-bar" (click)="openForum()">
+            <div>
+              <ion-icon mode="ios" class="bottom-bar-icon" slot="icon-only" src="../../../../assets/icon/forum-icon.svg"></ion-icon>
+            </div>
+          </ion-tab-button>
+
+          <ion-tab-button class="bottom-bar" (click)="openChatroom()">
+            <div>
+              <ion-icon mode="ios" class="bottom-bar-icon" slot="icon-only" src="../../../../assets/icon/chatroom-icon.svg"></ion-icon>
+            </div>
+          </ion-tab-button>
+
+          <ion-tab-button class="bottom-bar" (click)="openShoppingCart()">
+            <div>
+              <ion-icon mode="ios" class="bottom-bar-icon" slot="icon-only" src="../../../../assets/icon/shopping-cart-icon.svg"></ion-icon>
+            </div>
+          </ion-tab-button>
+
+          <ion-tab-button class="bottom-bar" (click)="openProfile()">
+            <div>
+              <ion-icon mode="ios" class="bottom-bar-icon" slot="icon-only" src="../../../../assets/icon/profile-icon.svg"></ion-icon>
+            </div>
+          </ion-tab-button>
+        </ion-tab-bar>
+      <!-- </div> -->
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,63 @@
+<ion-content class="ion-no-padding">
+  <div class="header">
+    <ion-toolbar color="#ffff">
+      <ion-title>更新信用卡資料</ion-title>
+      <ion-buttons slot="end">
+        <ion-icon mode="ios" class="back-icon" slot="icon-only" name="close-outline" (click)="close()"></ion-icon>
+      </ion-buttons>
+    </ion-toolbar>
+  </div>
+
+  <ion-grid class="ion-padding-horizontal">
+    <form class="form" [formGroup]="form">
+      <ion-row style="margin-bottom: 0em">
+        <ion-col>
+          <div class="required-form-title">信用卡號碼</div>
+          <ion-item mode="ios" class="input-form-item">
+            <ion-input mode="ios" class="form-input name-input" [formControl]="cardNumber" type="number" placeholder="輸入信用卡號碼"
+              ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row style="margin-bottom: 0em">
+        <ion-col>
+          <div class="required-form-title">付款人姓名</div>
+          <ion-item mode="ios" class="input-form-item">
+            <ion-input mode="ios" class="form-input name-input" [formControl]="name" type="text" placeholder="輸入姓名"
+              ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row style="margin-bottom: 0em">
+        <ion-col class="adress">
+            <ion-col>
+              <div class="form-title">到期日</div>
+              <ion-item mode="ios" class="input-form-item date">
+                <ion-input mode="ios" class="form-input name-input" [formControl]="cardDate" maxlength="5" type="tel" placeholder="MM/YY" mask="**/**"
+                  ></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col>
+              <div class="form-title">安全碼CVC</div>
+              <ion-item mode="ios" class="input-form-item">
+                <ion-input mode="ios" class="form-input name-input" [formControl]="cvc" type="password" maxlength="3"
+                  ></ion-input>
+              </ion-item>
+            </ion-col>
+        </ion-col>
+      </ion-row>
+      
+
+    </form>
+
+    <ion-row>
+      <ion-col class="submit-button">
+        <ion-button mode="ios" (click)="updateCardInfo()">
+          修改
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

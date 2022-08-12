@@ -1,0 +1,42 @@
+.ion-text-1{
+    font-family: 'Yuanti TC';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+    /* identical to box height */
+    color: #000000;
+}
+
+.ion-text-2{
+    font-family: 'Yuanti TC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    /* identical to box height */
+    color: #000000;
+}
+
+.ion-text-3{
+    font-family: 'Yuanti TC';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    /* identical to box height */
+    color: #FFFFFF;
+}
+
+ion-button{
+    --background: #49AAE8;
+    --background-activated: #49AAE8;
+    --background-focused: #49AAE8;
+    --background-hover: #49AAE8;
+    --color: white;
+    overflow-y:visible;
+    font-weight: 700;
+    width: 6.5rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+}

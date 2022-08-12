@@ -1,0 +1,212 @@
+ion-button{
+    --background: #49AAE8;
+    --background-activated: none;
+    --background-focused: #49AAE8;
+    --background-hover: #49AAE8;
+    --color: white;
+    overflow-y:visible;
+    font-weight: 400;
+    width: 6.25rem;
+    height: 1.625rem;
+  }
+ion-content{
+    --background: rgba(227, 240, 251, 0.2);
+    ;
+    .toolbar{
+        padding-top: 2rem;
+        height: 6.25rem;
+        width: 100%;
+        position: fixed;
+        .title{
+            font-weight: 700;
+            font-size: 20px;
+            color: #FFFFFF;
+            margin: 0 0 0.5rem 0;
+            // background: red;
+        }
+        .back-icon{
+            height: 30px;
+            width: 20px;
+            margin-left: 1rem;
+        }
+    }
+    .toolbar.fish{
+        background: rgba(52, 134, 187, 0.85);
+    }
+    .toolbar.flower{
+        background: rgba(175, 63, 63, 0.85);
+    }
+    .toolbar.insect{
+        background: rgba(46, 71, 50, 0.85);
+    }
+    .toolbar.bird{
+        background: rgba(170, 143, 2, 0.85);
+    }
+    .main-body{
+        font-family: 'Yuanti TC';
+        font-style: normal;
+        font-weight: 400;
+        .top-grid{
+            // background: lightgray;
+            .top-grid-text-1{
+                font-size: 16px;
+                color: #000000;
+            }
+            .top-grid-text-2{
+                font-size: 14px;
+                color: #979797;
+            }
+            .top-grid-text-3{
+                font-size: 14px;
+                color: #FFFFFF;
+                position: absolute;
+                top:50%;
+                left:50%;
+                transform: translate(-50%,-50%);
+            }
+            .top-grid-text-4{
+                font-size: 14px;
+                color:#000000;
+                font-weight: 400;
+            }
+            .label-button{
+                width: 4.9rem;
+                height: 1.4rem;
+                border-radius: 4px;;
+                position: relative;
+            }
+            .label-button.fish{
+                background: #49AAE8;
+            }
+            .label-button.flower{
+                background: #AF3F3F;
+            }
+            .label-button.insect{
+                background: #2E4732;
+            }
+            .label-button.bird{
+                background: #AA8F02;
+            }
+
+
+            .product-button-focused{
+                --background: none;
+                border-radius: 5px;
+            }
+            .product-button-focused.bird{
+                border:1px solid #AA8F02;
+                color: #AA8F02;
+            }
+            .product-button-focused.flower{
+                border:1px solid #AF3F3F;
+                color: #AF3F3F;
+            }
+            .product-button-focused.fish{
+                border:1px solid #49AAE8;
+                color: #49AAE8;
+            }
+            .product-button-focused.insect{
+                border: 1px solid #2E4732;
+                color: #2E4732;
+            }
+
+            .product-button{
+                --background: none;
+                --border-radius: 5px;
+                color:#000000
+            }
+        }
+        .flex-box{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            // background: lightblue;
+        }
+        .middle-grid{
+            margin: 0.5rem;
+            width: 23rem;
+            background: #FFFFFF;
+            border-radius: 0.625rem;
+            font-weight: 400;
+            .middle-grid-description{
+                margin: 1.25rem;
+                font-size: 15px;
+                font-weight: 400;
+                // background: lightcoral;
+            }
+            .middle-grid-picture{
+                margin: 1.25rem;
+                display: flex;
+                justify-content: center;
+                position: relative;
+                .middle-grid-picture-youtube-icon{
+                    width: 3.75rem;
+                    height: 2.625rem;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+        }
+        .bottom-grid{
+            margin: 0.5rem;
+            width: 23rem;
+            height: 5rem;
+            background: #FFFFFF;
+            border-radius: 0.625rem;
+            display: flex;
+            // align-items: center;
+            .store-icon{
+                margin: 0.5rem;
+                width: 4.25rem;
+                height: 4.25rem;
+            }
+            .store-name{
+                margin-top: 0.5rem;
+            }
+            .enter-store-button{
+                --background: #FFFFFF;
+                position: absolute;
+                bottom: 10%;
+                left: 50%;
+                color: #000000;
+                border: 1px solid #49AAE8;
+                border-radius: 0.625rem;
+            }
+        }
+        .latest-product-bar{
+            margin: 0.25rem 0;
+            // background: red; 
+            border-radius: 0.625rem;
+            outline: 1px solid #FFFFFF;
+            outline-offset: -5px;
+            position: relative;
+            .latest-product-bar-text{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+
+                font-style: normal;
+                font-weight: 700;
+                font-size: 16px;
+                color: #FFFFFF;
+            }
+        }
+        .flex-box-bottom-grid{
+            width: 100%; 
+            height: 100%; 
+            // background: lightcoral;
+
+            flex-wrap: wrap;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            align-content: flex-start;
+            .flex-box-item{
+                margin: 0.25rem 5px;
+            }
+        }
+    }
+}

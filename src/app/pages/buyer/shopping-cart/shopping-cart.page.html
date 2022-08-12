@@ -1,0 +1,163 @@
+<ion-content class="ion-no-padding" scrollY="true">
+  <div class="setting-inner-content">
+    <div mode="ios" class="toolbar">
+      <ion-row>
+        <ion-col>
+          <div class="title">
+            <ion-icon mode ="ios" class="back-icon" slot="icon-only" src="../../../../assets/icon/cart-icon.svg"></ion-icon>
+            購物車
+          </div>
+        </ion-col>
+      </ion-row>
+      <div>
+        <ion-row>
+          <ion-col class="edit-col">
+            <div class="edit-div" (click)="deleteItem()">
+              <ion-icon mode ="ios" class="edit-icon" slot="icon-only" src="../../../../assets/icon/bin-icon.svg"></ion-icon>
+              刪除
+            </div>
+            <div class="edit-div" (click)="moveToFavorite()">
+              <ion-icon mode ="ios" class="edit-icon" slot="icon-only" src="../../../../assets/icon/favorite-icon.svg"></ion-icon>
+              移到收藏頁
+            </div>
+          </ion-col>
+        </ion-row>
+      </div>
+    </div>
+  </div>
+
+  <ng-container *ngFor="let item of items">
+    <ion-grid class="ion-padding-horizontal shop-row">
+      <ion-row class="first-row" >
+        <ion-col size="1" class="check-col">
+            <div class="ion-button" (click)="checkShop(item.id)" [ngClass]="{'active': selectAllProducts(item.id)}">
+              <img src="../../../../assets/icon/check-icon.svg" *ngIf="selectAllProducts(item.id)" >
+            </div>
+        </ion-col>
+        <ion-col class="name-col">
+          <img src="../../../../assets/icon/no-message-icon.svg" alt="">
+          {{item.name}}
+        </ion-col>
+        <ion-col class="date-col" size="3">
+          <img src="../../../../assets/icon/clock-icon.svg">
+          {{item.date}}
+        </ion-col>
+      </ion-row>
+      <ng-container *ngFor="let product of item.product" >
+        <ion-row>
+          <ion-col size="1" class="check-col">
+            <div class="ion-button" (click)="checkProduct(item.id,product.pid)" [ngClass]="{'active': product.selected}">
+              <img src="../../../../assets/icon/check-icon.svg" *ngIf="product.selected" >
+            </div>
+          </ion-col>
+          <ion-col size="4" class="img-col">
+            <img [src]="product.img" alt="">
+          </ion-col>
+          <ion-col class="prod-col">
+            <ion-row>
+              <ion-col>
+                {{product.name}}
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col [ngClass]="{'discount-price':product.discount!==0}">
+                $ {{product.price}}
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col class="discount-col" >
+                優惠價 $ {{product.discount}}
+              </ion-col>
+            </ion-row>
+          </ion-col>
+          <ion-col size="3"  class="quan-col">
+            <div class="quan-div">
+              <div class="sign-but" (click)="changeQuan(item.id,product.pid,0)">-</div>
+              <div class="quan-but">{{product.quantity}}</div>
+              <div class="sign-but" (click)="changeQuan(item.id,product.pid,1)">+</div>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ng-container>
+    </ion-grid>
+  </ng-container>
+
+  
+  <ion-grid>
+    <div>
+      <ion-icon mode="ios-card" class="back-icon" slot="icon-only" src="../../../assets/icon/coupon-icon-navy.svg"></ion-icon>
+      <ion-text style="color: #123D58; font-size: 16px; font-weight: 700;"> 優惠券</ion-text>
+    </div>    
+  </ion-grid>
+
+  <ion-grid class="ion-padding-horizontal coupon-row">
+    <ion-row class="first-row" >
+      <ion-col size="3" class="name-col">
+        <ion-text>ShopID</ion-text>
+      </ion-col>
+      <ion-col size="5" class="coupon-details">
+        <ion-col size="3">
+        <ion-text style="font-size:16px; font-weight: bold;">8折</ion-text>
+        </ion-col>
+        <ion-col size="9">
+            <ion-text style="font-size:13.5px; line-height: 20px;">購買任何貨物</ion-text>
+            <br>
+            <ion-text style="font-size:13.5px; line-height: 15px;">滿$200使用</ion-text>
+        </ion-col>
+      </ion-col>
+      <ion-col class="button-class">
+        <ion-button>使用</ion-button>
+      </ion-col>
+    </ion-row>
+    
+
+    <ion-row class="first-row" >
+      <ion-col size="3" class="name-col">
+        <ion-text>ShopID</ion-text>
+      </ion-col>
+      <ion-col size="5" class="coupon-details">
+        
+        <ion-col>
+            <ion-text style="font-size:13.5px; line-height: 20px;">購買任何生物</ion-text>
+            <br>
+            <ion-text style="font-size:13.5px; line-height: 15px;">1件8折, 3件7折</ion-text>
+        </ion-col>
+      </ion-col>
+      <ion-col class="button-class">
+        <ion-button>領取並使用</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+<div class="summary-row">
+  <ion-row>
+    <ion-col size="2" class="middle"></ion-col>
+    <ion-col class="middle">
+      <div>
+        產品數量: {{getTotalQuantity()}}
+      </div>
+    </ion-col>
+    <ion-col size="4" class="middle">
+      <div class="price-col">
+        帳單金額
+        <div class="price-data">$ {{getTotalPrice()}}</div>
+      </div>
+    </ion-col>
+    <ion-col class="button-class" (click)="moveToPage()">
+      <ion-button>付款</ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-row class="second-row">
+    <ion-col size="2"></ion-col>
+    <ion-col size="3"></ion-col>
+    <ion-col size="4">
+      <div class="dis-col">
+      (優惠券：減$ {{discount}})
+      </div>
+    </ion-col>
+    <ion-col></ion-col>
+  </ion-row>
+</div>
+
+<app-toolbar-buyer></app-toolbar-buyer>

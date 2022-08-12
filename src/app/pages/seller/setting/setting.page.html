@@ -1,0 +1,108 @@
+<ion-content class="ion-no-padding" content="light dark">
+  <div class="setting-inner-content">
+    <div class="toolbar">
+      <ion-buttons (click)="goBack()">
+        <ion-icon mode="ios-person" class="back-icon" slot="icon-only" name="chevron-back-outline"></ion-icon>
+      </ion-buttons>
+      <ion-row>
+        <ion-col>
+          <div class="title">
+            設定
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <ion-grid class="ion-padding-horizontal">
+      <ion-row >
+        <div class="setting-item">
+          <div class="setting-header">
+            <span class="setting-title">商店資料</span>
+          </div>
+          <div class="setting-content">
+            <div>
+              <span class="setting-detail">商店名稱</span>
+              <span class="setting-info">iPYGG</span>
+            </div>
+            <div>
+              <span class="setting-detail">姓氏</span>
+              <span class="setting-info">Chan</span>
+            </div>
+            <div>
+              <span class="setting-detail">名字</span>
+              <span class="setting-info">Tai Man</span>
+            </div>
+            <div>
+              <span class="setting-detail">電子郵件</span>
+              <span class="setting-info">ipyggshop@gmail.com</span>
+            </div>
+            <div>
+              <span class="setting-detail">商店地址</span>
+              <span class="setting-info">xxxxxxxxxxxx</span>
+            </div>
+            <div>
+              <span class="setting-detail">商店電話</span>
+              <span class="setting-info">1234 5678</span>
+            </div>
+            <div>
+              <span class="setting-detail">營業時間</span>
+              <span class="setting-info">9:30 AM - 4 PM</span>
+            </div>
+          </div>
+          <div class="setting-buttons" (click)="presentUpdateStoreInformationModal()">
+            <div class="setting-edit">
+              <div>
+                <ion-icon mode="ios-pencil" class="edit-icon" slot="icon-only" src="../../../assets/icon/edit-icon.svg"></ion-icon>
+                <span class="edit-button-label">更新信息</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ion-row>
+
+      <ion-row (click)="presentStoreIntroductionEditModal()">
+        <div class="setting-item">
+          <span class="setting-title">商店簡介</span>
+        </div>
+      </ion-row>
+
+      <ion-row (click)="presentShippingEditModal()">
+        <div class="setting-item">
+          <span class="setting-title">送貨與退貨安排</span>
+        </div>
+      </ion-row>
+
+      <ion-row (click)="presentTermsEditModal()">
+        <div class="setting-item">
+          <span class="setting-title">條款及細則</span>
+        </div>
+      </ion-row>
+
+      <ion-row (click)="presentProductCategorySettingModal()">
+        <div class="setting-item">
+          <span class="setting-title">商品類別設定</span>
+        </div>
+      </ion-row>
+
+      <ion-row (click)="presentChatRoomSettingModal()">
+        <div class="setting-item">
+          <span class="setting-title">聊天室設定</span>
+        </div>
+      </ion-row>
+
+      <ion-row (click)="presentPromotionInformationNoticeModal()">
+        <div class="setting-item">
+          <span class="setting-title">優惠資訊通知</span>
+        </div>
+      </ion-row>
+
+      <ion-row (click)="presentPasswordChangeModal()">
+        <div class="setting-item">
+          <span class="setting-title">更改密碼</span>
+        </div>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+
+</ion-content>

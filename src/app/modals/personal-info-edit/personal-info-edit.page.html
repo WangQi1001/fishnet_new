@@ -1,0 +1,148 @@
+<ion-content class="ion-no-padding">
+  <div class="header">
+    <ion-toolbar color="#ffff">
+      <ion-title>更新個人資料</ion-title>
+      <ion-buttons slot="end">
+        <ion-icon mode="ios" class="back-icon" slot="icon-only" name="close-outline" (click)="close()"></ion-icon>
+      </ion-buttons>
+    </ion-toolbar>
+  </div>
+
+  <ion-grid class="ion-padding-horizontal">
+    <form class="form" [formGroup]="form">
+      <ion-row style="margin-bottom: 0em">
+        <ion-col>
+          <div class="required-form-title">帳戶名稱</div>
+          <ion-item mode="ios" class="input-form-item">
+            <ion-input mode="ios" class="form-input name-input" [formControl]="accountName" type="text"
+              ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row style="margin-bottom: 0em">
+        <ion-col>
+          <div class="required-form-title">用戶顯示名稱</div>
+          <ion-item mode="ios" class="input-form-item">
+            <ion-input mode="ios" class="form-input name-input" [formControl]="userDisplayName" type="text"
+              ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row style="margin-bottom: 0em">
+        <ion-col>
+          <div class="required-form-title">電話</div>
+          <ion-item mode="ios" class="input-form-item">
+            <ion-input mode="ios" class="form-input" [formControl]="phone" type="number"
+              ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row style="margin-bottom: 0em">
+        <ion-col>
+          <div class="required-form-title">電子郵件</div>
+          <ion-item mode="ios" class="input-form-item">
+            <ion-input mode="ios" class="form-input" [formControl]="email" type="text"
+              ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row style="margin-bottom: 0em">
+        <ion-col>
+          <div class="required-form-title">出生日期</div>
+          <ion-item mode="ios" class="input-form-item date">
+            <ion-input mode="ios" class="form-input name-input" [formControl]="myDate" type="text" placeholder='yyyy/mm'></ion-input>
+          </ion-item>
+          <ion-icon mode="ios" slot="icon-only" name="chevron-back-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+
+      <ion-row style="margin-bottom: 0em">
+        <ion-col>
+          <div class="required-form-title">地址</div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row style="margin-bottom: 0em">
+        <ion-col class="adress">
+            <ion-col>
+              <div class="form-title">室/單位</div>
+              <ion-item mode="ios" class="input-form-item">
+                <ion-input mode="ios" class="form-input name-input" [formControl]="room" type="text"
+                  ></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col>
+              <div class="form-title">樓層</div>
+              <ion-item mode="ios" class="input-form-item">
+                <ion-input mode="ios" class="form-input name-input" [formControl]="floor" type="text"
+                  ></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col>
+              <div class="form-title">座數</div>
+              <ion-item mode="ios" class="input-form-item">
+                <ion-input mode="ios" class="form-input name-input" [formControl]="numberOfSeats" type="text"
+                  ></ion-input>
+              </ion-item>
+            </ion-col>
+        </ion-col>
+      </ion-row>
+
+      <ion-row style="margin-bottom: 0em">
+        <ion-col>
+          <div class="form-title">大廈名稱</div>
+          <ion-item mode="ios" class="input-form-item">
+            <ion-input mode="ios" class="form-input" [formControl]="buildingName" type="text"
+              ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row style="margin-bottom: 0em">
+        <ion-col>
+          <div class="form-title">街道名稱</div>
+          <ion-item mode="ios" class="input-form-item">
+            <ion-input mode="ios" class="form-input" [formControl]="streetName" type="text"
+              ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row style="margin-bottom: 0em">
+        <ion-col>
+          <div class="form-title">地區</div>
+          <ion-item mode="ios" class="input-form-item">
+            <ion-input mode="ios" class="form-input" [formControl]="map" type="text"
+              ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="adress">
+        <ion-col>
+          <ion-button mode="ios" class="type-button" [ngClass]="{'active': this.region=== 'Hong Kong' }"
+            (click)="selectRegion('Hong Kong')">香港</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button mode="ios" class="type-button" [ngClass]="{'active': this.region === 'Kowloon' }"
+            (click)="selectRegion('Kowloon')">九龍</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button mode="ios" class="type-button" [ngClass]="{'active': this.region === 'New Territories' }"
+            (click)="selectRegion('New Territories')">新界</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+
+    <ion-row>
+      <ion-col class="submit-button">
+        <ion-button mode="ios" (click)="updateUser()">
+          註冊
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

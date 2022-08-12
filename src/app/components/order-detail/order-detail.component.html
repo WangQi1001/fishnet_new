@@ -1,0 +1,96 @@
+<ion-grid class="ion-padding-horizontal">
+  <ion-row>
+    <ion-col class="shopID">
+      <p>
+        {{shopID}}
+      </p>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <p>
+        訂單編號：{{shopNumber}}
+      </p>
+    </ion-col>
+  </ion-row>
+  <ion-row style="border-bottom: 1px solid #707C97 ;">
+    <ion-col class="image" >
+      <ion-img alt="image" [src]="productImg"></ion-img>
+    </ion-col>
+    <ion-col class="product-details" size="9" style="padding-right: 0;">
+      <ion-row>
+        <ion-col class="bold-title">
+          <p>{{productName}}</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col style="padding-right: 0;">
+          <p>原價：${{originalPrice}}</p>
+          <p>數量：{{quantity}}</p>
+          <p>帳單金額：${{total}}</p>
+        </ion-col>
+        <ion-col style="padding-right: 0;">
+          <p>優惠價：${{discountPrice}}</p>
+          <p>優惠券：${{coupon}}</p>
+          <p>(含運費：${{shippingPrice}})</p>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+  <br>
+  <ion-row>
+    <ion-col class="bold-title">
+      <p style="font-size: 16px;">
+        物流信息
+      </p>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <p>
+        寄送方式: {{shippingMethod}}
+      </p>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <p>
+        商店營業時間: {{storeRegistrationTime}}
+      </p>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <p>
+        收貨地址: {{deliveryAddress}}
+      </p>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <p>
+        收件人：{{recipient}}
+      </p>
+    </ion-col>
+    <ion-col class="go-button">
+      <ion-button (click)="presentOrderRatingModal()">
+        評分
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <p>
+        收件人電話：{{recipientPhoneNumber}}
+      </p>
+    </ion-col>
+    <ion-col class="go-button">
+      <ion-button (click)="goLogistics()">
+        查看物流
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+
+
+</ion-grid>

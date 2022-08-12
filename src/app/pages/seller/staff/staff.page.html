@@ -1,0 +1,50 @@
+<ion-content class="ion-no-padding" content="light dark">
+    <div class="setting-inner-content">
+      <div class="toolbar">
+        <ion-buttons (click)="goBack()">
+          <ion-icon mode="ios-person" class="back-icon" slot="icon-only" name="chevron-back-outline" (click)="goBack()"></ion-icon>
+        </ion-buttons>
+        <ion-row>
+          <ion-col>
+            <div class="title">
+              <ion-icon mode="ios-create" class="back-icon" slot="icon-only" src="../../../assets/icon/employee-icon-light.svg"></ion-icon>
+              管理員工
+            </div>
+          </ion-col>
+        </ion-row>
+        <div>
+          <ion-row>
+            <ion-col class="add-col">
+              <div class="add-div" (click)="presentStaffAddModal()">
+                <ion-icon mode ="ios" class="edit-icon" slot="icon-only" src="../../../../assets/icon/add-icon.svg"></ion-icon>
+                新增
+              </div>
+              <div class="delete-div" (click)="deleteStaff()">
+                <ion-icon mode ="ios" class="edit-icon" slot="icon-only" src="../../../../assets/icon/bin-icon.svg"></ion-icon>
+                刪除
+              </div>
+            </ion-col>
+          </ion-row>
+        </div>
+      </div>
+  
+      <ion-grid class="ion-padding-horizontal">
+        <ion-row *ngFor="let staff of staffs">
+          <ion-col size="1" class="check-col">
+                <div class="ion-button" (click)="checkStaff(staff.id)" [ngClass]="{'active': staff.selected}">
+                  <img src="../../../../assets/icon/check-icon.svg" *ngIf="staff.selected">
+                </div>
+          </ion-col>
+          <ion-col class="staff-item">
+            <div class="staff-details">
+              <span class="staff-name">{{staff.id}}</span>
+              <span class="staff-date">{{staff.date}}</span>
+            </div>                      
+          </ion-col>
+        </ion-row>
+               
+      </ion-grid>
+    </div>
+  
+  
+  </ion-content>

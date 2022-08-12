@@ -1,0 +1,164 @@
+<ion-content class="ion-no-padding">
+  <div class="setting-inner-content">
+    <div mode="ios" class="toolbar">
+      <ion-row>
+        <ion-col style="margin-left: 1rem">
+          <ion-icon class="back-icon" src="../../../../../assets/icon/back-icon.svg" (click)="goBack()"></ion-icon>
+        </ion-col>
+        <ion-col style="margin-right: 8rem">
+          <div class="title">
+            搜尋結果
+          </div>
+        </ion-col>
+      </ion-row>
+      <app-search-bar (searchClicked)="refreshResult($event)"></app-search-bar>
+    </div>
+
+    <div mode="ios" class="main-body">
+      <div class="toogle-bar" style="padding: 0 1rem 0.25rem 1rem">
+        <ion-row>
+          <ion-col class="ion-no-padding">
+            <ion-button mode="ios" [ngClass] = "{
+              'toggle-bar-product-focused': isProductDisplay === true,
+              'toggle-bar-product': isProductDisplay === false}" 
+              (click)="toggleProduct()">
+              <ion-text class="toggle-bar-text">商品</ion-text>
+            </ion-button>
+          </ion-col>
+          <ion-col class="ion-no-padding" style="margin-right: 4rem">
+            <ion-button mode="ios" [ngClass] = "{
+              'toggle-bar-store-focused': isStoreDisplay === true,
+              'toggle-bar-store': isStoreDisplay === false}" 
+              (click)="toggleStore()" >
+              <ion-text class="toggle-bar-text">店名</ion-text>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </div>
+
+      <ion-grid *ngIf="isProductDisplay" style="margin: 0.25rem 0; padding: 0;">
+        <ion-row>
+          <div class="sort-filter-bar">
+            <div>
+              <ion-col>
+                <ion-icon class="sort-icon" src="../../../../../assets/icon/sort-icon.svg"></ion-icon>
+                <ion-label class="sort-filter-text">排序</ion-label>
+              </ion-col>
+              <ion-col>
+                <ion-icon class="filter-icon" src="../../../../../assets/icon/filter-icon.svg"></ion-icon>
+                <ion-label class="sort-filter-text">篩選</ion-label>
+              </ion-col>
+            </div>
+          </div>
+        </ion-row>
+        
+        <ion-grid>
+          <div style="padding: 0.5rem">
+            <div style="color: red" *ngIf="search_result.length === 0">找不到任何與此搜尋相符的結果</div>
+            <div *ngIf="search_result.length !== 0">目前顯示的是以下字詞的搜尋結果：{{searchInput}}</div>
+          </div>
+          <ul style="padding: 0">
+            <div *ngFor="let product_info of search_result; let i = index">
+              <ion-row *ngIf="i % 2 == 0" style="display: flex">
+                <ion-col style="flex:1">
+                  <app-product-card [product_info] = "search_result[i]" [parent_url] = "parent_url"></app-product-card>
+                </ion-col>
+                <ion-col style="flex:1" *ngIf="i + 1 < search_result.length">
+                  <app-product-card [product_info] = "search_result[i+1]" [parent_url] = "parent_url"></app-product-card>
+                </ion-col>
+              </ion-row>
+            </div>
+          </ul>
+
+          <!-- Inpage search -->
+          <!-- <ul style="padding: 0">
+            <div *ngFor="let product_info of api_search_result_2; let i = index">
+              <ion-row *ngIf="i % 2 == 0" style="display: flex">
+                <ion-col style="flex:1">
+                  <app-product-card [product_info] = "api_search_result_2[i]" [parent_url] = "parent_url"></app-product-card>
+                </ion-col>
+                <ion-col style="flex:1" *ngIf="i + 1 < api_search_result_2.length">
+                  <app-product-card [product_info] = "api_search_result_2[i+1]" [parent_url] = "parent_url"></app-product-card>
+                </ion-col>
+              </ion-row>
+            </div>
+          </ul> -->
+        </ion-grid>
+
+
+      </ion-grid>
+
+      <ion-grid *ngIf="isStoreDisplay" class="ion-padding-horizontal">
+        <ion-row>
+          <div class="sort-filter-bar">
+            <div>
+              <ion-col>
+                <ion-icon class="sort-icon" src="../../../../../assets/icon/sort-icon.svg"></ion-icon>
+                <ion-label class="sort-filter-text">排序</ion-label>
+              </ion-col>
+            </div>
+          </div>
+        </ion-row>
+        
+        <div class="store-list">
+          <div class="store-item">
+            <ion-icon class="store-icon" src="../../../../../assets/icon/ipygg-icon.svg"></ion-icon>
+            <div class="store-title">
+              <span>iPYGG</span>
+              <div>
+                <ion-icon class="rating-icon" src="../../../../../assets/icon/rating-icon.svg"></ion-icon>
+              </div>
+            </div>
+            <ion-button class="enter-store-button-1" (click)="enterStore">關注中</ion-button>
+          </div>
+
+          <div class="store-item" style="background: url(../../../../../assets/BUYER/search-page/store-2.png);">
+            <ion-icon class="store-icon" src="../../../../../assets/icon/store-blank.svg"></ion-icon>
+            <div class="store-title">
+              <span>商店名稱</span>
+              <div>
+                <ion-icon class="rating-icon" src="../../../../../assets/icon/rating-icon.svg"></ion-icon>
+              </div>
+            </div>
+            <ion-button class="enter-store-button-2">關注中</ion-button>
+          </div>
+
+          <div class="store-item" style="background: url(../../../../../assets/BUYER/search-page/store-3.png);">
+            <ion-icon class="store-icon" src="../../../../../assets/icon/store-blank.svg"></ion-icon>
+            <div class="store-title">
+              <span>商店名稱</span>
+              <div>
+                <ion-icon class="rating-icon" src="../../../../../assets/icon/rating-icon.svg"></ion-icon>
+              </div>
+            </div>
+            <ion-button class="enter-store-button-2">關注中</ion-button>
+          </div>
+
+          <div class="store-item" style="background: url(../../../../../assets/BUYER/search-page/store-4.png);">
+            <ion-icon class="store-icon" src="../../../../../assets/icon/store-blank.svg"></ion-icon>
+            <div class="store-title">
+              <span>商店名稱</span>
+              <div>
+                <ion-icon class="rating-icon" src="../../../../../assets/icon/rating-icon.svg"></ion-icon>
+              </div>
+            </div>
+            <ion-button class="enter-store-button-2">關注中</ion-button>
+          </div>
+
+          <div class="store-item" style="background: url(../../../../../assets/BUYER/search-page/store-5.png);">
+            <ion-icon class="store-icon" src="../../../../../assets/icon/store-blank.svg"></ion-icon>
+            <div class="store-title">
+              <span>商店名稱</span>
+              <div>
+                <ion-icon class="rating-icon" src="../../../../../assets/icon/rating-icon.svg"></ion-icon>
+              </div>
+            </div>
+            <ion-button class="enter-store-button-2">關注中</ion-button>
+          </div>
+        </div>
+      </ion-grid>
+    </div>
+  </div>
+</ion-content>
+
+<app-toolbar-buyer></app-toolbar-buyer>

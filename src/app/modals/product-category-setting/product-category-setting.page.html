@@ -1,0 +1,61 @@
+<ion-content class="ion-no-padding">
+  <div class="header">
+    <ion-toolbar color="#ffff">
+      <ion-title style="text-align: center">商品類別設定</ion-title>
+      <ion-buttons slot="end">
+        <ion-icon mode="ios" class="back-icon" slot="icon-only" name="close-outline" (click)="close()"></ion-icon>
+      </ion-buttons>
+    </ion-toolbar>
+  </div>
+
+  <ion-grid class="ion-padding-horizontal">
+
+    <ion-row style="margin-bottom: 0em">
+      <ion-col>
+        <ion-text class="header-text">請選擇商品類別</ion-text>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <div class="category-item">
+          <div style="background-image: url('../../../assets/shop-register/category-fish.png')">
+            <ion-label class="category-text">魚類</ion-label>
+          </div>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div class="category-item">
+          <div style="background-image: url('../../../assets/shop-register/category-bird.png')">
+            <ion-label class="category-text">鳥類</ion-label>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <div class="category-item">
+          <div style="background-image: url('../../../assets/shop-register/category-flower.png')">
+            <ion-label class="category-text">花類</ion-label>
+          </div>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div class="category-item">
+          <div style="background-image: url('../../../assets/shop-register/category-insect.png')">
+            <ion-label class="category-text">蟲類</ion-label>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="submit-button">
+        <ion-button mode="ios" (click)="close()">
+          確認
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

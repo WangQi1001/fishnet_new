@@ -1,0 +1,97 @@
+<ion-content class="ion-no-padding">
+  <div class="setting-inner-content">
+    <div mode="ios" class="toolbar {{category}}">
+      <ion-row>
+        <ion-col>
+          <div>
+            <ion-icon class="back-icon" src="../../../../../assets/icon/back-icon.svg" (click)="goBack()"></ion-icon>
+          </div>
+        </ion-col>
+        <ion-col style="margin-right: 4rem">
+          <div class="title">
+            <ion-text>
+              {{category_chinese}}
+            </ion-text>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div class="search-bar {{category}}">
+            <ion-input type="text" mode="ios" class="search-input" [(ngModel)]="searchInput" (change)="searchInputted($event)"></ion-input>
+            <ion-icon mode="ios" class="search-icon" slot="icon-only" src="../../../assets/icon/search-icon.svg"></ion-icon>
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
+    
+    <div class="main-body">
+      <ion-grid style="padding: 1rem 0">
+        <!-- Top Grid -->
+        <ion-row style="display:flex">
+          <ion-col style="flex:1">
+            <div class="ion-no-padding">
+              <div class="top-grid-button">
+                <ion-label class="top-grid-button-text">所有</ion-label>
+                <ion-img src="../../../../../assets/BUYER/{{category}}-category/{{category}}-top-grid-image-1.png"></ion-img>
+              </div>
+            </div>
+          </ion-col>
+          <ion-col style="flex:1">
+            <div class="ion-no-padding">
+              <div class="top-grid-button">
+                <ion-label class="top-grid-button-text">分類1</ion-label>
+                <ion-img src="../../../../../assets/BUYER/{{category}}-category/{{category}}-top-grid-image-2.png"></ion-img>
+              </div>
+            </div>
+          </ion-col>
+          <ion-col style="flex:1">
+            <div class="ion-no-padding">
+              <div class="top-grid-button">
+                <ion-label class="top-grid-button-text">分類2</ion-label>
+                <ion-img  src="../../../../../assets/BUYER/{{category}}-category/{{category}}-top-grid-image-3.png"></ion-img>
+              </div>
+            </div>
+          </ion-col>
+        </ion-row>
+        <!-- Middle Grid -->
+        <ion-row>
+          <div class="sort-filter-bar">
+            <div>
+              <ion-col (click)="presentSortModal()">
+                <ion-icon class="sort-icon" src="../../../../../assets/icon/sort-icon.svg"></ion-icon>
+                <ion-label class="sort-filter-text">排序</ion-label>
+              </ion-col>
+              <ion-col (click)="presentFilterModal()">
+                <ion-icon class="filter-icon" src="../../../../../assets/icon/filter-icon.svg"></ion-icon>
+                <ion-label class="sort-filter-text">篩選</ion-label>
+              </ion-col>
+            </div>
+          </div>
+        </ion-row>
+
+        <ion-grid>
+          <div>
+            <div style="color: red" *ngIf="api_result.length === 0">找不到任何與此搜尋相符的結果</div>
+          </div>
+          <ul style="padding: 0; margin: 0">
+            <div *ngFor="let product_info of api_result let i = index">
+              <ion-row *ngIf="i % 2 == 0" style="display: flex">
+                <ion-col style="flex:1">
+                  <app-product-card [product_info] = "api_result[i]" [parent_url] = "parent_url"></app-product-card>
+                </ion-col>
+                <ion-col style="flex:1" *ngIf="i + 1 < api_result.length">
+                  <app-product-card  [product_info] = "api_result[i+1]" [parent_url] = "parent_url"></app-product-card>
+                </ion-col>
+              </ion-row>
+            </div>
+          </ul>
+        </ion-grid>
+
+      </ion-grid>
+    </div>
+  </div>
+</ion-content>
+
+<!-- Toolbar -->
+<app-toolbar-buyer></app-toolbar-buyer>

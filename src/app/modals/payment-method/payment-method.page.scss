@@ -1,0 +1,108 @@
+.header{
+    ion-toolbar{
+        padding-top: 2rem;
+        padding-right: 0.5rem;
+        padding-left: 0rem;
+        color: #000000;
+    }
+    .back-icon{
+        size: 20px;
+        color:#000000;
+    }
+
+
+}
+
+ion-content{
+    --ion-background-color: #ffff;
+    --ion-text-color: #000000;
+    --highlight-color-focused: #000000;
+    --highlight-color-valid: #000000;
+    --highlight-color-invalid: #000000;
+    font-family: Yuanti TC;
+}
+
+  .form-title{
+    margin-bottom:0.5rem;
+    font-size: 1em;
+  }
+  .payment-method {
+    position: relative;
+    --background: #F4FBFF;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    img {
+      position: absolute;
+      padding: 0 20px;
+    }
+    span {
+      margin: auto;
+    }
+  }
+  .payment-method.active {
+    border: 2px solid #49AAE8;
+  }
+  .no-pad-top{
+      padding-top: 0;
+  }
+
+
+
+.address{
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+}
+
+  .input-form-item{
+    border: 1px solid #49AAE8;
+    --border-width: 0;
+    border-radius: 0.5em;
+    // --border-radius: 5px;
+    --inner-border-width: 0px;
+    --background: #F4FBFF;
+    --background-activated: #F4FBFF;
+    --background-focused: #F4FBFF;
+    --background-hover: #F4FBFF;
+    --border-radius: 0.5rem;
+    text-align: center;
+    color: black;
+  }
+
+  .form-input {
+    text-align: start;
+  }
+  .name-input {
+    text-align: center;
+  }
+  .submit-button{
+    display: flex;
+    justify-content: center;
+    ion-button{
+        --background: #49AAE8;
+        --background-activated: #49AAE8;
+        --background-focused: #49AAE8;
+        --background-hover: #49AAE8;
+        --color: white;
+        overflow-y:visible;
+        width: 100%;
+        margin: 0;
+        font-size: 18px;
+        font-weight: bold;
+        width: 30%;
+        height: 150%;
+    }
+    margin: 1rem 0;
+  }
+
+.succeed-icon {
+  top: calc(50vh - 75px);
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 80px;
+  background: #49AAE8;
+  margin: auto;
+  padding: 50px;
+  display: flex;
+}

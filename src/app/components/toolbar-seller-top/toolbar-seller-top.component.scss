@@ -1,0 +1,43 @@
+ion-tab-button:focus{
+    --background-activated: #3F93C9;
+    --background-focused: #3F93C9;
+}
+ion-footer{
+    --background: #E9F5FF;
+    background-repeat: no-repeat;
+    height: 60px;
+    display: flex;
+    justify-content: flex-end;
+    --border-width: 0px; 
+    border: none !important;
+
+    ion-toolbar{
+        --border-width: 0px; 
+        height: 60px;
+        --background: #E9F5FF;
+        --color: #FFFFFF;
+        display: flex;
+        justify-content: flex-end;
+    }
+    ion-tab-bar{
+        display: flex;
+        justify-content: flex-end;
+        border: none !important;
+        --background: #E9F5FF;
+        --color: #FFFFFF;
+        .bottom-bar{
+            .bottom-bar-home-icon{
+                width: 2.5rem;
+                height: 2.5rem;
+            }
+            .bottom-bar-icon{
+                font-size: 24px;
+            }
+            .bottom-bar-icon-focused{
+                font-size: 24px;
+                --background: #3F93C9;
+            }
+        }
+        
+    }
+}

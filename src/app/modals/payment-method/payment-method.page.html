@@ -1,0 +1,87 @@
+<ion-content class="ion-no-padding">
+  <div class="header" *ngIf="!succeed">
+    <ion-toolbar color="#ffff">
+      <ion-title style="text-align: center">付款方式</ion-title>
+      <ion-buttons slot="end">
+        <ion-icon mode="ios" class="back-icon" slot="icon-only" name="close-outline" (click)="close()"></ion-icon>
+      </ion-buttons>
+    </ion-toolbar>
+  </div>
+
+  <ion-grid class="ion-padding-horizontal" *ngIf="!succeed">
+    <form class="form" [formGroup]="form">
+      <ion-row>
+        <ion-col>
+          <div class="form-title">選擇一個付款方式：</div>
+          <ion-item class="payment-method active">
+            <img src="../../../assets/icon/master-card.png" alt="">
+            <span>信用卡</span>
+          </ion-item>
+          <ion-item class="payment-method">
+            <img src="../../../assets/icon/apply-pay.png" alt="">
+            <span>Apple Pay</span>
+          </ion-item>
+          <ion-item class="payment-method">
+            <img src="../../../assets/icon/apli-pay.png" alt="">
+            <span>支付寶AliPay</span>
+          </ion-item>
+          <ion-item class="payment-method">
+            <img src="../../../assets/icon/google-pay.png" alt="">
+            <span>Google Pay</span>
+          </ion-item>
+          <ion-item class="payment-method">
+            <img src="../../../assets/icon/pay-me.png" alt="">
+            <span>PayMe</span>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row style="margin-bottom: 0em">
+        <ion-col>
+          <div class="form-title">信用卡號碼</div>
+          <ion-item mode="ios" class="input-form-item">
+            <ion-input mode="ios" placeholder="輸入信用卡號碼" class="form-input" [formControl]="cardNumber" type="text"
+            ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row style="margin-bottom: 0em">
+        <ion-col>
+          <div class="form-title">付款人姓名</div>
+          <ion-item mode="ios" class="input-form-item">
+            <ion-input mode="ios" placeholder="輸入姓名" class="form-input" [formControl]="cardName" type="text"
+            ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row style="margin-bottom: 0em">
+        <ion-col class="address">
+            <ion-col class="no-pad-top">
+              <div class="form-title">到期日</div>
+              <ion-item mode="ios" class="input-form-item">
+                <ion-input mode="ios" placeholder="MM/YY" class="form-input name-input" [formControl]="expireDate" type="text"
+                  ></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col class="no-pad-top">
+              <div class="form-title">安全碼CVC</div>
+              <ion-item mode="ios" class="input-form-item">
+                <ion-input mode="ios" class="form-input name-input" [formControl]="cvcCode" type="text"
+                  ></ion-input>
+              </ion-item>
+            </ion-col>
+        </ion-col>
+      </ion-row>
+    </form>
+
+    <ion-row>
+      <ion-col class="submit-button">
+        <ion-button mode="ios" (click)="confirmButton()">
+          付款
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div class="succeed-icon" *ngIf="succeed" (click)="close()">
+    <img src="../../../assets/icon/check.svg" alt="">
+  </div>
+</ion-content>

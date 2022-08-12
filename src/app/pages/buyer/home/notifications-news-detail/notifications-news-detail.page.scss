@@ -1,0 +1,78 @@
+ion-content{
+    background: #F8F8F8;
+    color: #000000;
+    font-family: Yuanti TC;
+    font-style: normal;
+    .toolbar{
+      padding-top: 2rem;
+      background: url('../../../../../assets/icon/toolbar-background.svg');
+      background-repeat: no-repeat;
+      height: 130px;
+      .title{
+          font-weight: 700;
+          font-size: 20px;
+          text-align: center;
+          color: #FFFFFF;
+          line-height: 20px;
+          vertical-align: middle;
+          margin-bottom: 1rem;
+          .back-icon{
+              position: absolute;
+              left: 10%;
+              width: 20px;
+              height: 30px;
+          }
+      }
+    }
+    
+    .main-body{
+      display: flex;
+      justify-content: center;
+    }
+    .notification-grid{
+      width: 20.5rem; 
+      height: 20.5rem;
+      background: rgba(73, 170, 232, 0.07);
+      padding: 0;
+      margin: 1.5rem 1rem;
+      border-radius: 0.625rem;
+      display: flex;
+      justify-content: center;
+    }
+    .notification-grid-container{
+      width: 80%;
+      margin: 1.25rem 0 1rem;
+    //   background: #49AAE8;
+    }
+    .notification-sale-image{
+      width: 16.5rem;
+      height: 10.5rem;
+    }
+    .notification-container-text{
+      color: #000000;
+      font-weight: 400; 
+      font-size: 16px; 
+      line-height: 22px;
+    }
+    .notification-grid-date{
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+      color: #979797;
+    }
+  
+    //FlexBox Properties
+    .horizontal-center{
+      width:100%;
+      display: flex;
+      justify-content: center;
+    }
+    .horizontal-flexend{
+      width:100%;
+      display: flex;
+      justify-content: flex-end;
+    }
+  
+  }
+  
+  

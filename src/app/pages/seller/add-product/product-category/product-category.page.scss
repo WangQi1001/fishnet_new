@@ -1,0 +1,64 @@
+ion-content{
+    --background: #F8F8F8;
+    font-family: Yuanti TC;
+    .toolbar{
+        background: url('../../../../../assets/icon/toolbar-background.svg');
+        background-repeat: no-repeat;
+        height: 8rem;
+        width: 25rem;
+        .back-icon{
+            width: 20px;
+            height: 30px;
+        }
+        .title{
+            font-weight: 700;
+            font-size: 20px;
+            color: #FFFFFF;
+        }
+    }
+    .main-body{
+        font-style: normal;
+        font-size: 16px;
+        line-height:22px;
+        color: #000000;
+        display: flex;
+        justify-content: center;
+
+        .header{
+            padding: 0.5rem 0;
+            .header-text{
+                font-weight: 700;
+            }      
+        }
+        .category-button{
+            width: 21.5rem;
+            height: 4.5rem;
+        }
+        .category-text{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-weight: 700;
+          }
+
+        .next-button{
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            ion-button{
+                --background: #49AAE8;
+                --background-activated: #49AAE8;
+                --background-focused: #49AAE8;
+                --background-hover: #49AAE8;
+                --color: white;
+                overflow-y:visible;
+                font-weight: 700;
+                width: 6.5rem;
+                height: 2rem;
+                border-radius: 0.5rem;
+            }
+
+          }
+    }
+}

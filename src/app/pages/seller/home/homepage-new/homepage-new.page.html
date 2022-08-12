@@ -1,0 +1,95 @@
+<ion-content class="ion-no-padding">
+  <div class="setting-inner-content">
+    <div mode="ios" class="toolbar">
+      <ion-row>
+        <ion-col>
+          <ion-icon style="width: 42px; height: 42px; padding-left: 0.5rem;" mode="ios" src="../../../../../assets/icon/ipygg-icon-2.svg"></ion-icon>
+        </ion-col>
+        <ion-col style="padding: 1rem 0rem 0rem 1.5rem;">
+          <ion-text class="title">iPYGG</ion-text>
+        </ion-col>
+        <ion-col style="padding-top: 1rem">
+          <ion-icon class="forum-icon" mode="ios" src="../../../../../assets/icon/notification-icon.svg" (click)="openNotification()"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div class="search-bar">
+            <ion-input type="text" mode="ios" class="search-input" [(ngModel)]="searchInput" (change)="searchInputted($event)"></ion-input>
+            <ion-icon mode="ios" class="search-icon" slot="icon-only" src="../../../assets/icon/search-icon.svg"></ion-icon>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="ion-padding-horizontal">
+        <ion-col>
+          <ion-text class="coupon">優惠券</ion-text>
+        </ion-col>
+        <ion-col style="padding: 0.75rem 0 0 0">
+          <ion-icon style="width: 6.5rem; height: 1rem; float: right;" src="../../../../../../assets/icon/rating-icon.svg"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    
+    <div mode="ios" class="main-body">
+      <ion-grid>
+        <!-- Top Grid -->
+        <ion-row style="display: flex">
+          <ion-col style="flex: 1">
+            <div class="top-grid">
+              <ion-img src="../../../../../assets/BUYER/home/homepage/buy-item.png"></ion-img>
+              <p class="top-grid-text">
+                購買任何商品
+                1件8折, 3件7折
+              </p>
+            </div>
+          </ion-col>
+          <ion-col style="flex: 1">
+            <div class="top-grid">
+              <ion-img src="../../../../../assets/BUYER/home/homepage/buy-item.png"></ion-img>
+              <p class="top-grid-text">
+                購買任何商品
+                1件8折, 3件7折
+              </p>
+            </div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="display: flex">
+          <ion-col style="flex:1">
+            <div class="store-button" (click)="enterStoreIntroduction()">
+              <ion-img src="../../../../../../assets/SELLER/home/homepage/store-introduction.png"></ion-img>
+              <ion-text class="button-text">商店簡介</ion-text>
+            </div>
+          </ion-col>
+          <ion-col style="flex:1">
+            <div class="store-button" (click)="enterShipping()">
+              <ion-img src="../../../../../../assets/SELLER/home/homepage/delivery-arrangement.png"></ion-img>
+              <ion-text class="button-text">送貨與退貨安排</ion-text>
+            </div>
+          </ion-col>
+          <ion-col style="flex:1">
+            <div class="store-button" (click)="enterTerms()">
+              <ion-img src="../../../../../../assets/SELLER/home/homepage/terms-condition.png"></ion-img>
+              <ion-text class="button-text">送貨與退貨安排</ion-text>
+            </div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="display: flex">
+          <ion-col style="flex:1">
+            <div class="latest-product-bar">
+              <ion-label class="latest-product-bar-text">最新產品</ion-label>
+              <ion-img class="latest-product-bar-img" src="../../../../../../assets/SELLER/home/homepage/hompage-item-bg-2.png"></ion-img>
+            </div>
+          </ion-col>
+        </ion-row>
+        
+      </ion-grid>
+    </div>
+  </div>
+</ion-content>
+
+<app-toolbar-seller-top></app-toolbar-seller-top>
+<app-toolbar-seller></app-toolbar-seller>

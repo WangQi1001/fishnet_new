@@ -1,0 +1,54 @@
+<ion-content class="ion-no-padding">
+  <div class="header">
+    <ion-toolbar color="#ffff">
+      <ion-title style="text-align: center">聊天室設定</ion-title>
+      <ion-buttons slot="end">
+        <ion-icon mode="ios" class="back-icon" slot="icon-only" name="close-outline" (click)="close()"></ion-icon>
+      </ion-buttons>
+    </ion-toolbar>
+  </div>
+  <ion-grid class="ion-padding-horizontal">
+    <form class="form" >
+
+      <ion-row style="margin-bottom: 0em">
+        <ion-col class="no-pad-bot">
+          <div class="required-form-title">聊天室功能</div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="address">
+        <ion-col>
+          <ion-button mode="ios" class="type-button" >開啟</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button mode="ios" class="type-button">關閉</ion-button>
+        </ion-col>
+      </ion-row>
+
+      <ion-row style="margin-bottom: 0em">
+        <ion-col class="no-pad-bot">
+          <div class="required-form-title">最後上線功能</div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="address">
+        <ion-col>
+          <ion-button mode="ios" class="type-button" >開啟</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button mode="ios" class="type-button">關閉</ion-button>
+        </ion-col>
+      </ion-row>
+
+    </form>
+
+    <ion-row>
+      <ion-col class="submit-button">
+        <ion-button mode="ios" (click)="close()">
+          確認
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>

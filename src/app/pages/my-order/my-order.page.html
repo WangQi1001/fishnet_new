@@ -1,0 +1,40 @@
+<ion-content>
+  <div class="setting-inner-content">
+    <div mode="ios" class="toolbar">
+      <ion-buttons (click)="goBack()">
+        <ion-icon mode="ios-person" class="back-icon" slot="icon-only" name="chevron-back-outline"></ion-icon>
+      </ion-buttons>
+      <ion-row>
+        <ion-col>
+          <div class="title">
+            <ion-icon mode="ios" class="back-icon2" slot="icon-only" src="../../../assets/icon/myorder-icon.svg"></ion-icon>
+            訂單狀態
+          </div>
+        </ion-col>
+      </ion-row>
+      <div class="div-search-bar">
+        <ion-row>
+          <ion-col>
+            <div class="search-bar">
+              <ion-input type="text" mode="ios" class="search-input" [(ngModel)]="searchInput" (change)="searchInputted($event)"></ion-input>
+              <ion-icon mode="ios" class="search-icon" slot="icon-only" src="../../../assets/icon/search-icon.svg"></ion-icon>
+            </div>
+          </ion-col>
+        </ion-row>
+      </div>
+    </div>
+  
+    <ion-grid class="ion-padding-horizontal">
+      <app-order-detail>
+         <!-- *ngFor="let product of products"
+              [hero]="product.name"
+              [master]="product.master"  
+            *** pass products details 
+            -->
+      </app-order-detail>
+  
+    </ion-grid>
+  </div>
+
+
+</ion-content>

@@ -1,0 +1,18 @@
+ion-content {
+  --background: rgba(0, 0, 0, 0.33);
+}
+.delete-modal{
+  padding: 25px;
+  background: white;
+  margin: 17px;
+  border-radius: 30px;
+
+  .delete-button {
+    background: #49AAE8;
+    border-radius: 10px;
+    width: 100px;
+    color: white;
+    padding: 5px;
+    margin: auto;
+  }
+}

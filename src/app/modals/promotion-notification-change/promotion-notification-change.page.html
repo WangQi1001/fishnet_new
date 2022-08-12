@@ -1,0 +1,78 @@
+<ion-content class="ion-no-padding">
+  <div class="header">
+    <ion-toolbar color="#ffff">
+      <ion-title>優惠資訊通知</ion-title>
+      <ion-buttons slot="end">
+        <ion-icon mode="ios" class="back-icon" slot="icon-only" name="close-outline" (click)="close()"></ion-icon>
+      </ion-buttons>
+    </ion-toolbar>
+  </div>
+
+  <ion-grid class="ion-padding-horizontal">
+    <ion-row style="margin-bottom: 0em">
+      <ion-col>
+        <div class="required-form-title">接收優惠資訊</div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="adress">
+      <ion-col>
+        <ion-button mode="ios" class="type-button" [ngClass]="{'active': this.typeDiscountInfo=== 'Open' }"
+          (click)="selectDiscountInfo('Open')">開啟</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button mode="ios" class="type-button" [ngClass]="{'active': this.typeDiscountInfo === 'Close' }"
+          (click)="selectDiscountInfo('Close')">關閉</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row style="margin-top: 1rem">
+      <ion-col>
+        <div class="required-form-title">優惠資訊類型</div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row style="margin-bottom: -0.5rem" class="checkItems">
+      <ion-col class="title">
+        <div class="required-form-title">魚類商品</div>
+      </ion-col>
+      <ion-col class="check-col">
+        <ion-button (click)="checkProducts('fish')" [ngClass]="{'active': this.fishProduct}">
+          <ion-icon mode="ios" class="check-icon" slot="icon-only" name="checkmark-outline" *ngIf="fishProduct" ></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row style="margin-bottom: -0.5rem" class="checkItems">
+      <ion-col class="title">
+        <div class="required-form-title">鳥類商品</div>
+      </ion-col>
+      <ion-col class="check-col">
+        <ion-button (click)="checkProducts('bird')" [ngClass]="{'active': this.birdProduct}">
+          <ion-icon mode="ios" class="check-icon" slot="icon-only" name="checkmark-outline" *ngIf="birdProduct" ></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row style="margin-bottom: -0.5rem" class="checkItems">
+      <ion-col class="title">
+        <div class="required-form-title">花類商品</div>
+      </ion-col>
+      <ion-col class="check-col">
+        <ion-button (click)="checkProducts('flower')" [ngClass]="{'active': this.flowerProduct}">
+          <ion-icon mode="ios" class="check-icon" slot="icon-only" name="checkmark-outline" *ngIf="flowerProduct" ></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row style="margin-bottom: -0.5rem" class="checkItems">
+      <ion-col class="title">
+        <div class="required-form-title">蟲類商品</div>
+      </ion-col>
+      <ion-col class="check-col">
+        <ion-button (click)="checkProducts('commodity')" [ngClass]="{'active': this.commodityProduct}">
+          <ion-icon mode="ios" class="check-icon" slot="icon-only" name="checkmark-outline" *ngIf="commodityProduct"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

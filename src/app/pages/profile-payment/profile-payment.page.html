@@ -1,0 +1,58 @@
+<ion-content class="ion-no-padding" content="light dark">
+  <div class="setting-inner-content">
+    <div class="toolbar">
+      <ion-buttons (click)="goBack()">
+        <ion-icon mode="ios-person" class="back-icon" slot="icon-only" name="chevron-back-outline"></ion-icon>
+      </ion-buttons>
+      <ion-row>
+        <ion-col>
+          <div class="title">
+            <ion-icon mode="ios" class="back-icon2" slot="icon-only" src="../../../assets/icon/mypayment-icon.svg"></ion-icon>
+            付款方式
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
+  
+    <ion-grid class="ion-padding-horizontal">
+      <div class="paragraph">
+        <ion-row>
+          <ion-col class="sub-title">
+            <ion-text>銀行名稱</ion-text>
+          </ion-col>
+        </ion-row>
+        <ion-row class="card-number-row">
+          <ion-col size="4">
+            <ion-text>信用卡號碼</ion-text>
+          </ion-col>
+          <ion-col>
+            <ion-text>{{cardNumber}}</ion-text>
+          </ion-col>
+          <ion-col size="3" class="card-icon">
+            <ion-icon [src]="cardImg"></ion-icon>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="4">
+            <ion-text>到期日</ion-text>
+          </ion-col>
+          <ion-col>
+            <ion-text>{{cardDate}}</ion-text>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="edit-button">
+            <ion-button (click)="presentCardInfoEditModal()">
+              <ion-icon mode="ios-pencil" class="edit-icon" slot="icon-only" src="../../../assets/icon/edit-icon.svg"></ion-icon>
+              <ion-text>
+                更新信息
+              </ion-text> 
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </div>
+    </ion-grid>
+  </div>
+
+
+</ion-content>

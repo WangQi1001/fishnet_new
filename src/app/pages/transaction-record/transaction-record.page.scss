@@ -1,0 +1,102 @@
+ion-content{
+    --ion-background-color: #ffff;
+    --ion-text-color: #000000;
+    --highlight-color-focused: #000000;
+    --highlight-color-valid: #000000; 
+    --highlight-color-invalid: #000000;
+    font-family: Yuanti TC;
+    .toolbar{
+        padding-top: 2rem;
+        background: url('../../../assets/icon/toolbar-background.svg');
+        background-repeat: no-repeat;
+        height: 130px;
+        .back-icon2{
+            font-size: 24px;
+            color: #FFFFFF;
+            padding: 10px;
+            vertical-align: middle;
+        }
+        .title{
+            vertical-align: middle;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+        .search-bar{
+            display: flex;
+            align-items: center;
+            text-align: center;
+            padding: 0 3px 0 1rem;
+            border: 1px solid #49AAE8;
+            color: black;
+            width: 70%;
+            margin: auto;
+            height: 40px;
+            border-radius: 30px;
+            background: #FCFCFC;
+            display: flex;
+            flex-direction: row;
+            .search-icon{
+                width: 34px ;
+                height: 34px;
+            }
+        }
+        ion-buttons{
+            position: absolute;
+            left: 5%;
+            top: 5%;
+            .back-icon{
+                size: 20px;
+                color:#ffffff;
+            }
+        }
+    }
+}
+
+.sub-title{
+    font-weight: 700; 
+}
+
+.sales-figure{
+    border: 1px solid #49AAE8;
+    margin: 1rem 2px;
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+    background: #ffffff;
+    font-size: 14px;
+    text-align: center;
+    vertical-align: middle;
+    font-size:12.5px;
+    line-height: 22px;
+}
+
+.figure {
+    font-weight:700;
+    font-size: 16px;
+    background: linear-gradient(259.22deg, #49AAE8 0%, #5B58C2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+     background-clip: text;
+}
+
+.buttons{
+  --background: #2E73A0;;
+  --background-activated: #2E73A0;;
+  --background-focused: #2E73A0;;
+  width: 108px;
+  height: 32.5px;
+  font-size:14px;
+  margin: 0 0;
+  border-radius: 10px;
+  color:#ffffff;
+}
+
+
+.paragraph{
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background: #49AAE812;
+}

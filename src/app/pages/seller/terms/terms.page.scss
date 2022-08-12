@@ -1,0 +1,71 @@
+ion-content{
+  --ion-background-color: #ffff;
+  --ion-text-color: #000000;
+  --highlight-color-focused: #000000;
+  --highlight-color-valid: #000000;
+  --highlight-color-invalid: #000000;
+  --background: #F9F9F9;
+  font-family: Yuanti TC;
+  .setting-inner-content{
+      background-repeat: no-repeat;
+  }
+  .toolbar{
+        padding-top: 2rem;
+        background: url('../../../../assets/SELLER/home/homepage/hompage-item-bg-1.png');
+        background-repeat: no-repeat;
+        height: 130px;
+        .back-icon2{
+            font-size: 24px;
+            color: #FFFFFF;
+            padding: 10px;
+            vertical-align: middle;
+        }
+        .title{
+            color: #FFFFFF;
+            vertical-align: middle;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        ion-buttons{
+            position: absolute;
+            left: 5%;
+            top: 5%;
+            .back-icon{
+                size: 20px;
+                color:#ffffff;
+            }
+        }
+    }
+
+  ion-row {
+    display: flex;
+    align-items: center;
+  }
+  ion-col {
+    flex: 1;
+  }
+  .page-label {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    color: #49AAE8;
+  }
+  .edit-button {
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+    background: #49AAE8;
+    border-radius: 10px;
+    padding: 6px 25px;
+    color: #ffffff;
+    .edit-button-label {
+      margin-left: 10px;
+    }
+  }
+  .page-content {
+    margin: 26px;
+  }
+}
